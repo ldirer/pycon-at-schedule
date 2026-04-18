@@ -1,0 +1,17 @@
+Day	Timeslot	Room	Workshop_or_Talk	Title	Description	Owner	Second_Speaker	language	first_time_speaker	Category	slide_url	image_filename
+sunday	10:00-12:00	E.HG 204	W	AI-driven Software Engineering: TDD-Guardrails for the Age of Vibe Programming	"AI coding tools are transforming how engineering and data science teams work — but speed without a structure creates technical debt, regressions, and code that's hard to trust.
+This workshop presents an alternative: a TDD-based guardrail framework for AI-assisted development that provides teams with a practical workflow to maintain code quality and reliability.
+
+Participants will learn to write tests that define intent before prompting, use the red-green-refactor loop to guide and validate AI output, and catch errors early. You'll leave with a repeatable approach that makes AI a reliable collaborator — whether you're building data pipelines, APIs, or analytical models."	Stefan Trenkwalder		English, English or German				Stefan_Trenkwalder
+sunday	14:00-16:00	E.HG 204	W	(Workshop) Do you know how well your model is doing? Evaluate your LLMs	"Prerequisites:
+
+- Have experience coding in Python (with Python installed in the local machine)
+- Basic understanding of machine learning and LLMs
+- Experience with Hugging Face Transformers preferred but not necessary
+- A Hugging Face Hub account (sign up for free)
+- A modern computer that can fine-turn small LLMs locally
+
+Description:
+
+Large Language Models (LLMs) are becoming central to modern applications, yet effectively evaluating their performance remains a significant challenge. How do you objectively compare different models, benchmark the impact of fine-tuning, or ensure your LLM responses adhere to safety guidelines (guard-railing)? This hands-on workshop addresses these critical questions."	Cheuk Ting Ho		English				Cheuk_Ting_Ho
+sunday	16:00-18:00	E.HG 204	W	Data validation with pointblank	"Data validation comprises a crucial step in each data-centric project. This part enables the data scientist to understand which aspects to focus on during data cleaning. Furthermore, building and executing machine learning models as well as performing subsequent data analysis on clean data substantially improves the results."	Johannes Werner		English	Checked			Johannes_Werner

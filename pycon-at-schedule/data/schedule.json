@@ -1,0 +1,73 @@
+{
+  "conference": {
+    "name": "PyCon Austria 2026",
+    "location": "Eisenstadt, Austria",
+    "dates": [
+      "2026-04-19",
+      "2026-04-20"
+    ],
+    "timezone": "Europe/Vienna"
+  },
+  "sessions": [
+    {
+      "id": "sunday-1000-e-hg-204-ai-driven-software-engineering-tdd-guard",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "room": "E.HG 204",
+      "type": "workshop",
+      "title": "AI-driven Software Engineering: TDD-Guardrails for the Age of Vibe Programming",
+      "description": "AI coding tools are transforming how engineering and data science teams work — but speed without a structure creates technical debt, regressions, and code that's hard to trust.\nThis workshop presents an alternative: a TDD-based guardrail framework for AI-assisted development that provides teams with a practical workflow to maintain code quality and reliability.\n\nParticipants will learn to write tests that define intent before prompting, use the red-green-refactor loop to guide and validate AI output, and catch errors early. You'll leave with a repeatable approach that makes AI a reliable collaborator — whether you're building data pipelines, APIs, or analytical models.",
+      "speakers": [
+        "Stefan Trenkwalder"
+      ],
+      "language": "English, English or German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Stefan_Trenkwalder"
+    },
+    {
+      "id": "sunday-1400-e-hg-204-workshop-do-you-know-how-well-your-model",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "room": "E.HG 204",
+      "type": "workshop",
+      "title": "(Workshop) Do you know how well your model is doing? Evaluate your LLMs",
+      "description": "Prerequisites:\n\n- Have experience coding in Python (with Python installed in the local machine)\n- Basic understanding of machine learning and LLMs\n- Experience with Hugging Face Transformers preferred but not necessary\n- A Hugging Face Hub account (sign up for free)\n- A modern computer that can fine-turn small LLMs locally\n\nDescription:\n\nLarge Language Models (LLMs) are becoming central to modern applications, yet effectively evaluating their performance remains a significant challenge. How do you objectively compare different models, benchmark the impact of fine-tuning, or ensure your LLM responses adhere to safety guidelines (guard-railing)? This hands-on workshop addresses these critical questions.",
+      "speakers": [
+        "Cheuk Ting Ho"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Cheuk_Ting_Ho"
+    },
+    {
+      "id": "sunday-1600-e-hg-204-data-validation-with-pointblank",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "room": "E.HG 204",
+      "type": "workshop",
+      "title": "Data validation with pointblank",
+      "description": "Data validation comprises a crucial step in each data-centric project. This part enables the data scientist to understand which aspects to focus on during data cleaning. Furthermore, building and executing machine learning models as well as performing subsequent data analysis on clean data substantially improves the results.",
+      "speakers": [
+        "Johannes Werner"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Johannes_Werner"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyCon Austria 2026 — Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__title">
+        <h1 id="conf-name">PyCon Austria 2026</h1>
+        <p class="site-header__meta">
+          <span id="conf-dates"></span> · <span id="conf-location"></span>
+        </p>
+      </div>
+      <div class="site-header__actions">
+        <button id="download-ics" type="button" class="btn btn--primary">
+          Download ICS
+        </button>
+      </div>
+    </div>
+    <nav class="day-tabs" id="day-tabs" aria-label="Schedule days"></nav>
+  </header>
+
+  <main id="schedule" class="schedule" aria-live="polite">
+    <p class="schedule__status">Loading schedule…</p>
+  </main>
+
+  <dialog id="session-dialog" class="dialog">
+    <article class="dialog__content">
+      <header class="dialog__header">
+        <h2 id="dialog-title"></h2>
+        <button class="dialog__close" type="button" aria-label="Close">×</button>
+      </header>
+      <p class="dialog__meta" id="dialog-meta"></p>
+      <p class="dialog__speakers" id="dialog-speakers"></p>
+      <div class="dialog__description" id="dialog-description"></div>
+    </article>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
