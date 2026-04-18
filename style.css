@@ -140,18 +140,18 @@ body {
   box-shadow: var(--shadow);
 }
 
-.timeline {
+.timetable {
   --room-count: 1;
-  --timeline-height: 560px;
-  --pixels-per-minute: 1.25;
-  --hour-height: calc(var(--pixels-per-minute) * 60px);
+  --slot-count: 1;
+  --slot-height: 17.5px;
   display: grid;
-  grid-template-columns: 88px repeat(var(--room-count), minmax(230px, 1fr));
-  grid-template-rows: auto var(--timeline-height);
-  min-width: calc(88px + var(--room-count) * 230px);
+  grid-template-columns: 84px repeat(var(--room-count), minmax(230px, 1fr));
+  grid-template-rows: auto repeat(var(--slot-count), var(--slot-height));
+  min-width: calc(84px + var(--room-count) * 230px);
+  align-items: stretch;
 }
 
-.timeline__head {
+.timetable__head {
   background: #f8faff;
   color: #4a5568;
   text-align: left;
@@ -161,52 +161,51 @@ body {
   padding: 0.7rem;
   border-bottom: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
-.timeline__head--room:last-child {
+.timetable__head--last {
   border-right: none;
 }
 
-.timeline__times,
-.timeline__room-col {
-  position: relative;
-  height: var(--timeline-height);
-  background-image: repeating-linear-gradient(
+.timetable__room-bg {
+  border-right: 1px solid var(--color-border);
+  background: repeating-linear-gradient(
     to bottom,
     transparent 0,
-    transparent calc(var(--hour-height) - 1px),
-    #ebeff7 calc(var(--hour-height) - 1px),
-    #ebeff7 var(--hour-height)
+    transparent calc(var(--slot-height) - 1px),
+    #eef2f8 calc(var(--slot-height) - 1px),
+    #eef2f8 var(--slot-height)
   );
 }
 
-.timeline__times {
-  border-right: 1px solid var(--color-border);
+.timetable__room-bg--last {
+  border-right: none;
 }
 
-.timeline__time-mark {
-  position: absolute;
-  left: 0.5rem;
+.timetable__time-label {
   font-size: 0.75rem;
   color: var(--color-muted);
-  transform: translateY(-50%);
+  padding: 0 0.45rem;
   line-height: 1;
+  transform: translateY(-50%);
+  z-index: 3;
 }
 
-.timeline__time-mark--start {
-  transform: none;
+.timetable__time-label--start {
+  transform: translateY(0);
 }
 
-.timeline__time-mark--end {
+.timetable__time-label--end {
   transform: translateY(-100%);
 }
 
-.timeline__room-col {
-  border-right: 1px solid var(--color-border);
-}
-
-.timeline__room-col:last-child {
-  border-right: none;
+.timetable__hour-line {
+  border-top: 1px solid #cfd7e7;
+  margin-top: -1px;
+  z-index: 1;
 }
 
 .session {
@@ -228,23 +227,15 @@ body {
   border-color: var(--color-accent);
 }
 
-.session + .session {
-  margin-top: 0.55rem;
-}
-
-.timeline-session {
-  position: absolute;
-  left: 0.35rem;
-  right: 0.35rem;
-  margin: 0;
+.timetable__session {
+  margin: 2px;
+  min-height: 42px;
   overflow: hidden;
+  align-self: stretch;
+  z-index: 2;
 }
 
-.timeline-session + .timeline-session {
-  margin-top: 0;
-}
-
-.timeline-session .session__title {
+.timetable__session .session__title {
   font-size: 0.93rem;
 }
 
@@ -359,36 +350,35 @@ body {
 }
 
 @media (max-width: 920px) {
-  .timeline {
-    grid-template-columns: 68px repeat(var(--room-count), minmax(220px, 1fr));
-    min-width: calc(68px + var(--room-count) * 220px);
+  .timetable {
+    grid-template-columns: 64px repeat(var(--room-count), minmax(210px, 1fr));
+    min-width: calc(64px + var(--room-count) * 210px);
   }
 
-  .timeline__head {
-    padding: 0.6rem;
-    font-size: 0.74rem;
-  }
-
-  .timeline__time-mark {
-    left: 0.35rem;
-    font-size: 0.68rem;
-  }
-
-  .timeline-session {
-    left: 0.25rem;
-    right: 0.25rem;
+  .timetable__head {
     padding: 0.55rem;
-  }
-
-  .timeline-session .session__meta {
     font-size: 0.72rem;
   }
 
-  .timeline-session .session__title {
+  .timetable__time-label {
+    font-size: 0.66rem;
+    padding: 0 0.3rem;
+  }
+
+  .timetable__session {
+    margin: 1px;
+    padding: 0.55rem;
+  }
+
+  .timetable__session .session__meta {
+    font-size: 0.72rem;
+  }
+
+  .timetable__session .session__title {
     font-size: 0.84rem;
   }
 
-  .timeline-session .session__speakers {
+  .timetable__session .session__speakers {
     font-size: 0.75rem;
   }
 }

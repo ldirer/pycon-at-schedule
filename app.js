@@ -115,8 +115,10 @@ function render() {
   const dayStart = floorToHour(Math.min(...minuteStarts));
   const dayEnd = ceilToHour(Math.max(...minuteEnds));
   const totalMinutes = Math.max(60, dayEnd - dayStart);
+  const slotMinutes = 10;
   const pixelsPerMinute = 1.75;
-  const timelineHeight = Math.max(300, Math.round(totalMinutes * pixelsPerMinute));
+  const slotHeight = Math.round(slotMinutes * pixelsPerMinute * 10) / 10;
+  const slotCount = Math.ceil(totalMinutes / slotMinutes);
 
   const selectedDay = getConferenceDays(state.schedule).find(
     (d) => d.date === state.activeDay
@@ -133,63 +135,82 @@ function render() {
   const wrap = document.createElement("div");
   wrap.className = "timeline-wrap";
 
-  const timeline = document.createElement("div");
-  timeline.className = "timeline";
-  timeline.style.setProperty("--room-count", String(rooms.length));
-  timeline.style.setProperty("--timeline-height", `${timelineHeight}px`);
-  timeline.style.setProperty("--pixels-per-minute", String(pixelsPerMinute));
+  const timetable = document.createElement("div");
+  timetable.className = "timetable";
+  timetable.style.setProperty("--room-count", String(rooms.length));
+  timetable.style.setProperty("--slot-count", String(slotCount));
+  timetable.style.setProperty("--slot-height", `${slotHeight}px`);
 
   const timeHead = document.createElement("div");
-  timeHead.className = "timeline__head timeline__head--time";
+  timeHead.className = "timetable__head";
   timeHead.textContent = "Time";
-  timeline.appendChild(timeHead);
+  timeHead.style.gridColumn = "1";
+  timeHead.style.gridRow = "1";
+  timetable.appendChild(timeHead);
 
-  rooms.forEach((room) => {
+  const roomIndex = new Map();
+  rooms.forEach((room, index) => {
+    roomIndex.set(room, index);
+
     const roomHead = document.createElement("div");
-    roomHead.className = "timeline__head timeline__head--room";
+    roomHead.className = "timetable__head";
+    if (index === rooms.length - 1) roomHead.classList.add("timetable__head--last");
     roomHead.textContent = room;
-    timeline.appendChild(roomHead);
+    roomHead.style.gridColumn = String(2 + index);
+    roomHead.style.gridRow = "1";
+    timetable.appendChild(roomHead);
+
+    const roomBg = document.createElement("div");
+    roomBg.className = "timetable__room-bg";
+    if (index === rooms.length - 1) roomBg.classList.add("timetable__room-bg--last");
+    roomBg.style.gridColumn = String(2 + index);
+    roomBg.style.gridRow = `2 / span ${slotCount}`;
+    timetable.appendChild(roomBg);
   });
 
-  const timesCol = document.createElement("div");
-  timesCol.className = "timeline__times";
   for (let m = dayStart; m <= dayEnd; m += 60) {
-    const mark = document.createElement("div");
-    mark.className = "timeline__time-mark";
-    if (m === dayStart) mark.classList.add("timeline__time-mark--start");
-    if (m === dayEnd) mark.classList.add("timeline__time-mark--end");
-    const topPct = ((m - dayStart) / totalMinutes) * 100;
-    mark.style.top = `${topPct}%`;
-    mark.textContent = minutesToTime(m);
-    timesCol.appendChild(mark);
+    const slotIndex = Math.round((m - dayStart) / slotMinutes);
+    const gridRow = 2 + slotIndex;
+
+    const label = document.createElement("div");
+    label.className = "timetable__time-label";
+    if (m === dayStart) label.classList.add("timetable__time-label--start");
+    if (m === dayEnd) label.classList.add("timetable__time-label--end");
+    label.textContent = minutesToTime(m);
+    label.style.gridColumn = "1";
+    label.style.gridRow = String(gridRow);
+    timetable.appendChild(label);
+
+    const line = document.createElement("div");
+    line.className = "timetable__hour-line";
+    line.style.gridColumn = `2 / span ${rooms.length}`;
+    line.style.gridRow = String(gridRow);
+    timetable.appendChild(line);
   }
-  timeline.appendChild(timesCol);
 
-  const byRoom = groupBy(sessions, (s) => s.room);
+  sessions.forEach((s) => {
+    const roomCol = roomIndex.get(s.room);
+    if (roomCol === undefined) return;
 
-  rooms.forEach((room) => {
-    const roomCol = document.createElement("div");
-    roomCol.className = "timeline__room-col";
+    const startMinute = timeToMinutes(s.startTime);
+    const endMinute = timeToMinutes(s.endTime);
+    if (!Number.isFinite(startMinute) || !Number.isFinite(endMinute) || endMinute <= startMinute) {
+      return;
+    }
 
-    (byRoom[room] || []).forEach((s) => {
-      const startMinute = timeToMinutes(s.startTime);
-      const endMinute = timeToMinutes(s.endTime);
-      if (!Number.isFinite(startMinute) || !Number.isFinite(endMinute)) return;
+    const startSlot = Math.floor((startMinute - dayStart) / slotMinutes);
+    const endSlot = Math.ceil((endMinute - dayStart) / slotMinutes);
+    const rowStart = 2 + Math.max(0, startSlot);
+    const rowEnd = 2 + Math.max(startSlot + 1, endSlot);
 
-      const startOffset = startMinute - dayStart;
-      const duration = Math.max(5, endMinute - startMinute);
-
-      const card = renderSession(s);
-      card.classList.add("timeline-session");
-      card.style.top = `${Math.round(startOffset * pixelsPerMinute)}px`;
-      card.style.height = `${Math.max(44, Math.round(duration * pixelsPerMinute) - 4)}px`;
-      roomCol.appendChild(card);
-    });
-
-    timeline.appendChild(roomCol);
+    const card = renderSession(s);
+    card.classList.add("timetable__session");
+    card.style.gridColumn = String(2 + roomCol);
+    card.style.gridRow = `${rowStart} / ${rowEnd}`;
+    timetable.appendChild(card);
   });
 
-  wrap.appendChild(timeline);
+  wrap.appendChild(timetable);
   section.appendChild(wrap);
 
   el.scheduleRoot.innerHTML = "";
@@ -397,14 +418,6 @@ function getConferenceDays(schedule) {
 
 function unique(arr) {
   return Array.from(new Set(arr));
-}
-
-function groupBy(arr, keyFn) {
-  return arr.reduce((acc, item) => {
-    const key = keyFn(item);
-    (acc[key] ||= []).push(item);
-    return acc;
-  }, {});
 }
 
 function normalizeTime(time) {

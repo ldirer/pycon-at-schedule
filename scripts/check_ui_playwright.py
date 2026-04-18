@@ -89,7 +89,7 @@ async def main() -> None:
             page.on("console", lambda msg: print(f"[browser:{msg.type}] {msg.text}"))
 
             await page.goto(f"{base_url}/index.html", wait_until="domcontentloaded", timeout=1000)
-            await page.wait_for_selector(".timeline", timeout=1000)
+            await page.wait_for_selector(".timetable", timeout=1000)
             await page.evaluate("console.log('playwright-check: schedule loaded')")
 
             conf_name = (await page.text_content("#conf-name") or "").strip()
@@ -106,17 +106,17 @@ async def main() -> None:
                 """
                 ({ shortTitle, longTitle }) => {
                   function cardGeometry(title) {
-                    const titleEls = Array.from(document.querySelectorAll('.timeline-session .session__title'));
+                    const titleEls = Array.from(document.querySelectorAll('.timetable__session .session__title'));
                     const titleEl = titleEls.find((el) => el.textContent.trim() === title);
                     if (!titleEl) return null;
-                    const card = titleEl.closest('.timeline-session');
+                    const card = titleEl.closest('.timetable__session');
                     if (!card) return null;
                     const r = card.getBoundingClientRect();
                     return { top: r.top, height: r.height };
                   }
 
-                  const marks = Array.from(document.querySelectorAll('.timeline__time-mark'))
-                    .map((el) => parseFloat(el.style.top))
+                  const marks = Array.from(document.querySelectorAll('.timetable__hour-line'))
+                    .map((el) => el.getBoundingClientRect().top)
                     .filter((n) => Number.isFinite(n));
 
                   return {
