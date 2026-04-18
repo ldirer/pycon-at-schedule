@@ -1,0 +1,1140 @@
+{
+  "source_url": "https://2026.pycon.at/talks-and-workshops/",
+  "scraped_at": "2026-04-18T22:13:39.890036+00:00",
+  "count": 48,
+  "talks": [
+    {
+      "id": "do-you-know-how-well-your-model-is-doing-evaluate-your-llms-cheuk-ting-ho",
+      "title": "Do you know how well your model is doing? Evaluate your LLMs",
+      "title_raw": "(Workshop) Do you know how well your model is doing? Evaluate your LLMs",
+      "type": "workshop",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Cheuk Ting Ho",
+      "author_url": "https://www.linkedin.com/in/cheukting-ho",
+      "author_image_url": "https://sessionize.com/image/7cb5-400o400o1-M8fWNqvoCanoup73bs7DYF.jpg",
+      "description": "<p>Prerequisites:</p>\n<ul>\n<li>Have experience coding in Python (with Python installed in the local machine)</li>\n<li>Basic understanding of machine learning and LLMs</li>\n<li>Experience with Hugging Face Transformers preferred but not necessary</li>\n<li>A Hugging Face Hub account (sign up for free)</li>\n<li>A modern computer that can fine-turn small LLMs locally</li>\n</ul>\n<p>Description:</p>\n<p>Large Language Models (LLMs) are becoming central to modern applications, yet effectively evaluating their performance remains a significant challenge. How do you objectively compare different models, benchmark the impact of fine-tuning, or ensure your LLM responses adhere to safety guidelines (guard-railing)? This hands-on workshop addresses these critical questions.</p>\n<p>We will begin with an essential revision of the Hugging Face Transformers library, covering basic LLM inference and fine-tuning. The core of the workshop will introduce and provide deep practice with Lighteval, an efficient and powerful LLM evaluation framework. Participants will learn how to leverage Lighteval to compare various LLMs available on the Hugging Face Hub using a range of pre-built tasks and metrics.</p>\n<p>Finally, we will delve into advanced evaluation techniques, focusing on creating custom tasks and metrics tailored to unique, real-world application requirements. Participants will learn how to prepare custom datasets on the Hugging Face Hub and integrate them into Lighteval for precise, domain-specific evaluation. By the end of this workshop, you will possess the practical skills to rigorously evaluate, benchmark, and fine-tune your LLMs with confidence.</p>\n<p>Outline:</p>\n<p>Part 1</p>\n<ul>\n<li>Presentation: The importance of evaluation of LLMs<ul>\n<li>Compare performance of LLM for specific tasks</li>\n<li>Benchmark the fine-tuning performance</li>\n<li>Rail guard the LLM responses</li>\n</ul>\n</li>\n<li>Coding exercise: Introduction and revision of  Hugging Face Transformers<ul>\n<li>Revision of using Transformers for LLM influence</li>\n<li>Fine tuning a LLM with transformers</li>\n</ul>\n</li>\n</ul>\n<p>Part 2</p>\n<ul>\n<li>Presentation: Introduction of Lighteval<ul>\n<li>What is Lighteval and what can it do</li>\n<li>Different tasks and metrics available in Lighteval</li>\n</ul>\n</li>\n<li>Coding exercise: Using Lighteval to compare LLMs<ul>\n<li>Familiar the use of Lighteval</li>\n<li>Compare two LLMs on Hugging Face Hub</li>\n<li>Experiment with different tasks and metrics</li>\n</ul>\n</li>\n</ul>\n<p>Part 3</p>\n<ul>\n<li>Presentation: Advance use of Lighteval<ul>\n<li>Introduction of custom tasks and metrics</li>\n<li>What is needed for creating custom tasks and metrics</li>\n<li>How to put custom tasks and metrics together</li>\n</ul>\n</li>\n<li>Coding exercise: Practice with custom tasks and metrics<ul>\n<li>Uploading datasets to Hugging Face Hub</li>\n<li>Creating custom tasks and metrics</li>\n<li>Using custom tasks and metrics to compare LLMs</li>\n</ul>\n</li>\n</ul>",
+      "author_bio": "<p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://cheuk.dev/videos/\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://cheuk.dev/videos/"
+        }
+      ]
+    },
+    {
+      "id": "pre-commit-to-better-code-stefanie-molin",
+      "title": "(Pre-)Commit to Better Code",
+      "title_raw": "(Pre-)Commit to Better Code",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Stefanie Molin",
+      "author_url": "https://www.linkedin.com/in/stefanie-molin/",
+      "author_image_url": "https://sessionize.com/image/ff50-400o400o1-HK24nDFzV6DmAoURgcHcaK.jpg",
+      "description": "<h1>Abstract</h1>\n<p>Maintaining code quality can be challenging, no matter the size of your project or number of contributors. Different team members may have different opinions on code styling and preferences for code structure, while solo contributors might find themselves spending a considerable amount of time making sure the code conforms to accepted conventions. However, manually inspecting and fixing issues in files is both tedious and error-prone. As such, computers are much more suited to this task than humans. Pre-commit hooks are a great way to have a computer handle this for you.</p>\n<p>Pre-commit hooks are code checks that run whenever you attempt to commit your changes with Git. They can detect and, in some cases, automatically correct code-quality issues <em>before</em> they make it to your codebase. In this tutorial, you will learn how to install and configure pre-commit hooks for your repository to ensure that only code that passes your checks makes it into your codebase. We will also explore how to build custom pre-commit hooks for novel use cases.</p>\n<h1>Description</h1>\n<h2>Section 1: Setting Up Pre-Commit Hooks</h2>\n<p>After laying the foundation with an overview of Git hooks, we will discuss the use cases for hooks at the pre-commit stage (called pre-commit hooks), as well as a high-level explanation of how to set them up without any external tools. We will then introduce the <code>pre-commit</code> tool and disambiguate it from pre-commit hooks, before commencing a detailed walkthrough of the pre-commit hooks setup process when using <code>pre-commit</code>.</p>\n<h2>Section 2: Creating a Pre-Commit Hook</h2>\n<p>While there are a lot of pre-made hooks in existence, sometimes they aren't sufficient for the task at hand. In this section, we will walk step-by-step through the process of creating and distributing a custom hook. After wiring everything up, we will discuss best practices for sharing, documenting, testing, and maintaining the codebase.</p>\n<h1>Audience</h1>\n<p>This tutorial is for anyone with intermediate knowledge of Python and basic knowledge of <code>git</code>. You must be comfortable writing Python code and working with <code>git</code> on the command line and using basic commands (<code>git clone</code>, <code>git add</code>, <code>git status</code>, <code>git commit</code>, <code>git push</code>). Attendees should have Python and <code>git</code> installed on their computers, as well as a text editor for writing code (e.g., Visual Studio Code).</p>\n<h1>Prerequisites</h1>\n<ul>\n<li>Comfort writing Python code and working with Git on the command line using basic commands (e.g., clone, status, diff, add, commit, and push)</li>\n<li>Have Python and Git installed on your computers, as well as a text editor for writing code (e.g., Visual Studio Code)</li>\n</ul>",
+      "author_bio": "<p><a href=\"https://stefaniemolin.com\">Stefanie Molin</a> is a software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around data wrangling/visualization, building tools for gathering data, and knowledge sharing. She is also a core developer of <a href=\"https://github.com/numpy/numpydoc\">numpydoc</a> and the author of “<a href=\"https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1800563450\">Hands-On Data Analysis with Pandas: A Python data science handbook for data collection, wrangling, analysis, and visualization</a>,” which is currently in its second edition and has been translated into Korean and Chinese. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science, as well as a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p><a href=\"https://stefaniemolin.com\">Stefanie Molin</a> is a software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around data wrangling/visualization, building tools for gathering data, and knowledge sharing. She is also a core developer of <a href=\"https://github.com/numpy/numpydoc\">numpydoc</a> and the author of “<a href=\"https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1800563450\">Hands-On Data Analysis with Pandas: A Python data science handbook for data collection, wrangling, analysis, and visualization</a>,” which is currently in its second edition and has been translated into Korean and Chinese. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science, as well as a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=mBKs4rxDufs&amp;pp=ygUOc3RlZmFuaWUgbW9saW4%3D\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=1rAp9zbJmEo&amp;pp=ygUOc3RlZmFuaWUgbW9saW4%3D\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=mBKs4rxDufs&pp=ygUOc3RlZmFuaWUgbW9saW4%3D"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=1rAp9zbJmEo&pp=ygUOc3RlZmFuaWUgbW9saW4%3D"
+        }
+      ]
+    },
+    {
+      "id": "the-flexible-robotics-stack-simulating-and-controlling-bots-in-python-jan-margeta",
+      "title": "The Flexible Robotics Stack: Simulating and Controlling Bots in Python",
+      "title_raw": "The Flexible Robotics Stack: Simulating and Controlling Bots in Python",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Jan Margeta",
+      "author_url": "https://www.linkedin.com/in/jmargeta/",
+      "author_image_url": "https://sessionize.com/image/c0dc-400o400o1-UUwcDU3TaofDJokSt1ufXJ.png",
+      "description": "<p>Have you ever considered giving your Python an extra claw? Python has become the glue of modern robotics, bridging the gap between high-level AI and physical movement.</p>\n<p>In this talk, we will explore the stack for modern robotics. We’ll see how to build virtual worlds to train AI models and how those models transition to physical hardware. We will then see tools to control and monitor these robots to keep them on track. Then we’ll cover the basics of servo control, translating learned Python logic into making a robotic arm move. \nFinally, we’ll look at soft robotics, using simulation libraries to simulate and control deformable, flexible machines.</p>\n<p>Whether you're a hobbyist or an engineer, you'll walk away with a roadmap for building your own robots.</p>",
+      "author_bio": "<p>Jan is a specialist in medical imaging, computer vision, and machine learning. His expertise in robotics is built on industrial work and strong academic foundations, including the MSc in Computer Vision and Robotics, and a PhD from Inria focused on cardiac modeling.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Jan is a specialist in medical imaging, computer vision, and machine learning. His expertise in robotics is built on industrial work and strong academic foundations, including the MSc in Computer Vision and Robotics, and a PhD from Inria focused on cardiac modeling.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=vDQLHy3tbf0&amp;list=PLxLpOfqYxZ_szKjKtit8XPtYd7pc9surH\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=vDQLHy3tbf0&list=PLxLpOfqYxZ_szKjKtit8XPtYd7pc9surH"
+        }
+      ]
+    },
+    {
+      "id": "running-every-street-in-paris-with-python-and-postgis-vinayak-mehta",
+      "title": "Running Every Street in Paris with Python and PostGIS",
+      "title_raw": "Running Every Street in Paris with Python and PostGIS",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Vinayak Mehta",
+      "author_url": "https://www.linkedin.com/in/mehtavinayak",
+      "author_image_url": "https://sessionize.com/image/abef-400o400o1-DG1n3ftK8nPbPwE1BoJJhS.jpg",
+      "description": "<p>In 2006, Tom Murphy started a project of running every street in Pittsburgh (over 1,500 miles in total). He finished the project in 2022, covering 3661 miles in 269 runs. In this talk, we'll look at how we can do the same in our cities and track our progress, with Paris as an example.</p>\n<p>We'll explore how to extract street networks from OpenStreetMap, process GPS tracking data from running activities, and build a system to track progress toward covering every street in a city. We'll dive into challenges like handling GPS inaccuracies, matching runs to streets, and maintaining a database of covered streets.</p>\n<p>This talk is aimed at Python developers interested in working with geospatial data using Python libraries like <code>osmnx</code>, <code>shapely</code>, <code>geopandas</code>, and storing it for efficient querying in Postgres and PostGIS.</p>",
+      "author_bio": "<p>Working on open-source tools http://fleurmcp.com, camelot, present, excalibur, and many more. F20  @recursecenter.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Working on open-source tools http://fleurmcp.com, camelot, present, excalibur, and many more. F20  @recursecenter.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://vinayak.io/talks\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://vinayak.io/talks"
+        }
+      ]
+    },
+    {
+      "id": "how-to-automate-tests-for-llms-that-never-answer-the-same-way-twice-manuel-alejandro-ledezma-falcon",
+      "title": "How to Automate Tests for LLMs That Never Answer the Same Way Twice",
+      "title_raw": "How to Automate Tests for LLMs That Never Answer the Same Way Twice",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Manuel Alejandro Ledezma Falcon",
+      "author_url": "https://www.linkedin.com/in/manuelledezma687",
+      "author_image_url": "https://sessionize.com/image/8d05-400o400o1-SNDtSRAP63F8dWwQzyi9wc.jpg",
+      "description": "<p>Large Language Models rarely give the same answer twice, even when the meaning is exactly the same.\nIn our case, this became a real production problem: automated tests kept failing, not because the model was wrong, but because it expressed the same idea using different words, synonyms, or sentence structures.\nTraditional assertions are built for deterministic systems. LLMs are not.\nThe session focuses on practical lessons learned from real-world usage, how to test LLMs that paraphrase by design, and how semantic evaluation can turn flaky tests into reliable signals.</p>",
+      "author_bio": "<p>Manuel Ledezma, known in the tech community as Tester Testarudo, is a software testing and automation specialist with a strong commitment to delivering high-quality and reliable software. Over the past years, he has focused on mastering QA practices and automation strategies, working in agile and fast-paced environments.\nHe has contributed to leading companies such as Mediktor, AXA, Telecom Argentina, Newfold, and Mojo Marketplace, where he implemented scalable testing solutions that improved product stability and user experience.\nManuel currently serves as the QA Automation Lead at Mediktor in Barcelona, Spain, where he leads automation initiatives to ensure robust and impactful digital products.\nBeyond his professional work, Manuel empowers the QA community through Tester Testarudo, his educational project dedicated to helping newcomers learn testing in a clear, practical, and accessible way.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Manuel Ledezma, known in the tech community as Tester Testarudo, is a software testing and automation specialist with a strong commitment to delivering high-quality and reliable software. Over the past years, he has focused on mastering QA practices and automation strategies, working in agile and fast-paced environments.\nHe has contributed to leading companies such as Mediktor, AXA, Telecom Argentina, Newfold, and Mojo Marketplace, where he implemented scalable testing solutions that improved product stability and user experience.\nManuel currently serves as the QA Automation Lead at Mediktor in Barcelona, Spain, where he leads automation initiatives to ensure robust and impactful digital products.\nBeyond his professional work, Manuel empowers the QA community through Tester Testarudo, his educational project dedicated to helping newcomers learn testing in a clear, practical, and accessible way.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "how-i-built-a-rag-powered-ai-assistant-with-python-claudia-ng",
+      "title": "How I Built a RAG-Powered AI Assistant With Python",
+      "title_raw": "How I Built a RAG-Powered AI Assistant With Python",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Claudia Ng",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/5ce7-400o400o1-wDJjxR8jeoFNNHa61vFidM.jpg",
+      "description": "<p>Most of my readers ask similar questions about data science careers, AI, and breaking into the industry without a CS degree, but the answers are usually buried across 50+ of my substack blog posts (https://aiweekender.substack.com). So I built a Python-based AI assistant (https://assistant.ds-claudia.com) that can answer their questions directly, using my past writing as the knowledge base.</p>\n<p>In this talk, I’ll walk through how I used Supabase, OpenAI, and Streamlit to build a lightweight retrieval-augmented generation (RAG) system that:\n1. Retrieves relevant posts, \n2. Generates personalized responses,\n3. Helps readers discover content they would have missed. </p>\n<p>This talk is a practical, end-to-end walkthrough of building a RAG AI assistant on top of existing content. I’ll cover:</p>\n<ul>\n<li>Parsing real-world text from RSS feeds and HTML</li>\n<li>Converting posts into embeddings for semantic search</li>\n<li>Storing and querying embeddings with Supabase and pgvector</li>\n<li>Generating personalized answers with OpenAI LLMs</li>\n<li>Streaming responses in Streamlit, including source citations</li>\n<li>Logging queries to understand reader needs and improve the system</li>\n</ul>\n<p>Attendees will leave with a clear picture of how to build a RAG-based assistant for their own blogs, documentation, or newsletters. This is a practical, end-to-end look at turning messy real-world text into a useful assistant that people actually rely on, all without fine-tuning or heavy infrastructure.</p>",
+      "author_bio": "<p>Claudia Ng is a machine learning engineer with six years of experience building scalable ML systems in Silicon Valley fintech startups. She has deep expertise in credit modeling, fraud detection, and AI product design, and now focuses on building and writing about AI projects and tools. She holds a Master’s in Public Policy from Harvard University and a Bachelor’s in International Business from Northeastern University.</p>\n<p>Fun fact: She is a polyglot who speaks 9 languages.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Claudia Ng is a machine learning engineer with six years of experience building scalable ML systems in Silicon Valley fintech startups. She has deep expertise in credit modeling, fraud detection, and AI product design, and now focuses on building and writing about AI projects and tools. She holds a Master’s in Public Policy from Harvard University and a Bachelor’s in International Business from Northeastern University.</p>\n<p>Fun fact: She is a polyglot who speaks 9 languages.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "kafka-for-python-devs-from-what-is-kafka-to-production-basics-sophie-herrmann",
+      "title": "Kafka for Python Devs: From “What is Kafka?” to Production Basics",
+      "title_raw": "Kafka for Python Devs: From “What is Kafka?” to Production Basics",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Sophie Herrmann",
+      "author_url": "https://www.linkedin.com/in/sophie-herrmann-b58408224",
+      "author_image_url": "https://sessionize.com/image/6258-400o400o1-YpgS7Hvv5i8FtrXmxR1Vqe.jpg",
+      "description": "<p>Kafka shows up everywhere once systems need to move data in real time—but I feel many Python developers shy back from taking a deeper look. In this beginner-friendly talk, I’ll build a clear mental model of Kafka (topics, partitions, offsets, consumer groups, retention) and explain when it’s the right tool—and when it’s too much compared to simpler options like Redis Pub/Sub.</p>\n<p>Using two realistic fintech-flavored examples—publishing fixed-cadence price updates and consuming event-driven trades to update derived state—we’ll look at small, readable Python snippets with confluent-kafka: a minimal producer, a minimal consumer, and the patterns that keep them reliable. We’ll cover common pitfalls like auto-commit surprises, rebalances, and “poison” messages, and finish with a practical 80/20 set of tuning knobs (batching, linger, compression, commit strategy).</p>\n<p>Attendees will leave with the concepts and patterns needed to confidently build and troubleshoot their first Kafka-based Python service.</p>",
+      "author_bio": "<p>01.2025 - today: Senior Engineer @Bitpanda \n11.2021 - 12.2024: Senior Engineer @A1\n04.2017 - 10.2021: Software Engineer @eodc\n10.2014 - 12.2021: Geodesy &amp; Geoinformation @TU Wien (BSc &amp; MSc)</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>01.2025 - today: Senior Engineer @Bitpanda \n11.2021 - 12.2024: Senior Engineer @A1\n04.2017 - 10.2021: Software Engineer @eodc\n10.2014 - 12.2021: Geodesy &amp; Geoinformation @TU Wien (BSc &amp; MSc)</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "building-a-data-lakehouse-in-the-european-cloud-marcel-jan-krijgsman",
+      "title": "Building a data lakehouse in the European cloud",
+      "title_raw": "Building a data lakehouse in the European cloud",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Marcel-Jan Krijgsman",
+      "author_url": "https://www.linkedin.com/in/marcel-jankrijgsman/",
+      "author_image_url": "https://sessionize.com/image/80fa-400o400o1-hXN7cvJyDQ5KW7d1UeLWfo.jpg",
+      "description": "<p>It's 2026 and all of a sudden your regular solution to build a data pipeline in Azure or AWS seem to have gone out of favour pretty fast. We want to store our data outside of the reach of the next autocrat.\nBut what are the alternatives? In this session we'll discuss how you can build a data lakehouse in the European cloud. And we want more: we want PySpark, notebooks and data visualization. Is that all possible?</p>\n<p>For this data lakehouse solution we start with Kubernetes and object storage. You'll be surprised how many European cloud providers offer these products. Now we'll use Nessie as catalog and Trino as query engine. With Iceberg, our open table format, we can already create our first table.</p>\n<p>Next we'll run Jupyter Hub for shared notebooks. And now we can cooperate on writing PySpark code. \nGreat, but can we still use (local) PowerBI for data visualisation?</p>\n<p>Yes, but that actually turns out a bit harder and for some reason expensive. We'll look at the alternatives for that.</p>\n<p>This presentation is also suitable for visitors who are not data engineers or who have little knowledge of Kubernetes.</p>",
+      "author_bio": "<p>Marcel-Jan Krijgsman is a senior data engineer with 25 years experience in data. Learning Python when switching his career to data engineering, he used it to plot locations of cycling videos on a map, to land rockets in a computer game and automatically categorise space and astronomy news.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Marcel-Jan Krijgsman is a senior data engineer with 25 years experience in data. Learning Python when switching his career to data engineering, he used it to plot locations of cycling videos on a map, to land rockets in a computer game and automatically categorise space and astronomy news.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://youtu.be/ulSu7QKkCrg\">video link</a></li>\n<li><a href=\"https://youtu.be/WsoLPRvXpNo\">video link</a></li>\n<li><a href=\"https://youtu.be/XqDB9C16HJ4\">video link</a></li>\n<li><a href=\"https://youtu.be/VaQaUWjsY4A\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://youtu.be/ulSu7QKkCrg"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/WsoLPRvXpNo"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/XqDB9C16HJ4"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/VaQaUWjsY4A"
+        }
+      ]
+    },
+    {
+      "id": "agents-what-do-they-do-fabian-schindler",
+      "title": "Agents — What Do They Do?",
+      "title_raw": "Agents — What Do They Do?",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Fabian Schindler",
+      "author_url": "https://at.linkedin.com/in/fabian-schindler-strauss",
+      "author_image_url": "https://sessionize.com/image/e844-400o400o1-QsY1rX9LcdKqPoFUJgZt9L.jpg",
+      "description": "<p>Agents — what do they do? No, really, what do they do?\nYour agent fails mid-tool-call, returns garbage, burns your token budget — and your APM dashboard says everything's fine. Our users kept hitting this wall, so at Sentry we decided to solve it.\nI'll walk through the engineering decisions behind Sentry's open-source Agent Monitoring: why we landed on three span types — intent, reasoning, action — and how they plug into your existing tracing stack. We'll dig into the surprisingly tricky parts (token cost tracking that goes literally negative if you get it wrong), conversation tracking across agent invocations, and what it takes to instrument a Python agent.\nYou'll walk out knowing how agents break in prod and how to catch it.</p>",
+      "author_bio": "<p>Building observability tools</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Building observability tools</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"Concurrency in Python: Threads, Processes, and Asyncio (PyCon AT 2025)\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "Concurrency in Python: Threads, Processes, and Asyncio (PyCon AT 2025)"
+        }
+      ]
+    },
+    {
+      "id": "why-would-you-import-duckdb-in-your-python-project-gabor-szarnyas",
+      "title": "Why would you \"import duckdb\" in your Python project?",
+      "title_raw": "Why would you \"import duckdb\" in your Python project?",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Gabor Szarnyas",
+      "author_url": "https://www.linkedin.com/in/szarnyasg",
+      "author_image_url": "https://sessionize.com/image/f6e4-400o400o1-9E6BeNF8cwSNGT37sDxrsG.jpg",
+      "description": "<p>DuckDB is an in-process database that can be imported as a library in all popular programming languages. Of course, that includes Python too – with about 3/4 of DuckDB's user base importing its Python client.</p>\n<p>But why would you use a database inside your Python process? First, DuckDB brings all the benefits of databases, including persistent storage, query optimization, and transaction handling, all without the hassle of setting up a database server. Second, DuckDB's Python client can seamlessly interact with other libraries such as Pandas, Polars, NumPy, and notebooks. Its Arrow-based deep integrations and Pythonic API allow you to gradually include DuckDB in a Python project, ranging from eliminating performance choke points to performing your entire workload in DuckDB.</p>\n<p>In this talk, I give a brief overview of DuckDB and demonstrate how you can use it to modernize your Python codebase.</p>",
+      "author_bio": "<p>Gábor Szárnyas is Developer Relations Advocate at DuckDB Labs. He obtained his PhD in software engineering in 2019 and spent 3 years as a post-doctoral researcher at CWI in Amsterdam, working on graph data management techniques.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Gábor Szárnyas is Developer Relations Advocate at DuckDB Labs. He obtained his PhD in software engineering in 2019 and spent 3 years as a post-doctoral researcher at CWI in Amsterdam, working on graph data management techniques.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"Keynote at PyCon Lithuania 2025:\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=VROBm_NBybw\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "Keynote at PyCon Lithuania 2025:"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=VROBm_NBybw"
+        }
+      ]
+    },
+    {
+      "id": "how-python-powers-data-extraction-scrapy-in-production-john-rooney",
+      "title": "How Python Powers Data Extraction: Scrapy in Production",
+      "title_raw": "How Python Powers Data Extraction: Scrapy in Production",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "John Rooney",
+      "author_url": "https://www.linkedin.com/in/jhnwr/",
+      "author_image_url": "https://sessionize.com/image/6437-400o400o1-9AbLYpUaLs7hQTxYTRYXWg.jpg",
+      "description": "<p>Everyone's written a scraper but fewer people have kept one running reliably for months. This talk bridges that gap, taking you from \"it works on my machine\" to a production data extraction system built with Scrapy, Python's most battle-tested scraping framework.</p>\n<p>We'll cover four parts of running Scrapy in production: scheduling your spiders reliably, monitoring for failures before your data pipeline goes silent, scaling up, and wiring your output into a real data pipeline. </p>\n<p>If you've used Python and are curious how serious data extraction systems are built, this talk is for you.</p>\n<p>What attendees will take away:</p>\n<p>A mental model for thinking about scrapers as production services</p>\n<p>An overview of scheduling options (cron, Scrapyd, cloud schedulers)</p>\n<p>How to detect silent failures and slow spiders before they become a problem</p>\n<p>Where scraped data goes next — storage, pipelines, and downstream use, including powering RAG and AI systems</p>",
+      "author_bio": "<p>John is a self taught Python developer and web scraping professional, who has been sharing data extraction content and help for the last 6 years via his own YouTube channel and now at Zyte.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>John is a self taught Python developer and web scraping professional, who has been sharing data extraction content and help for the last 6 years via his own YouTube channel and now at Zyte.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"Extract Summit 2025 (event speaker and orangiser):\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"https://youtu.be/EeO2jlxW3XY?si=JoKUbWDZS53LA0WM\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=eh3GKn0nWx4\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "Extract Summit 2025 (event speaker and orangiser):"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/EeO2jlxW3XY?si=JoKUbWDZS53LA0WM"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=eh3GKn0nWx4"
+        }
+      ]
+    },
+    {
+      "id": "from-imports-to-innovation-the-dynamics-behind-python-s-evolution-g-bor-m-sz-ros",
+      "title": "From Imports to Innovation: The Dynamics Behind Python’s Evolution",
+      "title_raw": "From Imports to Innovation: The Dynamics Behind Python’s Evolution",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Gábor Mészáros",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/96ce-400o400o1-MZwM11sbHUusWsRHh34yhD.jpg",
+      "description": "<p>What can millions of real Python code snippets tell us about how the language evolves? And why do the patterns we observe in Python look uncannily similar to patterns found in patents and scientific research — systems that seem to have nothing to do with software?</p>\n<p>This talk begins with a practical challenge: extracting structured signals from the chaotic world of Stack Overflow. We built a pipeline that scanned posts for Python code blocks, identified import statements, normalised package names, filtered noise, and reconstructed a time-ordered stream of collections, each composed of the packages used in that snippet. From this, we derived two simple indicators of innovation:\n    •   new packages appearing for the first time, and\n    •   new package pairs appearing together for the first time.</p>\n<p>Once these signals are extracted, a surprisingly coherent picture emerges. The Python ecosystem introduces brand-new packages less and less frequently over time, yet continues to generate new combinations of packages at a remarkably steady pace. Developers reuse familiar tools, but they also explore the space of possible pairings with a precision that looks — statistically — almost mechanical.</p>\n<p>To understand just how surprising this is, we compare Python’s behavior with two very different worlds. The first is the US patent system, where technology codes assigned to inventions can be analyzed the same way we analyze Python imports. A classic 2015 study by Youn et al. showed that while new technology codes appear at a slowing rate, pairs of codes accumulate almost linearly over two centuries of innovation. The second is a corpus of physics publications, which behaves in much the same way when one treats subject classification codes as ingredients.</p>\n<p>Across all three domains — software, science, and invention — the same pattern holds. Distinct components grow sublinearly (Heaps’ law), while distinct combinations grow close to linearly. This parallel is not only unexpected; it suggests that these systems share a deeper underlying mechanism, bound not by specific domain-specific details but by the very foundational patterns of human innovation.</p>\n<p>In the second half of the talk, we introduce the concept of \"adjacent possible\" and demonstrate its modelling via a simple stochastic model: a Pólya urn extended with the adjacent possible. The model assumes only two forces: reinforcement of frequently used components and occasional introduction of new ones. Despite its simplicity, it reproduces the empirical behavior of all three systems without requiring domain-specific rules. It shows how a stable exploration–exploitation balance can arise naturally, leading to predictable rates of combinatorial novelty even in rapidly changing ecosystems.</p>\n<p>The framework offers a new way to think about the ecosystem: not as a chaotic swarm of libraries, but as an innovation system governed by universal constraints. It sheds light on why certain libraries become dominant, why the combination space grows the way it does, and how the community collectively expands the “adjacent possible” of the language.</p>\n<p>Attendees of the talk will learn:\n    •   how to extract meaningful innovation signals from real Python code at scale,\n    •   how to measure novelty and combinatorial creativity in software ecosystems,\n    •   why Python’s long-term evolution aligns with empirical laws from patents and science,\n    •   and how simple generative models can help reason about complex developer behavior.</p>\n<p>The talk connects engineering, data analysis, and innovation theory to reveal an unexpected insight: Python grows the way many creative systems grow — slowly at the edges, rapidly in combinations, and always under the quiet guidance of reinforcement and the adjacent possible.</p>",
+      "author_bio": "<p>Mathematician turned software engineer turned network scientist. I explore how structure and behavior emerge in complex systems — from code ecosystems to large graphs. Passionate about Python, powered mostly by coffee, and firmly in the tabs-over-spaces camp.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Mathematician turned software engineer turned network scientist. I explore how structure and behavior emerge in complex systems — from code ecosystems to large graphs. Passionate about Python, powered mostly by coffee, and firmly in the tabs-over-spaces camp.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"This question took me by surprise, but very well, an ancient recording of me presenting at the Bay Area Python Interest Group (BayPIGgies) :\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=0mLeQio-yhg\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "This question took me by surprise, but very well, an ancient recording of me presenting at the Bay Area Python Interest Group (BayPIGgies) :"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=0mLeQio-yhg"
+        }
+      ]
+    },
+    {
+      "id": "from-imports-to-innovation-the-dynamics-behind-python-s-evolution-g-bor-m-sz-ros",
+      "title": "From Imports to Innovation: The Dynamics Behind Python’s Evolution",
+      "title_raw": "From Imports to Innovation: The Dynamics Behind Python’s Evolution",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Gábor Mészáros",
+      "author_url": "https://www.linkedin.com/in/meszarosgabor-ps/",
+      "author_image_url": "https://sessionize.com/image/2594-400o400o1-fHgUPAZa3TB66yAuMhe15e.jpg",
+      "description": "<p>What can millions of real Python code snippets tell us about how the language evolves? And why do the patterns we observe in Python look uncannily similar to patterns found in patents and scientific research — systems that seem to have nothing to do with software?</p>\n<p>This talk begins with a practical challenge: extracting structured signals from the chaotic world of Stack Overflow. We built a pipeline that scanned posts for Python code blocks, identified import statements, normalised package names, filtered noise, and reconstructed a time-ordered stream of collections, each composed of the packages used in that snippet. From this, we derived two simple indicators of innovation:\n    •   new packages appearing for the first time, and\n    •   new package pairs appearing together for the first time.</p>\n<p>Once these signals are extracted, a surprisingly coherent picture emerges. The Python ecosystem introduces brand-new packages less and less frequently over time, yet continues to generate new combinations of packages at a remarkably steady pace. Developers reuse familiar tools, but they also explore the space of possible pairings with a precision that looks — statistically — almost mechanical.</p>\n<p>To understand just how surprising this is, we compare Python’s behavior with two very different worlds. The first is the US patent system, where technology codes assigned to inventions can be analyzed the same way we analyze Python imports. A classic 2015 study by Youn et al. showed that while new technology codes appear at a slowing rate, pairs of codes accumulate almost linearly over two centuries of innovation. The second is a corpus of physics publications, which behaves in much the same way when one treats subject classification codes as ingredients.</p>\n<p>Across all three domains — software, science, and invention — the same pattern holds. Distinct components grow sublinearly (Heaps’ law), while distinct combinations grow close to linearly. This parallel is not only unexpected; it suggests that these systems share a deeper underlying mechanism, bound not by specific domain-specific details but by the very foundational patterns of human innovation.</p>\n<p>In the second half of the talk, we introduce the concept of \"adjacent possible\" and demonstrate its modelling via a simple stochastic model: a Pólya urn extended with the adjacent possible. The model assumes only two forces: reinforcement of frequently used components and occasional introduction of new ones. Despite its simplicity, it reproduces the empirical behavior of all three systems without requiring domain-specific rules. It shows how a stable exploration–exploitation balance can arise naturally, leading to predictable rates of combinatorial novelty even in rapidly changing ecosystems.</p>\n<p>The framework offers a new way to think about the ecosystem: not as a chaotic swarm of libraries, but as an innovation system governed by universal constraints. It sheds light on why certain libraries become dominant, why the combination space grows the way it does, and how the community collectively expands the “adjacent possible” of the language.</p>\n<p>Attendees of the talk will learn:\n    •   how to extract meaningful innovation signals from real Python code at scale,\n    •   how to measure novelty and combinatorial creativity in software ecosystems,\n    •   why Python’s long-term evolution aligns with empirical laws from patents and science,\n    •   and how simple generative models can help reason about complex developer behavior.</p>\n<p>The talk connects engineering, data analysis, and innovation theory to reveal an unexpected insight: Python grows the way many creative systems grow — slowly at the edges, rapidly in combinations, and always under the quiet guidance of reinforcement and the adjacent possible.</p>",
+      "author_bio": "<p>Mathematician turned software engineer (turned network scientist ... more on that later! ;)). Passionate about Python, powered mostly by coffee, and firmly in the tabs-over-spaces camp.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Mathematician turned software engineer (turned network scientist ... more on that later! ;)). Passionate about Python, powered mostly by coffee, and firmly in the tabs-over-spaces camp.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"This question took me by surprise, but very well, an ancient recording of me presenting at the Bay Area Python Interest Group (BayPIGgies) :\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=0mLeQio-yhg\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "This question took me by surprise, but very well, an ancient recording of me presenting at the Bay Area Python Interest Group (BayPIGgies) :"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=0mLeQio-yhg"
+        }
+      ]
+    },
+    {
+      "id": "code-organization-for-non-engineers-michael-seifert",
+      "title": "Code organization for non-engineers",
+      "title_raw": "Code organization for non-engineers",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Michael Seifert",
+      "author_url": "https://www.linkedin.com/in/seifertm/",
+      "author_image_url": "https://sessionize.com/image/ee41-400o400o1-7HPtCanK3MBSPT24BfQYqM.jpg",
+      "description": "<p>Have you ever opened a piece of code that seems to break just by looking at it—and noticed that your coworker wrote it? You don’t want to be <em>that</em> person. While tangled, hard-to-maintain code can emerge for many reasons, it should never be by accident.</p>\n<p>In this hands-on workshop, you will learn how to make code easier to maintain and to evolve. We will gradually refactor a messy Python application into a well-organized, testable software. You will develop a mental model for organizing code effectively and understand how its structure impacts code quality. Ultimately, this will inform future decisions on design and code organization.</p>\n<p>This workshop is specifically designed for people who don't identify as software engineers or don't perform typical software engineering tasks as part of their daily work. Participants should be familiar with basic Python programming and the concept of automated (unit) tests.</p>",
+      "author_bio": "<p>Michael is a trainer and consulting software engineer who helps product teams develop Python software in the cloud. He enjoys deleting code more than writing it and is constantly looking for new ways to improve developer experience and the maintainability of software.</p>\n<p>Michael has been enthusiastic for free and open-source software since his teenage years and published his first project in 2006. Nowadays, he maintains the pytest-asyncio library. In his free time, Michael dances Shuffle or struggles with a hardware project.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Michael is a trainer and consulting software engineer who helps product teams develop Python software in the cloud. He enjoys deleting code more than writing it and is constantly looking for new ways to improve developer experience and the maintainability of software.</p>\n<p>Michael has been enthusiastic for free and open-source software since his teenage years and published his first project in 2006. Nowadays, he maintains the pytest-asyncio library. In his free time, Michael dances Shuffle or struggles with a hardware project.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=tviU-nyRTjI\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=tviU-nyRTjI"
+        }
+      ]
+    },
+    {
+      "id": "python-decorators-from-syntactic-sugar-to-production-grade-design-tool-haim-michael",
+      "title": "Python Decorators: From Syntactic Sugar to Production-Grade Design Tool",
+      "title_raw": "Python Decorators: From Syntactic Sugar to Production-Grade Design Tool",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Haim Michael",
+      "author_url": "https://linkedin.com/in/lifemichael",
+      "author_image_url": "https://sessionize.com/image/3659-400o400o1-KB1uHpPRatLCcxnxXoYPwu.jpg",
+      "description": "<p>Decorators are one of Python’s most powerful and often misunderstood features. Beyond simple logging examples, decorators enable clean separation of concerns, cross-cutting behavior injection, and framework-level extensibility. In this talk, we will build a precise mental model of how decorators work at runtime. We will move from basic function decorators to parameterized decorators, class decorators, and decorator factories. Real production use cases will be demonstrated. We will conclude with an overview of the best practices to consider when developing new decorators. </p>",
+      "author_bio": "<p>Haim Michael is a software development trainer, entrepreneur, and lecturer with nearly 30 years of experience. He founded life michael (lifemichael.com), delivering professional training in Java, Python, JavaScript, Scala, Kotlin, and more. Haim has lectured at leading universities, including Bar-Ilan, HIT, Shenkar, and Technion, and has trained developers at top tech companies.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Haim Michael is a software development trainer, entrepreneur, and lecturer with nearly 30 years of experience. He founded life michael (lifemichael.com), delivering professional training in Java, Python, JavaScript, Scala, Kotlin, and more. Haim has lectured at leading universities, including Bar-Ilan, HIT, Shenkar, and Technion, and has trained developers at top tech companies.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://lifemichael.com/en/talks\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://lifemichael.com/en/talks"
+        }
+      ]
+    },
+    {
+      "id": "debug-smarter-not-harder-all-you-need-to-know-about-debugging-in-python-cheuk-ting-ho",
+      "title": "Debug smarter, not harder - all you need to know about debugging in Python",
+      "title_raw": "Debug smarter, not harder - all you need to know about debugging in Python",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Cheuk Ting Ho",
+      "author_url": "https://www.linkedin.com/in/cheukting-ho",
+      "author_image_url": "https://sessionize.com/image/7cb5-400o400o1-M8fWNqvoCanoup73bs7DYF.jpg",
+      "description": "<p>This talk tackles the common, yet ultimately limiting, practice of using print statements for debugging in Python. We will explore why relying on print statements often becomes inefficient and cumbersome as applications grow in complexity. </p>\n<p>The presentation will guide attendees through a transition to professional-grade debugging tools, beginning with a detailed look at the built-in Python debugger, pdb, including essential commands and workflows. </p>\n<p>Next, I will demystify the powerful debugging capabilities integrated into modern Integrated Development Environments (IDEs), specifically demonstrating debugpy and its seamless application within popular tools like VS Code and PyCharm. </p>\n<p>Finally, the talk will introduce debug logging as a robust, scalable alternative to temporary print statements, covering best practices for when and how to implement a logging framework to manage application state effectively. </p>\n<p>By contrasting these strategies, this session aims to empower developers to choose the right tool. Be it a dedicated debugger, an IDE feature, or a logging framework, for any challenge. Enabling smarter, faster, and more effective code remediation in their daily work.</p>\n<p>Outline:</p>\n<ul>\n<li>Why not use “print”?<ul>\n<li>Situation when you can use “print” to debug</li>\n<li>Situation when using “print” is not helpful</li>\n</ul>\n</li>\n<li>Debuggers used in Python<ul>\n<li>pdb : why use pdb not “print”</li>\n<li>Debugging in IDEs<ul>\n<li>Debugpy: what is it?</li>\n<li>Debugpy used in VS Code and PyCharm</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>Debug logging<ul>\n<li>When should you use debug logging?</li>\n<li>Logging vs “print”</li>\n<li>How to manage debug logs?</li>\n</ul>\n</li>\n<li>Conclusion and summary<ul>\n<li>Use the right tools and strategies for the situation</li>\n<li>Summarise the debugging strategies that have been introduced</li>\n</ul>\n</li>\n</ul>",
+      "author_bio": "<p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://cheuk.dev/videos/\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://cheuk.dev/videos/"
+        }
+      ]
+    },
+    {
+      "id": "the-flicker-effect-why-your-model-audits-are-lying-to-you-albert-dorador",
+      "title": "The \"Flicker Effect\": Why Your Model Audits Are Lying to You",
+      "title_raw": "The \"Flicker Effect\": Why Your Model Audits Are Lying to You",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Albert Dorador",
+      "author_url": "https://www.linkedin.com/in/albertdorador/",
+      "author_image_url": "https://sessionize.com/image/1547-400o400o1-BkuJz1MijPzk6UncCprKc6.png",
+      "description": "<p>Have you ever estimated feature importance in scikit-learn, changed the random_state, and watched your \"Top 5\" features swap places? This is the \"Flicker Effect.\"</p>\n<p>For most Python developers, \"shuffling\" data (Permutation Importance) is the industry standard for explaining models. But in high-stakes environments like banking or healthcare, stochastic results are a liability. If you can’t get the same answer twice, can you really trust the audit?</p>\n<p>In this talk, we move beyond \"random shuffling\" toward Deterministic Model Auditing. We will explore:</p>\n<ul>\n<li>A Beginner-Friendly Introduction to the Math of Stability: How a \"single optimal permutation\" makes model explanations 100% reproducible and 30x faster.</li>\n<li>The Proxy Problem: How models \"sneak in\" biased data (like gender or race) through proxy variables, and how to detect this \"signal leakage\" using Systemic Variable Importance (SVI).</li>\n<li>Forensic-Grade AI: How to move from \"black-box\" guesses to audits that hold up under regulatory scrutiny.</li>\n</ul>\n<p>Whether you are a data scientist building models or a developer curious about AI fairness, you will leave with a new framework for making your Python models truly accountable.</p>",
+      "author_bio": "<p>Albert Dorador is an Adjunct Professor of Statistics (BarcelonaTech) and Mathematics (Pompeu Fabra). He holds a PhD in Statistics from the University of Wisconsin–Madison and previously served at the European Central Bank, specializing in financial risk management and algorithmic auditing. Albert is the creator of the TRUST and Renet algorithms among others, focusing on the intersection of high-performance optimization and auditable, \"human-scale\" machine learning. His work centers on solving the \"Interpretability Gap\" in high-stakes regulatory environments, moving the industry toward deterministic and forensic-grade AI transparency.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Albert Dorador is an Adjunct Professor of Statistics (BarcelonaTech) and Mathematics (Pompeu Fabra). He holds a PhD in Statistics from the University of Wisconsin–Madison and previously served at the European Central Bank, specializing in financial risk management and algorithmic auditing. Albert is the creator of the TRUST and Renet algorithms among others, focusing on the intersection of high-performance optimization and auditable, \"human-scale\" machine learning. His work centers on solving the \"Interpretability Gap\" in high-stakes regulatory environments, moving the industry toward deterministic and forensic-grade AI transparency.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "free-software-is-all-about-freedom-fiona-ebner",
+      "title": "Free Software Is All About Freedom",
+      "title_raw": "Free Software Is All About Freedom",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Fiona Ebner",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/e92a-400o400o1-MWe5LvNBeuPqLdnzD64zxN.jpg",
+      "description": "<p>Free software (often also called open-source software) plays an essential role for almost all modern digital infrastructure. The Python language and most of the Python ecosystem are also free software. But what does that actually mean? Learn about the four essential freedoms, why they matter, and how they lead to the success of free software.</p>\n<p>Learn about the motivation and values behind free software. Software is everywhere in modern society, and we all rely on software every day. We all depend on software every day. Big tech companies often abuse our dependence and force unwanted features on us. We should care that people are in control of their own devices and digital lives. Free software communities work hard to provide alternatives and the possibility to escape from vendor lock-in.</p>\n<p>Let's get political! Free software is ever more important for democracy and digital sovereignty. Learn about the initiatives of the FSFE (Free Software Foundation Europe), fighting to benefit users and society for 25 years now.</p>",
+      "author_bio": "<p>I work as a software engineer and maintainer at Proxmox. I mostly work with Perl and C, so I don't know much Python, but somehow managed to get some tests written in Python for QEMU accepted.</p>\n<p>I studied mathematical logic, but I've long been interested in the intersection and interactions of technology and society.</p>\n<p>I've been using Linux and free software for most of my life. I'm a member of the Team Austria of the FSFE (Free Software Foundation Europe). I'm a member of the C3W (Chaos Computer Club Wien), not to be confused with the W3C.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I work as a software engineer and maintainer at Proxmox. I mostly work with Perl and C, so I don't know much Python, but somehow managed to get some tests written in Python for QEMU accepted.</p>\n<p>I studied mathematical logic, but I've long been interested in the intersection and interactions of technology and society.</p>\n<p>I've been using Linux and free software for most of my life. I'm a member of the Team Austria of the FSFE (Free Software Foundation Europe). I'm a member of the C3W (Chaos Computer Club Wien), not to be confused with the W3C.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "gregor-horvath",
+      "title": "",
+      "title_raw": "",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Gregor Horvath",
+      "author_url": "",
+      "author_image_url": "",
+      "description": "",
+      "author_bio": "<p>Freelance Software Developer / Consultant using Python since ~25 years \nhttps://gregor-horvath.com/</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Freelance Software Developer / Consultant using Python since ~25 years \nhttps://gregor-horvath.com/</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "logging-module-adventures-konrad-gawda",
+      "title": "Logging module adventures",
+      "title_raw": "Logging module adventures",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Konrad Gawda",
+      "author_url": "https://www.linkedin.com/in/konradgawda/",
+      "author_image_url": "https://sessionize.com/image/9380-400o400o1-My2hAHN8gsiJ4KKAKpELN7.jpg",
+      "description": "<p>Logging module seems a little bit odd. If you would like to understand its logic - join me on my journey into the depths of Python logging. I will share learnings from my own adventure, driven by curiosity and need to add context to long running tasks' logs.</p>",
+      "author_bio": "<p>Cloud Evangelist, Python developer and trainer. Host of \"Porozmawiajmy o chmurze\" videocast.\nAuthor of patents (in Orange R&amp;D), experienced with Telco Cloud deployment and Public IaaS Cloud automation.\nLinux and Open Source believer.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Cloud Evangelist, Python developer and trainer. Host of \"Porozmawiajmy o chmurze\" videocast.\nAuthor of patents (in Orange R&amp;D), experienced with Telco Cloud deployment and Public IaaS Cloud automation.\nLinux and Open Source believer.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://youtu.be/SvUrLdTbNrM\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://youtu.be/SvUrLdTbNrM"
+        }
+      ]
+    },
+    {
+      "id": "feature-selection-what-your-model-can-t-tell-you-james-donahue",
+      "title": "Feature Selection: What your model can't tell you",
+      "title_raw": "Feature Selection: What your model can't tell you",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "James Donahue",
+      "author_url": "https://www.linkedin.com/in/jamesdonahue84/",
+      "author_image_url": "https://sessionize.com/image/8639-400o400o1-Rte7cT9mDB2WWSMc4eZgfP.jpg",
+      "description": "<p>There are several algorithms for selecting features. However, they rely on the data and the correlations between features. Is there a place for the saying \"correlation is not causation?\"</p>\n<p>This talk focuses on exactly that. Including what economists call \"bad controls\" can mask effects and create spurious correlations, ending in reduced model performance. Using an entertaining mix of anecdotes and simulated data, I explain how feature selection can benefit from the causal inference literature. The colorful cast of characters includes selection bias, confounders, and Simpson's Paradox.</p>\n<p>While widely applicable, this talk is not overwhelmingly technical. The target audience is anyone who uses data, but the math involved is limited to linear regression. In fact, I hope that anyone, regardless of background, can enjoy the nuances of data interactions with me.</p>",
+      "author_bio": "<p>Raise in Nashville, Tennessee, settled in Hamburg, Germany, with a few other continents in between. My academic background is macroeconomics, with a focus on Bayesian methods and labor market dynamics. I am currently working with AWS Cloud applications, trying to find a good compost system, and still drinking too much coffee.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Raise in Nashville, Tennessee, settled in Hamburg, Germany, with a few other continents in between. My academic background is macroeconomics, with a focus on Bayesian methods and labor market dynamics. I am currently working with AWS Cloud applications, trying to find a good compost system, and still drinking too much coffee.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=rZSSA7Qdggs\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=rZSSA7Qdggs"
+        }
+      ]
+    },
+    {
+      "id": "stop-guessing-finding-and-fixing-python-performance-bottlenecks-tabish-mazhari",
+      "title": "Stop Guessing: Finding and Fixing Python Performance Bottlenecks",
+      "title_raw": "Stop Guessing: Finding and Fixing Python Performance Bottlenecks",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Tabish Mazhari",
+      "author_url": "https://in.linkedin.com/in/tabishmazhari",
+      "author_image_url": "https://sessionize.com/image/99f8-400o400o1-92okZtr3NSPEVHY93UZNfK.jpg",
+      "description": "<p>Python applications often become slow for reasons that are not immediately obvious. Developers frequently rely on intuition or trial-and-error when optimizing performance, which can lead to wasted effort and ineffective solutions.</p>\n<p>In this talk, we will explore a practical workflow for identifying and fixing real performance bottlenecks in Python services. Using a live demo of a deliberately inefficient recommendation API built with Python and FastAPI, we will investigate common performance problems such as inefficient algorithms, excessive database queries, blocking I/O, and missing caching strategies.</p>\n<p>Through profiling tools such as cProfile and py-spy, we will identify the true bottlenecks and apply targeted optimizations including algorithm improvements, query batching, caching with Redis, and asynchronous concurrency.</p>\n<p>By the end of the session, attendees will learn a systematic approach to diagnosing and improving the performance of Python applications, moving from guesswork to data-driven optimization.</p>",
+      "author_bio": "<p>Tabish Mazhari is a Senior Software Engineer at Red Hat with nine years of experience building backend systems and scalable developer platforms. His work focuses on designing workflows, building intelligent agents, and improving system reliability.</p>\n<p>His interests include performance optimization, automation, and practical engineering approaches that help teams build faster and more reliable Python services.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Tabish Mazhari is a Senior Software Engineer at Red Hat with nine years of experience building backend systems and scalable developer platforms. His work focuses on designing workflows, building intelligent agents, and improving system reliability.</p>\n<p>His interests include performance optimization, automation, and practical engineering approaches that help teams build faster and more reliable Python services.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"This would be my first international Python conference talk. I have presented internally and in technical discussions, but do not yet have public recordings. I am happy to provide a short recorded sample upon request.\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "This would be my first international Python conference talk. I have presented internally and in technical discussions, but do not yet have public recordings. I am happy to provide a short recorded sample upon request."
+        }
+      ]
+    },
+    {
+      "id": "what-did-my-agent-do-observability-and-accountability-for-ai-agents-ishan-jain",
+      "title": "What Did My Agent Do? Observability and Accountability for AI Agents",
+      "title_raw": "What Did My Agent Do? Observability and Accountability for AI Agents",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Ishan Jain",
+      "author_url": "https://www.linkedin.com/in/ishanjainn/",
+      "author_image_url": "https://sessionize.com/image/e982-400o400o1-B1MFh3nPoWYgMhLA5qyKvJ.jpg",
+      "description": "<p>Generative AI systems and AI agents behave very differently from traditional software. Their non-deterministic nature and ability to act across multiple steps make debugging and accountability harder, which increases the need for better observability. Beyond latency and error rates, teams need insight into prompts, responses, and agent actions to understand what an agent did and why.</p>\n<p>In this session, I will show how to instrument AI agents using OpenTelemetry and the GenAI Semantic Conventions, with OpenLIT as the native SDK. Through a live demo, I will demonstrate how to capture agent interactions alongside performance telemetry using Prometheus and Jaeger, while keeping sensitive data separate to reduce risk and cost.</p>\n<p>I will also show how telemetry can support ongoing evaluations, helping teams reason about agent behavior over time without logging everything. This talk is for engineers building AI agents who want to improve trust and accountability without oversharing data.</p>",
+      "author_bio": "<p>I’m a Developer Experience Engineer at Grafana Labs, where I spend most of my time helping people make observability easier and more practical. I maintain the Grafana Ansible Collection and the Grafana Operator, projects that have grown to over 5 million downloads, and I love working with open source. I started my career as an SRE, and that hands-on background still shapes how I think about systems today. I enjoy sharing what I learn, which has led me to speak at conferences about eBPF, Kubernetes, and AI, and to write guides that help engineers run real-world infrastructure more confidently.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I’m a Developer Experience Engineer at Grafana Labs, where I spend most of my time helping people make observability easier and more practical. I maintain the Grafana Ansible Collection and the Grafana Operator, projects that have grown to over 5 million downloads, and I love working with open source. I started my career as an SRE, and that hands-on background still shapes how I think about systems today. I enjoy sharing what I learn, which has led me to speak at conferences about eBPF, Kubernetes, and AI, and to write guides that help engineers run real-world infrastructure more confidently.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/live/9X7M-bvnZG0?si=e5ReflFYZv_zZ9kL\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"https://youtu.be/Ehq-loMRKR4?si=iSDpxr8wBhQBLsIY\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/live/9X7M-bvnZG0?si=e5ReflFYZv_zZ9kL"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/Ehq-loMRKR4?si=iSDpxr8wBhQBLsIY"
+        }
+      ]
+    },
+    {
+      "id": "data-validation-with-pointblank-johannes-werner",
+      "title": "Data validation with pointblank",
+      "title_raw": "Data validation with pointblank",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Johannes Werner",
+      "author_url": "",
+      "author_image_url": "",
+      "description": "<p>Data validation comprises a crucial step in each data-centric project. This part enables the data scientist to understand which aspects to focus on during data cleaning. Furthermore, building and executing machine learning models as well as performing subsequent data analysis on clean data substantially improves the results. </p>\n<p>This workshop will provide some guidance to the participants to run data validation in Python with pointblank. Essential validation patterns are demonstrated while teaching best practices with regards to coding, configuration, environments and versioning in mind. Data validation is demonstrated for both notebook environments and CLI applications, for instance when workflow management tools are used for production-ready code. The participants should gain experience with data validation and feel confident integrating this step in their daily data analysis. </p>\n<p>This workshop is addressed to intermediate Python developers and data scientists. A general understanding of Python fundamentals is expected. A general understanding of data science workflows, e.g. as outlined by Hadley Wickham would be helpful. Version control, virtual environments, workflow management and a general understanding of data frame manipulation is beneficial as well.</p>",
+      "author_bio": "<p>I received my PhD in bioinformatics in 2014 from the Max Planck Institute of Microbiology, Bremen and spent around 10 years at universities and research institutes in Germany focusing on microbiome analysis, cancer research, research data management and cloud infrastructure. Since four years, I am focusing on consulting and bioinformatic and biostatistical data analysis in early clinical trials. </p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I received my PhD in bioinformatics in 2014 from the Max Planck Institute of Microbiology, Bremen and spent around 10 years at universities and research institutes in Germany focusing on microbiome analysis, cancer research, research data management and cloud infrastructure. Since four years, I am focusing on consulting and bioinformatic and biostatistical data analysis in early clinical trials. </p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "the-ai-blind-spot-why-your-vector-search-needs-classic-python-algorithms-artem-sentsov",
+      "title": "The AI Blind Spot: Why Your Vector Search Needs Classic Python Algorithms",
+      "title_raw": "The AI Blind Spot: Why Your Vector Search Needs Classic Python Algorithms",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Artem Sentsov",
+      "author_url": "https://www.linkedin.com/in/asentsov/",
+      "author_image_url": "https://sessionize.com/image/68cd-400o400o1-LVjFp1X7SzXbeYteoAu4Jc.jpg",
+      "description": "<p>In 2026, it is tempting to think Large Language Models and Vector Databases have completely solved text analytics. Just embed your text, run a cosine similarity check, and you’re done, right? Not quite.</p>\n<p>While vectors are incredible at understanding meaning, they have a massive blind spot: they are terrible at exactness. If you need to match specific product SKUs, catch slight typos in usernames, or prevent an LLM from hallucinating an ID number, modern AI will often fail where a 60-year-old math algorithm succeeds.</p>\n<p>In this beginner-friendly talk, we will explore this \"Vector Blind Spot.\" You will learn why classic string metrics like Levenshtein and Jaro-Winkler are more critical than ever, how to implement them using blazing-fast, modern Python libraries like RapidFuzz.</p>",
+      "author_bio": "<p>Data Science professional with 8+ years of experience applying graph databases to solve complex business challenges. As Co-Founder and CTO of ClearPic.ai, I develop tools that map business relationships in Central Asia and the Caspian region, helping clients uncover hidden connections and compliance risks. My background combines data science with practical financial intelligence - from Deloitte and PwC to leading R&amp;D at Urus Advisory where I specialized in high-risk market analysis. My passion is making complex data speak through network visualization.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Data Science professional with 8+ years of experience applying graph databases to solve complex business challenges. As Co-Founder and CTO of ClearPic.ai, I develop tools that map business relationships in Central Asia and the Caspian region, helping clients uncover hidden connections and compliance risks. My background combines data science with practical financial intelligence - from Deloitte and PwC to leading R&amp;D at Urus Advisory where I specialized in high-risk market analysis. My passion is making complex data speak through network visualization.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://2025.pycon.at/talks/using-python-neo4j-to-explore-business-connections/\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://2025.pycon.at/talks/using-python-neo4j-to-explore-business-connections/"
+        }
+      ]
+    },
+    {
+      "id": "the-combinator-pattern-elegant-composition-for-modern-python-developers-haim-michael",
+      "title": "The Combinator Pattern: Elegant Composition for Modern Python Developers",
+      "title_raw": "The Combinator Pattern: Elegant Composition for Modern Python Developers",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Haim Michael",
+      "author_url": "https://linkedin.com/in/lifemichael",
+      "author_image_url": "https://sessionize.com/image/3659-400o400o1-KB1uHpPRatLCcxnxXoYPwu.jpg",
+      "description": "<p>Functional programming encourages us to think in terms of composition - building complex logic from small, pure building blocks. In this talk, we’ll explore how the Combinator Design Pattern helps us achieve exactly that.</p>\n<p>Using Python, we’ll go beyond theoretical definitions and implement combinators step by step — starting from simple primitives and evolving them into elegant, reusable, and type-safe abstractions.</p>\n<p>Along the way, we’ll analyze how combinators enhance readability, maintainability, and alignment with the Single Responsibility Principle, while offering a modern alternative to conditional logic and inheritance-based designs.</p>\n<p>By the end, participants will understand not only how to implement combinators but also how to think compositionally in Python.</p>\n<p>The key takeaways are:</p>\n<ul>\n<li>\n<p>Understand the Combinator Pattern: Learn its conceptual foundation and its role in functional programming and software design.</p>\n</li>\n<li>\n<p>Practical Implementation in Python: See how to build combinators step by step, leveraging lambdas, higher-order functions, and immutability.</p>\n</li>\n<li>\n<p>Achieve Clean and Reusable Code: Discover how combinators promote clarity, separation of concerns, and compliance with SOLID principles.</p>\n</li>\n<li>\n<p>Adopt a Compositional Mindset: Leave with concrete insights on writing expressive, declarative Python code that scales elegantly across real-world projects.</p>\n</li>\n</ul>",
+      "author_bio": "<p>Haim Michael is a software development trainer, entrepreneur, and lecturer with nearly 30 years of experience. He founded life michael (lifemichael.com), delivering professional training in Java, Python, JavaScript, Scala, Kotlin, and more. Haim has lectured at leading universities, including Bar-Ilan, HIT, Shenkar, and Technion, and has trained developers at top tech companies.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Haim Michael is a software development trainer, entrepreneur, and lecturer with nearly 30 years of experience. He founded life michael (lifemichael.com), delivering professional training in Java, Python, JavaScript, Scala, Kotlin, and more. Haim has lectured at leading universities, including Bar-Ilan, HIT, Shenkar, and Technion, and has trained developers at top tech companies.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://lifemichael.com/en/talks - slides + video of talks I delivered\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"My talk at PyCon IL 2025\">video link</a></li>\n<li><a href=\"https://lifemichael.com/en/decorators-in-python-pycon-il-2025/\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://lifemichael.com/en/talks - slides + video of talks I delivered"
+        },
+        {
+          "label": "video link",
+          "url": "My talk at PyCon IL 2025"
+        },
+        {
+          "label": "video link",
+          "url": "https://lifemichael.com/en/decorators-in-python-pycon-il-2025/"
+        }
+      ]
+    },
+    {
+      "id": "making-sense-of-concurrency-in-python-3-14-michael-seifert",
+      "title": "Making sense of concurrency in Python 3.14",
+      "title_raw": "Making sense of concurrency in Python 3.14",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Michael Seifert",
+      "author_url": "https://www.linkedin.com/in/seifertm/",
+      "author_image_url": "https://sessionize.com/image/ee41-400o400o1-7HPtCanK3MBSPT24BfQYqM.jpg",
+      "description": "<p>Async/await, threads, subinterpreters, and multiprocessing—Do you know when to use which?</p>\n<p>Python 3.14 made subinterpreters available in the standard library and marked free-threaded Python as officially supported. This gives us a wider choice of concurrency mechanisms—but also more tradeoffs to consider.</p>\n<p>This talk develops a mental model in which the differences between Python’s concurrency mechanisms become apparent. Attendees will learn how to reason about async/await, threads, subinterpreters, and multiprocessing. They will be able to assess which approach to pick for a given problem, and how to combine concurrency models effectively in Python applications.</p>",
+      "author_bio": "<p>Michael is a trainer and consulting software engineer who helps product teams develop Python software in the cloud. He enjoys deleting code more than writing it and is constantly looking for new ways to improve developer experience and the maintainability of software.</p>\n<p>Michael has been enthusiastic for free and open-source software since his teenage years and published his first project in 2006. Nowadays, he maintains the pytest-asyncio library. In his free time, Michael dances Shuffle or struggles with a hardware project.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Michael is a trainer and consulting software engineer who helps product teams develop Python software in the cloud. He enjoys deleting code more than writing it and is constantly looking for new ways to improve developer experience and the maintainability of software.</p>\n<p>Michael has been enthusiastic for free and open-source software since his teenage years and published his first project in 2006. Nowadays, he maintains the pytest-asyncio library. In his free time, Michael dances Shuffle or struggles with a hardware project.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=tviU-nyRTjI\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=tviU-nyRTjI"
+        }
+      ]
+    },
+    {
+      "id": "ready-set-publish-write-your-first-python-package-linda-kolb",
+      "title": "Ready, set, publish - Write your first Python Package",
+      "title_raw": "Ready, set, publish - Write your first Python Package",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Linda Kolb",
+      "author_url": "https://www.linkedin.com/in/linda-kolb-01a7a715a/",
+      "author_image_url": "https://sessionize.com/image/507b-400o400o1-SkeGQSSgWdy6mcqvazSR9p.jpg",
+      "description": "<p>This session walks through the full journey of creating your first Python package using Poetry - from project setup to publishing. We will explore how to write and structure tests, use pre‑commit hooks to automatically format and lint your code, and run everything inside reproducible Dev Containers. </p>",
+      "author_bio": "<p>Linda has several years of experience using Python across automation, data science and modern tooling. If she is not busy building data flows, she is flowing on the yoga mat. </p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Linda has several years of experience using Python across automation, data science and modern tooling. If she is not busy building data flows, she is flowing on the yoga mat. </p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "hands-on-building-ai-applications-in-python-robina-mirbahar",
+      "title": "Hands-On: Building AI Applications in Python",
+      "title_raw": "Hands-On: Building AI Applications in Python",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Robina Mirbahar",
+      "author_url": "https://www.linkedin.com/in/robinamirbahar/",
+      "author_image_url": "https://sessionize.com/image/e0da-400o400o1-MFAHS5vNJ8MKpJZFunBPbB.jpg",
+      "description": "<p>AI features are becoming common in Python applications, but many developers struggle to move from demos to real, maintainable code.</p>\n<p>In this hands-on workshop, participants will build a small AI-powered Python application step-by-step. The focus is on understanding how AI fits into a Python system: structuring inputs and outputs, integrating a language model, adding simple logic, and handling failure cases responsibly.</p>\n<p>Rather than relying on heavy frameworks or hidden abstractions, the workshop uses clear, minimal Python code to demonstrate patterns that participants can reuse in their own projects. A modern language model (such as Gemini) is used as an example, but the concepts apply to any AI-backed Python application.</p>\n<p>No prior AI or machine learning experience is required.</p>",
+      "author_bio": "<p>💻 Multi-Cloud Architect | AWS | Azure | Google Cloud\n🤖 Generative AI Specialist | LLMs | AI Content Generation | AI for Business\n🎤 Tech Speaker &amp; Mentor | Google Cloud Innovator Champion | Women Techmakers Ambassador\n👩‍💻 Founder of SheCloud | Empowering women in tech through education &amp; mentorship\n🎨 AI Art &amp; Design Enthusiast | AI-powered creative solutions\n📚 Lifelong Learner | Cloud Native | Kubernetes | AI-Powered Automation</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>💻 Multi-Cloud Architect | AWS | Azure | Google Cloud\n🤖 Generative AI Specialist | LLMs | AI Content Generation | AI for Business\n🎤 Tech Speaker &amp; Mentor | Google Cloud Innovator Champion | Women Techmakers Ambassador\n👩‍💻 Founder of SheCloud | Empowering women in tech through education &amp; mentorship\n🎨 AI Art &amp; Design Enthusiast | AI-powered creative solutions\n📚 Lifelong Learner | Cloud Native | Kubernetes | AI-Powered Automation</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "open-edx-the-other-open-source-lms-florian-haas",
+      "title": "Open edX: the \"other\" open source LMS",
+      "title_raw": "Open edX: the \"other\" open source LMS",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Florian Haas",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/474e-400o400o1-DhVuszgaenzsrogjU94S5m.jpg",
+      "description": "<p>In Europe, most people think of Moodle when they hear think about open source learning management systems. However, there's another! Open edX has been a solid, Python-based LMS for more than a decade, and it has an interesting past, present, and future. </p>\n<p>Having worked with up Open edX since 2015, I help run multiple Open edX platforms, develop courseware on Open edX, and am an active contributing community member. </p>\n<p>This talk explains Open edX, its architecture, and its community.</p>",
+      "author_bio": "<p>I run Education and Documentation at Cleura, a Swedish cloud service provider. I am an active member of the Open edX, Ceph, and OpenStack communities.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I run Education and Documentation at Cleura, a Swedish cloud service provider. I am an active member of the Open edX, Ceph, and OpenStack communities.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://youtu.be/KlE-VyUYLts\">video link</a></li>\n<li><a href=\"https://youtu.be/B1ic5o9geqw\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://youtu.be/KlE-VyUYLts"
+        },
+        {
+          "label": "video link",
+          "url": "https://youtu.be/B1ic5o9geqw"
+        }
+      ]
+    },
+    {
+      "id": "from-marketboard-to-mcp-building-an-llm-powered-advisor-for-final-fantasy-14-wit-brandon-gier",
+      "title": "From Marketboard to MCP: Building an LLM-Powered Advisor for Final Fantasy 14 with Python",
+      "title_raw": "From Marketboard to MCP: Building an LLM-Powered Advisor for Final Fantasy 14 with Python",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Brandon Gier",
+      "author_url": "https://www.linkedin.com/in/brandon-gier/",
+      "author_image_url": "",
+      "description": "<p>What happens when you take a niche gaming problem, figuring out when and how to sell items on Final Fantasy XIV's player-driven marketplace, and solve it with an LLM-powered Python backend? You end up learning a lot about what it actually takes to make AI advice useful.\nIn this talk, I'll walk through the full journey of building a marketboard advisor: from syncing in-game inventory and aggregating price trends, to structuring that data in a way an LLM can reason about, to exposing it through MCP tools and a ChatGPT integration on my website. The game is just the domain, the lessons around designing for LLM consumption, building MCP tools, and knowing where AI adds value (and where it doesn't) apply to any advisory system you might build in Python.</p>",
+      "author_bio": "<p>Brandon Gier has spent over a decade working in tech across different sectors. Most recently, he has been involved in helping build out authentication flows for Agentic transactions.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Brandon Gier has spent over a decade working in tech across different sectors. Most recently, he has been involved in helping build out authentication flows for Agentic transactions.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "multi-lingual-advanced-search-in-django-without-cloud-thomas-aglassinger",
+      "title": "Multi-lingual advanced search in Django without Cloud",
+      "title_raw": "Multi-lingual advanced search in Django without Cloud",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Thomas Aglassinger",
+      "author_url": "https://www.linkedin.com/in/thomas-aglassinger/",
+      "author_image_url": "https://sessionize.com/image/a599-400o400o1-RfqrGJjo1ES16qmaGRDbEr.jpg",
+      "description": "<p>Django offers built-in support for classic full-text search (FTS), but sometimes it can be hard to understand the results. This approach also has limitations, some of which can be overcome with semantic search.</p>\n<p>This talks first explains the basics of full-text search and how the rank is computed and why it is so fast compared to field lookups like <code>icontains</code>.</p>\n<p>Next, we take a look at performing a semantic search, where search terms are found by their similar meaning. For example, a cat is closer to a dog than a house. For that, we use Ollama to vectorize texts with an embedding model, store it in the database using pgvector, and retrieve it sorted by similarity.</p>\n<p>Finally, full-text and semantic search are combined into a hybrid search, which give best of both worlds.</p>\n<p>The talk also covers how to search languages other than English.</p>\n<p>All this can be done on a laptop without the need for cloud services or your data leaving your premise. This allows for data sovereignty and keeps your operational costs predicable.</p>",
+      "author_bio": "<p>Thomas Aglassinger is a software developer and founder of Siisurit. He has worked in multiple sectors such as finance, e-commerce, or health. He has designed and developed multiple applications with a search feature using technologies like Django and PostgreSQL, but also Java and Solr. He is a casual open source developer and maintains a couple of PyPI packages such as pygount (count source code) and ebcdic (codecs for mainframes). In his free time, he likes to go on bike trips or play video games.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Thomas Aglassinger is a software developer and founder of Siisurit. He has worked in multiple sectors such as finance, e-commerce, or health. He has designed and developed multiple applications with a search feature using technologies like Django and PostgreSQL, but also Java and Solr. He is a casual open source developer and maintains a couple of PyPI packages such as pygount (count source code) and ebcdic (codecs for mainframes). In his free time, he likes to go on bike trips or play video games.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"EuroPython: Introduction to sentiment analysis with SpaCy (https://youtu.be/LvlUBxi_JEg), EuroPython: Solution oriented error handling (https://youtu.be/j1mN7j83AV8), Linuxtage (German): Wolkenlose KI für zu Hause (https://github.com/roskakori/wolkenlose-ki-fuer-zu-hause)\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "EuroPython: Introduction to sentiment analysis with SpaCy (https://youtu.be/LvlUBxi_JEg), EuroPython: Solution oriented error handling (https://youtu.be/j1mN7j83AV8), Linuxtage (German): Wolkenlose KI für zu Hause (https://github.com/roskakori/wolkenlose-ki-fuer-zu-hause)"
+        }
+      ]
+    },
+    {
+      "id": "building-deep-learning-systems-with-python-for-problems-in-health-agriculture-an-cherno-basiru-jallow",
+      "title": "Building Deep Learning Systems with Python: For Problems in Health, Agriculture, and Climate",
+      "title_raw": "Building Deep Learning Systems with Python: For Problems in Health, Agriculture, and Climate",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Cherno Basiru Jallow",
+      "author_url": "https://www.linkedin.com/in/cherno-basiru-jallow-4834b8240/",
+      "author_image_url": "https://sessionize.com/image/9388-400o400o1-EEi171bzJR7ovhAL8yCqB4.jpg",
+      "description": "<p>Deep learning is often introduced through idealized examples: clean datasets, powerful hardware, and benchmark driven results. In practice, most real world problems are messier, constrained, and driven by decisions rather than scores. This talk focuses on how to build deep learning systems with Python that work under conditions, using examples from health, agriculture, and climate data.\nThe session presents a practical, system oriented approach to deep learning. Instead of focusing on complex architectures, it emphasizes how to frame problems correctly, work with imperfect data, build reliable baselines, and evaluate models in ways that support real world use.</p>\n<ol>\n<li>\n<p>From Problem to System (Why framing matters)\nMoving from “can we train a model?” to “what decision should this system support?”\nDefining success metrics based on context (e.g., sensitivity vs. accuracy)\nWhy many deep learning projects fail before modeling even begins</p>\n</li>\n<li>\n<p>Data Reality Check\nWorking with limited, noisy, and imbalanced datasets\nCommon data issues in health, agriculture, and environmental data\nPractical strategies for inspection, validation, and preprocessing using Python</p>\n</li>\n<li>\n<p>Building the Baseline in Python\nWhy simple models sometimes matter more than complex ones early on\nEstablishing strong baselines before scaling complexity\nA reusable Python workflow: data loading, training loop, evaluation</p>\n</li>\n<li>\n<p>Model Design Under Constraints\nChoosing architectures that match the problem and resources\nTraining on CPUs or limited hardware\nWhen transfer learning helps and when it does not</p>\n</li>\n<li>\n<p>Evaluation Beyond Accuracy\nSelecting metrics that reflect costs and risks\nUnderstanding failure modes through error analysis\nUsing interpretability tools to inspect model behavior</p>\n</li>\n<li>\n<p>Case Studies Across Domains\nHealth: image based disease detection and triage support\nAgriculture: crop disease detection from visual data\nClimate: pattern detection in environmental and geospatial data\nWhat stayed the same across domains, and what changed</p>\n</li>\n<li>\n<p>From Experiment to Deployment Thinking\nReproducibility and documentation\nWhat makes a model usable outside a notebook\nCommon pitfalls when moving toward real world use</p>\n</li>\n<li>\n<p>Key Takeaways\nA practical framework for building deep learning systems with Python\nHow to apply the same workflow across different domains\nHow to think critically about data, models, and evaluation in real settings</p>\n</li>\n</ol>\n<p>This talk is aimed at developers and data practitioners who already know Python and basic machine learning concepts and want to move beyond demos toward building systems that actually support decisions.</p>",
+      "author_bio": "<p>Cherno Basiru Jallow is a Gambian machine learning engineer and computer science student. Previous Data scientist Intern at the Medical Research Council Unit The Gambia at the London School of Hygiene &amp; Tropical Medicine, former Lead AI/ML intern at Obentas Global Technology Company, Scientific researcher (published preprints), public speaker (2x Google Devfest, Pycon Senegambia, + other tech events), Hackathons winner ($$ cash prizes), and tech content creator (Youtube, tiktok, Linkedin, Instagram).\nHe started coding early in life and today, he design and build AI systems that tackle problems in healthcare, education, and communities across Africa, with a focus on computer vision, deep learning, and research you can deploy in the real world. He regularly gives tech talks across the Senegambia region and loves creating videos to share knowledge and inspire others.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Cherno Basiru Jallow is a Gambian machine learning engineer and computer science student. Previous Data scientist Intern at the Medical Research Council Unit The Gambia at the London School of Hygiene &amp; Tropical Medicine, former Lead AI/ML intern at Obentas Global Technology Company, Scientific researcher (published preprints), public speaker (2x Google Devfest, Pycon Senegambia, + other tech events), Hackathons winner ($$ cash prizes), and tech content creator (Youtube, tiktok, Linkedin, Instagram).\nHe started coding early in life and today, he design and build AI systems that tackle problems in healthcare, education, and communities across Africa, with a focus on computer vision, deep learning, and research you can deploy in the real world. He regularly gives tech talks across the Senegambia region and loves creating videos to share knowledge and inspire others.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=N_1G_aGJN7U\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=0duywa6tky8\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=YJoyBul1LrU\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=N_1G_aGJN7U"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=0duywa6tky8"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=YJoyBul1LrU"
+        }
+      ]
+    },
+    {
+      "id": "schema-first-ai-type-safe-llm-outputs-with-pydanticai-tested-in-ci-offline-with--vyom-gupta",
+      "title": "Schema-First AI: Type-Safe LLM Outputs with PydanticAI (Tested in CI, Offline with Ollama)",
+      "title_raw": "Schema-First AI: Type-Safe LLM Outputs with PydanticAI (Tested in CI, Offline with Ollama)",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Vyom Gupta",
+      "author_url": "https://www.linkedin.com/in/vyomguptaa/",
+      "author_image_url": "https://sessionize.com/image/41db-400o400o1-HyPnSmpMvdSMX2NBEKSRx4.jpg",
+      "description": "<p>On Friday, your team ships an “LLM-powered” feature. On Monday, the dashboard looks… haunted.</p>\n<p>One row says years_experience = “5–7”, another says “about five-ish”, a user’s email is “john at gmail dot com”, and your database is now storing what can only be described as creative writing. Nothing is “down” — but your data is drifting, your analytics are lying, and your code is becoming a scrapbook of quick fixes. If you store “5–7” in an integer column, your pipeline breaks—or worse, silently coerces and corrupts your metrics.</p>\n<p>This is the quiet failure mode of AI features: LLMs return plausible text, not guaranteed data. And many projects accidentally return to the old “stringly-typed” era: prompt → paragraph → regex → json.loads() → try/except → more try/except. It works in demos… until real-world inputs arrive: ranges (“5–7”), multiple numbers (“worked on 3 projects in 2 teams”), mixed languages, inconsistent keys, wrong types, invalid formats, and outputs that change shape between runs.</p>\n<p>Python teams spent years building trust through schemas, validation, and tests. We define request/response contracts for every API. We validate before writing to the database. We ship with test suites and Continuous Integration (CI). But when the LLM enters the stack, many teams throw that discipline away and “hope the output behaves.”</p>\n<p>This talk brings it back with a practical approach: Schema-First AI — treat LLM output like an API response with a non-negotiable contract.</p>\n<p>What you’ll see (and copy into your own projects)</p>\n<p>We’ll build a workflow that turns messy text into reliable, typed objects:</p>\n<p>Define the contract first using a Pydantic model (types + constraints)</p>\n<p>Example: years_experience is an integer (0–50), email must be a valid email, skills must be a list, not prose.</p>\n<p>Enforce structured output using PydanticAI</p>\n<p>The model must return output that matches your schema. If it doesn’t, validation fails (and we handle it cleanly).</p>\n<p>Validate before storage</p>\n<p>Bad-but-plausible outputs get caught before they corrupt your database and metrics.</p>\n<p>Test without calling the model (fast, $0, CI-friendly)</p>\n<p>Unit-test business logic using typed Pydantic objects (no model calls), add contract tests for schema guarantees, and use \n Hypothesis (property-based testing) to generate hundreds/thousands of edge cases in seconds.</p>\n<p>Live demo</p>\n<p>Unstructured output → typed result → validation catching errors → a test suite running in under a second → a small production-style pipeline + dashboard that makes the reliability visible.</p>\n<p>The full demo runs offline using Ollama (no API keys), and the same architecture works with hosted providers too.</p>\n<p>Why this is useful (beyond the demo)</p>\n<p>You’ll reduce brittle parsing code dramatically\nYou’ll prevent silent data corruption (often worse than a crash)\nYou’ll get a repeatable pattern for extraction, classification, routing, and “AI-as-a-service” internal tools\nYou’ll have a testing strategy that lets AI code ship with confidence\nTakeaways</p>\n<p>A repeatable Schema-First blueprint for extraction/classification workflows\nA CI-ready testing strategy for AI features (including $0 model-call tests)\nPractical patterns for validation, retries, and schema evolution\nA reference repo + checklist you can apply to your next LLM feature\nAudience: Beginner → Intermediate Python developers. No AI background required.</p>",
+      "author_bio": "<p>Hi, I’m Vyom, an SDE II at Cisco Systems (India) working on data center networking/back-end systems. I enjoy turning messy, real-world problems into reliable engineering workflows (observability, testing, automation, and developer experience). Outside work, I’m into adventure travel, puzzles/brain-teasers, and building small projects that turn “this should be simpler” into a usable tool.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Hi, I’m Vyom, an SDE II at Cisco Systems (India) working on data center networking/back-end systems. I enjoy turning messy, real-world problems into reliable engineering workflows (observability, testing, automation, and developer experience). Outside work, I’m into adventure travel, puzzles/brain-teasers, and building small projects that turn “this should be simpler” into a usable tool.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"I've just delivered two talks yet, and feel I did a pretty good job. Now i want to be more active in the community and deliver as well as takeaway as many learning possible.\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "I've just delivered two talks yet, and feel I did a pretty good job. Now i want to be more active in the community and deliver as well as takeaway as many learning possible."
+        }
+      ]
+    },
+    {
+      "id": "teaching-python-but-also-a-lot-more-it-stuff-in-a-script-generated-lab-in-the-cl-robert-matzinger",
+      "title": "Teaching Python (but also a lot more IT stuff) in a Script-Generated Lab in the Cloud",
+      "title_raw": "Teaching Python (but also a lot more IT stuff) in a Script-Generated Lab in the Cloud",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Robert Matzinger",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/c0ec-400o400o1-Bt7pJ5H6pHJaspvu2tjDvE.jpg",
+      "description": "<p>Providing students with the infrastructure for teaching IT related stuff like programming,\noperating systems, networks, etc. was always a challenge for teachers.</p>\n<p>At the Unviversity of Applied Sciences Burgenland we do this with a self-designed system called \"Vlizedlab\", which allows to provide a virtual machine to every student that is defined by a script and has a desktop that the students can access via a web browser.</p>\n<p>The script definition of the student machine is modular, such that we can compose custom-made machines for quite a lot of sorts of teaching.</p>\n<p>And the web interface allows the teacher to view student machines at any time, to help along or find errors. Anyone having tought IT will know how important this \"glimpse over the shoulder\" is when teaching practical IT.</p>\n<p>Still, such a lab can be generated by some script magic in about 20 minutes.</p>\n<p>And clearly, \"Vlizedlab\" is open source software and does not rely on a particular cloud provider.</p>\n<p>Vlizedlab was used for the first time for teaching in particular Python for beginners with different teachers and student groups in 2025. But it has been used for years for teaching various subjects including programming, algorithms, operating systems, basic networking, web development, databases and even blockchain, containers and orchestration.</p>\n<p>In this talk we will present an insight on design goals and usage of the Vlizedlab from the point of view of an operator and of a teacher, we will report on particular experience with it when teaching Python (and other stuff), and will provide a life demo on how to generate a lab for a group of students with ease.</p>",
+      "author_bio": "<p>Full time teacher at University of Applied Sciences Burgenland for &gt;20 years, IT professional. Background in theory, math and IT security, open source activist. Co-organizer of PyCon 2025 and 2026.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Full time teacher at University of Applied Sciences Burgenland for &gt;20 years, IT professional. Background in theory, math and IT security, open source activist. Co-organizer of PyCon 2025 and 2026.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"(at PyCon yes, otherwise no).\">video link</a></li>\n<li><a href=\"E.g.: https://media.ccc.de/v/froscon2021-2694-vlizedlab_remote\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "(at PyCon yes, otherwise no)."
+        },
+        {
+          "label": "video link",
+          "url": "E.g.: https://media.ccc.de/v/froscon2021-2694-vlizedlab_remote"
+        }
+      ]
+    },
+    {
+      "id": "are-we-free-threaded-ready-looking-at-where-free-threaded-python-fails-cheuk-ting-ho",
+      "title": "Are we free-threaded ready? Looking at where free-threaded Python fails",
+      "title_raw": "Are we free-threaded ready? Looking at where free-threaded Python fails",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Cheuk Ting Ho",
+      "author_url": "https://www.linkedin.com/in/cheukting-ho",
+      "author_image_url": "https://sessionize.com/image/7cb5-400o400o1-M8fWNqvoCanoup73bs7DYF.jpg",
+      "description": "<p>Free-threaded Python aims to significantly improve performance, allowing multiple native threads to execute Python bytecode concurrently. In this talk, we will explore the current state of Python's free-threading initiative and assess its practical readiness for widespread adoption. </p>\n<p>We begin by exploring the background of free-threaded Python, summarising its origins, current status, and the technical differences distinguishing it from standard Python implementations. A key focus will be examining the compatibility landscape, specifically investigating how many popular third-party libraries are currently prepared for free-threading. We will distinguish between generic pure Python wheels and explicitly free-threaded wheels and I’ll explain how the community can contribute to compatibility verification. </p>\n<p>We then critically discuss free-threaded Python's necessity, weighing the disadvantage of increased thread safety concerns (and verification methods) against the promised advantage of speed (including multithreaded profiling).Will free-threaded Python become a critical future direction for the language? How can you contribute? If and how specific projects can immediately benefit from it? Let’s find out together!</p>\n<p>Outline:</p>\n<ul>\n<li>Background about free-threaded Python<ul>\n<li>Where it started and where are we now</li>\n<li>What are the differences between standard and free-threaded Python</li>\n</ul>\n</li>\n<li>Looking at how many popular libraries are free-threaded ready<ul>\n<li>free-threaded wheels vs generic pure Python wheel</li>\n<li>Testing the library built for free-threading compatibility and how you can help</li>\n</ul>\n</li>\n<li>Do we really need free-threaded Python?<ul>\n<li>Disadvantage: thread safety - how to verify thread safety of a library</li>\n<li>Advantage: speed up - how to perform multithreaded profiling</li>\n</ul>\n</li>\n<li>Conclusion<ul>\n<li>Free-threaded Python is the future, and how you can contribute</li>\n<li>Check if you can take advantage of it and equip yourself\nJoin the discourse and voice out your thoughts</li>\n</ul>\n</li>\n</ul>",
+      "author_bio": "<p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as a developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. Cheuk also started and hosted a Python podcast, PyPodCats, which highlights the achievements of underrepresented members in the community. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://cheuk.dev/videos/\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://cheuk.dev/videos/"
+        }
+      ]
+    },
+    {
+      "id": "ai-driven-software-engineering-tdd-guardrails-for-the-age-of-vibe-programming-stefan-trenkwalder",
+      "title": "AI-driven Software Engineering: TDD-Guardrails for the Age of Vibe Programming",
+      "title_raw": "AI-driven Software Engineering: TDD-Guardrails for the Age of Vibe Programming",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Stefan Trenkwalder",
+      "author_url": "https://www.linkedin.com/in/strenkwalder/",
+      "author_image_url": "https://sessionize.com/image/4e3e-400o400o1-Kr9XDqMfQZqsEaxRXLVM4Q.jpg",
+      "description": "<p>AI coding tools are transforming how engineering and data science teams work — but speed without a structure creates technical debt, regressions, and code that's hard to trust. \nThis workshop presents an alternative: a TDD-based guardrail framework for AI-assisted development that provides teams with a practical workflow to maintain code quality and reliability.</p>\n<p>Participants will learn to write tests that define intent before prompting, use the red-green-refactor loop to guide and validate AI output, and catch errors early. You'll leave with a repeatable approach that makes AI a reliable collaborator — whether you're building data pipelines, APIs, or analytical models.</p>",
+      "author_bio": "<p>Dr Stefan Trenkwalder is a Senior Software Engineer and advocate for software craftsmanship, with 15+ years of experience shipping production Python across fintech, automotive, and embedded systems.\nStefan has introduced TDD, Extreme Programming, and trunk-based development into teams that had none, turning ad-hoc codebases into systems that are measurably more reliable and easier to maintain. He believes that good engineering practices — not just good intentions — are what separate software that lasts from software that doesn't.\nHe holds a PhD in Robotics from the University of Sheffield and has taught software development at university level. He now brings that same rigour to hands-on workshops for working developers.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Dr Stefan Trenkwalder is a Senior Software Engineer and advocate for software craftsmanship, with 15+ years of experience shipping production Python across fintech, automotive, and embedded systems.\nStefan has introduced TDD, Extreme Programming, and trunk-based development into teams that had none, turning ad-hoc codebases into systems that are measurably more reliable and easier to maintain. He believes that good engineering practices — not just good intentions — are what separate software that lasts from software that doesn't.\nHe holds a PhD in Robotics from the University of Sheffield and has taught software development at university level. He now brings that same rigour to hands-on workshops for working developers.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"I gave a TDD workshop at PyCon Austria 2025.\">video link</a></li>\n<li><a href=\"I gave a talk of TDD (for C++) and my practice video was: https://youtu.be/d_45_bcn0sg\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "I gave a TDD workshop at PyCon Austria 2025."
+        },
+        {
+          "label": "video link",
+          "url": "I gave a talk of TDD (for C++) and my practice video was: https://youtu.be/d_45_bcn0sg"
+        }
+      ]
+    },
+    {
+      "id": "workshop-learn-to-unlock-document-intelligence-with-open-source-ai-mingxuan-zhao",
+      "title": "Workshop: Learn to Unlock Document Intelligence with Open-Source AI",
+      "title_raw": "Workshop: Learn to Unlock Document Intelligence with Open-Source AI",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Mingxuan Zhao",
+      "author_url": "https://www.linkedin.com/in/mingxuan-z-9a5a6419a/",
+      "author_image_url": "https://sessionize.com/image/efa1-400o400o1-hZfMmik96T9TUrq9L3oyJR.jpg",
+      "description": "<p>Most organizational knowledge is still locked inside complex documents, making it difficult to extract and use the information effectively. Traditional tools often fail when working with real-world document formats, particularly PDFs. Tables lose their structure, figures get separated from captions, and multi-column layouts become unreadable text. These failures make it difficult to bring AI to document-heavy workflows.</p>\n<p>This workshop will give you hands on experience with Docling, an open source Python library that takes a different approach, using deep learning models to parse documents the way humans read them. It preserves hierarchy, extracts structured data through a consistent API, and supports 15+ file formats out of the box. All of Docling is MIT-licensed, enabling fully local execution, allowing you to keep sensitive data on-premise while delivering low-latency processing and ingestion.</p>\n<p>You'll be building a complete document intelligence pipeline from the ground up. We'll work through three progressive modules: first, converting documents and exploring Docling's enrichment features like table detection and image classification; second, chunking strategies that preserve document semantics for retrieval; and finally, building on all our other components using Docling, we will build a multimodal RAG pipeline with visual grounding, creating an application that can cite the exact page and location where it found an answer.</p>\n<p>No prior experience with Docling is required. Colab notebooks with hosted model endpoints will be provided, so you can follow along with just a browser. Attendees who prefer local execution should have Jupyter Notebook installed and the ability to download models from Hugging Face. Bring your own documents to experiment with, or use the samples provided.</p>",
+      "author_bio": "<p>Ming Zhao is an open source developer and Developer Advocate at IBM Research, where he helps IBM leverage open technologies while building impactful tools and growing vibrant open-source communities. He’s passionate about making open tech accessible to all and ensuring developers have the tools they need to succeed in the rapidly developing AI space. Ming now leads community efforts around Docling, IBM’s fastest-growing open source project, recently welcomed into the LF AI &amp; Data Foundation.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Ming Zhao is an open source developer and Developer Advocate at IBM Research, where he helps IBM leverage open technologies while building impactful tools and growing vibrant open-source communities. He’s passionate about making open tech accessible to all and ensuring developers have the tools they need to succeed in the rapidly developing AI space. Ming now leads community efforts around Docling, IBM’s fastest-growing open source project, recently welcomed into the LF AI &amp; Data Foundation.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"https://www.youtube.com/watch?v=ZopwDCLKP_s\">video link</a></li>\n<li><a href=\"\">video link</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=rrQHnibpXX8\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=ZopwDCLKP_s"
+        },
+        {
+          "label": "video link",
+          "url": "https://www.youtube.com/watch?v=rrQHnibpXX8"
+        }
+      ]
+    },
+    {
+      "id": "carol-chen",
+      "title": "",
+      "title_raw": "",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Carol Chen",
+      "author_url": "https://www.linkedin.com/in/cybette/",
+      "author_image_url": "https://sessionize.com/image/5e65-400o400o1-QPXdNJZLoE2DMds1Md6YUB.jpg",
+      "description": "",
+      "author_bio": "<p>Carol Chen is a Community Architect at Red Hat, having led several upstream communities including InstructLab, Ansible and ManageIQ. She has been actively involved in open source communities while working for Jolla and Nokia previously. In addition, she also has experiences in software development/integration in her 12 years in the mobile industry. On a personal note, Carol plays the Timpani in an orchestra in Tampere, Finland, where she now calls home.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Carol Chen is a Community Architect at Red Hat, having led several upstream communities including InstructLab, Ansible and ManageIQ. She has been actively involved in open source communities while working for Jolla and Nokia previously. In addition, she also has experiences in software development/integration in her 12 years in the mobile industry. On a personal note, Carol plays the Timpani in an orchestra in Tampere, Finland, where she now calls home.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "tying-up-loose-threads-making-your-project-no-gil-ready-charlie-lin",
+      "title": "Tying Up Loose Threads: Making your Project No-GIL Ready",
+      "title_raw": "Tying Up Loose Threads: Making your Project No-GIL Ready",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Charlie Lin",
+      "author_url": "https://www.linkedin.com/in/charlie-lin-8a2a30196",
+      "author_image_url": "https://sessionize.com/image/e8fd-400o400o1-RNYhcdWoddS6UXBAAHCKBs.jpg",
+      "description": "<p>If you messed around with Python's command line options or read the official documentation, you might wonder what the -Xgil option or the PYTHON_GIL environment variable did to your scripts, and whether setting either affects performance. The hubbub on popular wheels such as pyo3, python-zstandard, numpy, uv, cffi, and cython supporting the free-threaded interpreter is no passing fad either. For Pythonistas that don't read PEPs in their spare time or contribute to the cpython project itself, an adventure that delves into a less known, yet jaw-dropping aspect of Python awaits!</p>\n<p>Python's Global Interpreter Lock, which determines which single thread can execute native Python code and call C API functions, simplifies writing multithreaded code.  However, sticking with this execution model leaves out extra performance afforded by modern multicore CPUs with hyperthreading, as automatic locking and unlocking of the GIL does not scale well with thread counts, especially in performance-sensitive workloads.</p>\n<p>The newfangled free-threaded interpreter promises salvation when running either pure Python code or with compiled extensions. General multithreading rules apply (prefer thread-local variables, using locks to prevent simultaneous access of shared data), but when dealing with projects containing compiled extensions that directly or indirectly interface with Python's C API, more porting rules also apply. </p>\n<p>Key porting tips, including projects using the Limited API, include: port native code away from C API functions that avoid borrowed references because they aren't thread-safe; modify unit tests to catch concurrency bugs  arising from assuming the presence of the GIL; and extend CI coverage of Python interpreters both for testing and to build free-threaded compatible wheels.</p>\n<p>Outline:\n* Introduction (2-3 min.) \n    * What is the -Xgil option?\n    * What is the GIL?\n* What is the free-threaded interpreter? (6-8 min.) \n    * Global Interpreter Lock: downsides of automatic serialization of parallel workloads\n    * How to try out the free-threaded interpreter\n    * Increased parallelism with the no-GIL interpreter with multi-core CPUs\n* Porting tips (15-18 min)\n    * Adding a trove classifier in  pyproject.toml\n    * Marking your extension module as supporting no-GIL\n    * Limited API (and PEP 803)\n    * Bumping key dependencies, including FFI wheels\n    * Using locks, mutexes, and atomics in native code to prevent concurrency bugs\n    * Including pytest-run-parallel to catch threading bugs\n* Closing Remarks (2 min.) \n* Q&amp;A (2 min.)</p>",
+      "author_bio": "<p>I am a free-lance OSS contributor, and a graduate from a little-known private arts college known as Rollins College. I am rather fond of subjecting myself to testing bleeding-edge unstable software in the following ways:</p>\n<ul>\n<li>Dual-booting Windows Insider Canary and Fedora Rawhide (this is where do most of my development)</li>\n<li>Booting Fedora with the latest unstable kernel snapshots</li>\n<li>Compiling software from source using unstable toolchains, such as GCC snapshots for C/C++, CPython prereleases, and Rust nightly</li>\n<li>Using non-ASCII usernames so that I have to test software for full Unicode support (and many bug reports were filed and fixed on GH)</li>\n</ul>\n<p>Most of my family has worked in restaurants throughout their entire lives, and I (with high certainty) am the very first family member interested in deep-dives on software in general, and software development.</p>\n<p>Beyond programming, I attend broad game nights at a pizzeria (preferring strategy games), am a casual Trekkie, and consider myself somewhat astute in attaining as much online privacy as possible. In particular, I use privacy.sexy for debloating my Windows install and route all DNS requests to servers that support encrypted DNS over HTTPS.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I am a free-lance OSS contributor, and a graduate from a little-known private arts college known as Rollins College. I am rather fond of subjecting myself to testing bleeding-edge unstable software in the following ways:</p>\n<ul>\n<li>Dual-booting Windows Insider Canary and Fedora Rawhide (this is where do most of my development)</li>\n<li>Booting Fedora with the latest unstable kernel snapshots</li>\n<li>Compiling software from source using unstable toolchains, such as GCC snapshots for C/C++, CPython prereleases, and Rust nightly</li>\n<li>Using non-ASCII usernames so that I have to test software for full Unicode support (and many bug reports were filed and fixed on GH)</li>\n</ul>\n<p>Most of my family has worked in restaurants throughout their entire lives, and I (with high certainty) am the very first family member interested in deep-dives on software in general, and software development.</p>\n<p>Beyond programming, I attend broad game nights at a pizzeria (preferring strategy games), am a casual Trekkie, and consider myself somewhat astute in attaining as much online privacy as possible. In particular, I use privacy.sexy for debloating my Windows install and route all DNS requests to servers that support encrypted DNS over HTTPS.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "fair-ai-from-qa-how-testers-can-prevent-algorithmic-bias-manuel-alejandro-ledezma-falcon",
+      "title": "Fair AI from QA: How Testers Can Prevent Algorithmic Bias",
+      "title_raw": "Fair AI from QA: How Testers Can Prevent Algorithmic Bias",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Manuel Alejandro Ledezma Falcon",
+      "author_url": "https://www.linkedin.com/in/manuelledezma687",
+      "author_image_url": "https://sessionize.com/image/8d05-400o400o1-SNDtSRAP63F8dWwQzyi9wc.jpg",
+      "description": "<p>In this interactive talk, we will explore how artificial intelligence systems can be affected by hidden biases in data and models, impacting critical decisions such as hiring, loan approvals, or medical diagnoses. Attendees will learn what algorithmic bias is, how to detect it from a QA perspective, and practical strategies to mitigate it.</p>\n<p>The session includes a hands-on activity analyzing real datasets, helping participants identify discriminatory patterns and reflect on the ethical role of testers in the AI era.</p>\n<p>This talk is essential for QA professionals and developers who want to ensure technology is not only functional but also fair, safe, and transparent.</p>",
+      "author_bio": "<p>Manuel Ledezma, known in the tech community as Tester Testarudo, is a software testing and automation specialist with a strong commitment to delivering high-quality and reliable software. Over the past years, he has focused on mastering QA practices and automation strategies, working in agile and fast-paced environments.\nHe has contributed to leading companies such as Mediktor, AXA, Telecom Argentina, Newfold, and Mojo Marketplace, where he implemented scalable testing solutions that improved product stability and user experience.\nManuel currently serves as the QA Automation Lead at Mediktor in Barcelona, Spain, where he leads automation initiatives to ensure robust and impactful digital products.\nBeyond his professional work, Manuel empowers the QA community through Tester Testarudo, his educational project dedicated to helping newcomers learn testing in a clear, practical, and accessible way.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Manuel Ledezma, known in the tech community as Tester Testarudo, is a software testing and automation specialist with a strong commitment to delivering high-quality and reliable software. Over the past years, he has focused on mastering QA practices and automation strategies, working in agile and fast-paced environments.\nHe has contributed to leading companies such as Mediktor, AXA, Telecom Argentina, Newfold, and Mojo Marketplace, where he implemented scalable testing solutions that improved product stability and user experience.\nManuel currently serves as the QA Automation Lead at Mediktor in Barcelona, Spain, where he leads automation initiatives to ensure robust and impactful digital products.\nBeyond his professional work, Manuel empowers the QA community through Tester Testarudo, his educational project dedicated to helping newcomers learn testing in a clear, practical, and accessible way.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "an-introduction-to-regression-testing-claus-aichinger",
+      "title": "An Introduction to Regression Testing",
+      "title_raw": "An Introduction to Regression Testing",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Claus Aichinger",
+      "author_url": "https://www.linkedin.com/in/claus-aichinger-data-scientist/",
+      "author_image_url": "../images/claus_aichinger.jpeg",
+      "description": "<p>Have you ever been unsure about touching a bit of code out of fear you might break something?    Have you ever thought \"Ah, maybe I should fix this... BUT\" and refrained from following up on your instincts of improving the code base?  In this talk, we we focus on tools and strategies to implement regression tests. Through regression tests, we want to ensure that previously developed (and tested?) code still performs as expected after a change.   Agenda: 1. Conceptual overview and basics 2. A more realistic example 3. Selected strategies that I have kept reusing over the years 4. Costs vs. benefits 5. Q&amp;A and discussion   Familiarity with software testing in general and <code>pytest</code> in particular is assumed. Also, that you are interested in testing your code. ;)   Looking forward to our exchange!</p>",
+      "author_bio": "<p>I am a data scientist and software engineer working as a consultant and technical coach with 10+ years of experience in a variety of fields and industries.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>I am a data scientist and software engineer working as a consultant and technical coach with 10+ years of experience in a variety of fields and industries.</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "vibe-coding-with-aider-ralf-schlatterbeck",
+      "title": "Vibe coding with Aider?",
+      "title_raw": "Vibe coding with Aider?",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Ralf Schlatterbeck",
+      "author_url": "https://www.runtux.com",
+      "author_image_url": "../images/ralf_schlatterbeck.jpg",
+      "description": "<p>Everyone talks about AI and Vibe coding. As a software developer you ask\nyourself if AI-support can really be a help.</p>\n<p>\nI've recently done some experiments with Aider [1]. Aider is a tool\nwritten in Python which can use various AI APIs from different vendors.\nI've mainly experimented with Claude, using the native interface of\nAnthropic [2], but it can also use OpenRouter [3] to use it with other\nvendors.</p>\n<p>\nYou start Aider directly on a cloned git repo. It can automatically\nproduce commits which you can bring into the wanted form (e.g., with an\ninteractive rebase) if needed. But you can also discuss a new feature\nfrom an architectural viewpoint with Aider.</p>\n<p>\nSince I mainly develop open source software which anyway resides with\nMicrosoft at Github, the security problem, that you send your source\ncode to the AI, doesn't apply in my case.</p>\n<p>\nI'd like to tell you some anecdotes and experiences -- most of them\nquite positive -- in this talk.          \n          </p>",
+      "author_bio": "<p>see <https: runtux.com=\"\"></https:></p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>see <https: runtux.com=\"\"></https:></p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "calculating-industrial-revolution-mechanical-calculators-of-the-past-robert-matzinger",
+      "title": "Calculating Industrial Revolution - Mechanical Calculators of the Past",
+      "title_raw": "Calculating Industrial Revolution - Mechanical Calculators of the Past",
+      "type": "talk",
+      "track": "english",
+      "section": "Talks and workshops in English language",
+      "author": "Robert Matzinger",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/c0ec-400o400o1-Bt7pJ5H6pHJaspvu2tjDvE.jpg",
+      "description": "<p>Almost all the achievements of the Industrial Revolution — from the steam engine to the Ferris wheel, from the Semmering Railway to the Kaprun power plant, from the telegraph to the radio — were planned and created before the first pocket calculator.</p>\n<p>\nBut how were these designs and inventions calculated? How were complex calculations even carried out in practice before the first computer? From around 1900 through the 1970s, in addition to slide rules and calculating discs, a class of machines now almost forgotten was used for this purpose: mechanical calculating machines.</p>\n<p>\nInitially a rare sensation in the mechanization of mathematics, these “brains of steel” were used by the thousands well into the 1960s. Traces of them can still be found in today’s computer science.</p>\n<p>\nIn this lecture, I will not only trace the history of the development of mechanical calculators, but I will also bring several well-preserved calculating machines from 1920 to 1960 to the lecture and demonstrate live how our grandparents’ generations used them to calculate the technical developments of the modern era.\n</p>\n<p>\nAfter the presentation, you can try out some of the calculators for yourself.</p>",
+      "author_bio": "<p>Full time teacher at University of Applied Sciences Burgenland for &gt;20 years, IT professional. Background in theory, math and IT security, open source activist. Co-organizer of PyCon 2025 and 2026.</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Full time teacher at University of Applied Sciences Burgenland for &gt;20 years, IT professional. Background in theory, math and IT security, open source activist. Co-organizer of PyCon 2025 and 2026.</p></div>\n<ul class=\"session_speaker_videos\">\n<li><a href=\"(at PyCon yes, otherwise no).\">video link</a></li>\n<li><a href=\"E.g.: https://media.ccc.de/v/froscon2021-2694-vlizedlab_remote\">video link</a></li>\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": [
+        {
+          "label": "video link",
+          "url": "(at PyCon yes, otherwise no)."
+        },
+        {
+          "label": "video link",
+          "url": "E.g.: https://media.ccc.de/v/froscon2021-2694-vlizedlab_remote"
+        }
+      ]
+    },
+    {
+      "id": "ein-raspberry-pi-nice-hunderte-davon-crazy-wie-man-mit-raspberry-pis-kein-geld-v-franz-knipp",
+      "title": "Ein Raspberry Pi: Nice, Hunderte davon: Crazy – Wie man mit Raspberry Pis (kein) Geld verdient",
+      "title_raw": "Ein Raspberry Pi: Nice, Hunderte davon: Crazy – Wie man mit Raspberry Pis (kein) Geld verdient",
+      "type": "talk",
+      "track": "german",
+      "section": "Vorträge und Workshops in deutscher Sprache / Talks and workshops in German",
+      "author": "Franz Knipp",
+      "author_url": "https://www.linkedin.com/in/franzknipp/",
+      "author_image_url": "../images/franz_knipp.jpeg",
+      "description": "<p>Viele haben einen Raspberry Pi zum Experimentieren oder für kleinere Anwendungen zu Hause, was für die Umsetzung ein informatisches Interesse und Grundverständnis wie auch die Bereitschaft zum Basteln erfordert. Andererseits ist der Minicomputer eine mehr als ausreichende Hardware, um damit viele Anwendungen umzusetzen, wo diese Bedingungen aber nicht gegeben sind. Franz Knipp betreut eine Flotte von mehreren 100 Geräten, die in ganz Österreich im Einsatz sind, ohne dass er Einsatzorte je selbst gesehen hat. Im Rahmen des Vortrags geht auf die Erfahrungen ein, die er in mehreren Jahren gesammelt hat, beschreibt die Möglichkeiten der Aktualisierung aus der Ferne und die Bereitstellung für die Endkunden als Plug&amp;Play-Geräte.</p>",
+      "author_bio": "<p>Program Director for Software Engineering, University of Applied Sciences Burgenland</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Program Director for Software Engineering, University of Applied Sciences Burgenland</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "programmierer-weisheiten-denis-knauf",
+      "title": "Programmierer-Weisheiten",
+      "title_raw": "Programmierer-Weisheiten",
+      "type": "talk",
+      "track": "german",
+      "section": "Vorträge und Workshops in deutscher Sprache / Talks and workshops in German",
+      "author": "Denis Knauf",
+      "author_url": "",
+      "author_image_url": "https://sessionize.com/image/d0d9-400o400o1-4ZTfVmTwWbYymwaDCn7i8d.jpg",
+      "description": "<p>Was sollte ein Programmierer lernen um ein richtjig guter Programmierer zu werden?\nTotale Unabhängigkeit von Künstlicher Intelligenz! Ein Vortrag zum schmunzeln und nachdenken.</p>",
+      "author_bio": "<p>opensource Entwickler seit  25 Jahren, Hardware + Software, Layer1 bis Layer 7.\nMotto:  Fail often, fail fast, you can fix it.\nBevorzugte Programmiersprache: Ruby. Ich habe viel Spaß mit functional programming.\nAuf meinen Privat- und Firmenrechnern läuft NixOS, Debian and manchmal RHE</p>\n<p>Ihobbies: Podcast, Lock-Picking</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>opensource Entwickler seit  25 Jahren, Hardware + Software, Layer1 bis Layer 7.\nMotto:  Fail often, fail fast, you can fix it.\nBevorzugte Programmiersprache: Ruby. Ich habe viel Spaß mit functional programming.\nAuf meinen Privat- und Firmenrechnern läuft NixOS, Debian and manchmal RHE</p>\n<p>Ihobbies: Podcast, Lock-Picking</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "alpine-mobility-bahn-zum-berg-zuugle-martin-heppner-phadoongvithee",
+      "title": "Alpine Mobility: Bahn zum Berg & Zuugle",
+      "title_raw": "Alpine Mobility: Bahn zum Berg & Zuugle",
+      "type": "talk",
+      "track": "german",
+      "section": "Vorträge und Workshops in deutscher Sprache / Talks and workshops in German",
+      "author": "Martin Heppner-Phadoongvithee",
+      "author_url": "https://www.linkedin.com/in/martin-heppner-phadoongvithee/",
+      "author_image_url": "../images/martin_heppner.jpeg",
+      "description": "<p>Bahn zum Berg’ ist ein gemeinnütziger Verein aus Österreich, der die klimafreundliche Anreise in die Berge mit den Öffis fördert. Eine zentrale Herausforderung dabei: Der Datenraum aus unzähligen Tourenkombinationen und dynamischen Fahrplänen ist riesig. Um dir als Endanwender eine einfach nutzbare Informationsplattform bieten zu können, verarbeiten wir diese Komplexität im Hintergrund vollautomatisch. Dank der Unterstützung österreichischer Ministerien konnten wir in den letzten Jahren zwei starke Plattformen realisieren: www.bahn-zum-berg.at mit Fokus auf den deutschsprachigen Alpenraum und www.zuugle.at, eine multilinguale Suchmaschine für den gesamten Alpenbogen in fünf Sprachen.</p>",
+      "author_bio": "<p>IT &amp; Sustainability Expert</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>IT &amp; Sustainability Expert</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    },
+    {
+      "id": "philosophischer-mitmach-workshop-digitaler-humanismus-soll-k-i-alles-d-rfen-michael-wissgott",
+      "title": "Philosophischer Mitmach-Workshop: Digitaler Humanismus, soll K.I. alles dürfen?",
+      "title_raw": "Philosophischer Mitmach-Workshop: Digitaler Humanismus, soll K.I. alles dürfen?",
+      "type": "talk",
+      "track": "german",
+      "section": "Vorträge und Workshops in deutscher Sprache / Talks and workshops in German",
+      "author": "Michael Wissgott",
+      "author_url": "",
+      "author_image_url": "../images/michael_wissgott.jpeg",
+      "description": "<p>Ein philosophischer Mitmach-Workshop: Was bedeutet digitaler Humanismus und gibt es Grenzen des Erlaubten für künstliche Intelligenz.</p>",
+      "author_bio": "<p>Philosoph</p>",
+      "speaker_info_html": "<h2>Biography</h2>\n<div class=\"session_speaker_bio\"><p>Philosoph</p></div>\n<ul class=\"session_speaker_videos\">\n</ul>",
+      "detail_headings": [
+        "Session content",
+        "Biography"
+      ],
+      "speaker_videos": []
+    }
+  ]
+}
