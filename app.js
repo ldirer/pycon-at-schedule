@@ -1,8 +1,11 @@
 const SCHEDULE_URL = "data/schedule.json";
+const TALKS_URL = "data/talks.json";
 
 const state = {
   schedule: null,
   activeDay: null,
+  scheduleToTalkId: {},
+  talksById: {},
 };
 
 const el = {
@@ -31,9 +34,12 @@ async function init() {
   });
 
   try {
-    const res = await fetch(SCHEDULE_URL, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    state.schedule = await res.json();
+    const { schedule, talksData } = await loadScheduleAndTalks();
+    state.schedule = schedule;
+
+    const talks = Array.isArray(talksData?.talks) ? talksData.talks : [];
+    state.scheduleToTalkId = buildScheduleToTalkMapping(schedule.sessions, talks);
+    state.talksById = indexTalksById(talks);
   } catch (err) {
     el.scheduleRoot.innerHTML = `<p class="schedule__status">Couldn't load schedule: ${escapeHtml(
       err.message
@@ -47,6 +53,56 @@ async function init() {
   renderHeader(state.schedule.conference);
   renderDayTabs(days);
   render();
+}
+
+async function loadScheduleAndTalks() {
+  const schedule = await loadJson(SCHEDULE_URL);
+  const talksData = await loadJson(TALKS_URL).catch(() => ({ talks: [] }));
+  return { schedule, talksData };
+}
+
+async function loadJson(url) {
+  const res = await fetch(url, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`Failed to load ${url}: HTTP ${res.status}`);
+  return res.json();
+}
+
+function buildScheduleToTalkMapping(scheduleSessions, talks) {
+  const talkTitles = talks.map((talk) => ({
+    id: talk.id,
+    normalizedTitle: normalizeTitleForMatching(talk.title || ""),
+  }));
+
+  return scheduleSessions.reduce((acc, session) => {
+    const sessionTitle = normalizeTitleForMatching(session.title || "");
+    if (!sessionTitle || !talkTitles.length) return acc;
+
+    let bestTalkId = null;
+    let bestDistance = Number.POSITIVE_INFINITY;
+
+    talkTitles.forEach((talk) => {
+      const dist = levenshteinDistance(sessionTitle, talk.normalizedTitle);
+      if (dist < bestDistance) {
+        bestDistance = dist;
+        bestTalkId = talk.id;
+      }
+    });
+
+    if (bestTalkId) acc[session.id] = bestTalkId;
+    return acc;
+  }, {});
+}
+
+function indexTalksById(talks) {
+  return talks.reduce((acc, talk) => {
+    if (talk?.id) acc[talk.id] = talk;
+    return acc;
+  }, {});
+}
+
+function getMatchedTalkForSession(session) {
+  const talkId = state.scheduleToTalkId[session.id];
+  return talkId ? state.talksById[talkId] || null : null;
 }
 
 function renderHeader(conf) {
@@ -272,7 +328,15 @@ function openDialog(s) {
     .filter(Boolean)
     .join(" · ");
   el.dialogSpeakers.textContent = (s.speakers || []).join(", ");
-  el.dialogDescription.textContent = s.description || "No description available.";
+
+  const matchedTalk = getMatchedTalkForSession(s);
+  if (matchedTalk?.description) {
+    el.dialogDescription.innerHTML = matchedTalk.description;
+  } else if (s.description) {
+    el.dialogDescription.textContent = s.description;
+  } else {
+    el.dialogDescription.textContent = "No description available.";
+  }
 
   if (typeof el.dialog.showModal === "function") {
     el.dialog.showModal();
@@ -418,6 +482,43 @@ function getConferenceDays(schedule) {
 
 function unique(arr) {
   return Array.from(new Set(arr));
+}
+
+function normalizeTitleForMatching(title) {
+  return String(title || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function levenshteinDistance(a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+
+  const prev = new Array(b.length + 1);
+  const curr = new Array(b.length + 1);
+
+  for (let j = 0; j <= b.length; j++) prev[j] = j;
+
+  for (let i = 1; i <= a.length; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(
+        prev[j] + 1,
+        curr[j - 1] + 1,
+        prev[j - 1] + cost
+      );
+    }
+    for (let j = 0; j <= b.length; j++) prev[j] = curr[j];
+  }
+
+  return prev[b.length];
 }
 
 function normalizeTime(time) {
