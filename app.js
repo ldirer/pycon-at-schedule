@@ -37,10 +37,10 @@ async function init() {
 
   try {
     const { schedule, talksData } = await loadScheduleAndTalks();
-    state.schedule = schedule;
+    state.schedule = filterCanceledSessions(schedule);
 
     const talks = Array.isArray(talksData?.talks) ? talksData.talks : [];
-    const { mapping, matches } = buildScheduleToTalkMapping(schedule.sessions, talks);
+    const { mapping, matches } = buildScheduleToTalkMapping(state.schedule.sessions, talks);
     state.scheduleToTalkId = mapping;
     state.titleMatches = matches;
     state.talksById = indexTalksById(talks);
@@ -72,6 +72,13 @@ async function loadJson(url) {
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Failed to load ${url}: HTTP ${res.status}`);
   return res.json();
+}
+
+function filterCanceledSessions(schedule) {
+  return {
+    ...schedule,
+    sessions: (schedule.sessions || []).filter((s) => !s.canceled),
+  };
 }
 
 function buildScheduleToTalkMapping(scheduleSessions, talks) {
