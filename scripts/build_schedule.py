@@ -1,22 +1,24 @@
-"""Parse the PyCon Austria 2026 schedule TSV into schedule.json.
+"""Parse a PyCon Austria 2026 schedule TSV into schedule.json.
 
-Input:  data/schedule.tsv  (tab-separated, with quoted multi-line descriptions)
-Output: data/schedule.json
+Input TSV format: tab-separated with quoted multi-line descriptions.
 
 Usage:
     python scripts/build_schedule.py
+    python scripts/build_schedule.py data/20260418_232400_schedule.tsv
+    python scripts/build_schedule.py --input data/20260418_232400_schedule.tsv --output data/schedule.json
 """
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "data" / "schedule.tsv"
-DST = ROOT / "data" / "schedule.json"
+DEFAULT_SRC = ROOT / "data" / "schedule.tsv"
+DEFAULT_DST = ROOT / "data" / "schedule.json"
 
 DAY_TO_DATE = {
     "sunday": "2026-04-19",
@@ -69,8 +71,8 @@ def row_to_session(row: dict[str, str]) -> dict:
     }
 
 
-def build() -> dict:
-    with SRC.open(newline="", encoding="utf-8") as f:
+def build(src: Path) -> dict:
+    with src.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t", quotechar='"')
         sessions = [row_to_session(r) for r in reader if r.get("Day")]
 
@@ -87,10 +89,48 @@ def build() -> dict:
     }
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "input",
+        nargs="?",
+        help="Input TSV path (default: data/schedule.tsv)",
+    )
+    parser.add_argument(
+        "--input",
+        dest="input_opt",
+        help="Input TSV path (overrides positional input)",
+    )
+    parser.add_argument(
+        "--output",
+        default=str(DEFAULT_DST.relative_to(ROOT)),
+        help="Output JSON path (default: data/schedule.json)",
+    )
+    return parser.parse_args()
+
+
+def resolve_from_root(path_str: str) -> Path:
+    p = Path(path_str)
+    return p if p.is_absolute() else ROOT / p
+
+
 def main() -> None:
-    data = build()
-    DST.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(data['sessions'])} sessions to {DST.relative_to(ROOT)}")
+    args = parse_args()
+
+    input_arg = args.input_opt or args.input or str(DEFAULT_SRC.relative_to(ROOT))
+    src = resolve_from_root(input_arg)
+    dst = resolve_from_root(args.output)
+
+    if not src.exists():
+        raise SystemExit(f"Input file not found: {src}")
+
+    data = build(src)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    src_label = src.relative_to(ROOT) if src.is_relative_to(ROOT) else src
+    dst_label = dst.relative_to(ROOT) if dst.is_relative_to(ROOT) else dst
+    print(f"Read {src_label}; wrote {len(data['sessions'])} sessions to {dst_label}")
 
 
 if __name__ == "__main__":

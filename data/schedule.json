@@ -10,6 +10,26 @@
   },
   "sessions": [
     {
+      "id": "sunday-0930-hs1-conference-opening",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "09:30",
+      "endTime": "10:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "conference opening",
+      "description": "",
+      "speakers": [
+        "various speakers"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
+    },
+    {
       "id": "sunday-1000-e-hg-204-ai-driven-software-engineering-tdd-guard",
       "day": "sunday",
       "date": "2026-04-19",
@@ -18,7 +38,7 @@
       "room": "E.HG 204",
       "type": "workshop",
       "title": "AI-driven Software Engineering: TDD-Guardrails for the Age of Vibe Programming",
-      "description": "AI coding tools are transforming how engineering and data science teams work — but speed without a structure creates technical debt, regressions, and code that's hard to trust.\nThis workshop presents an alternative: a TDD-based guardrail framework for AI-assisted development that provides teams with a practical workflow to maintain code quality and reliability.\n\nParticipants will learn to write tests that define intent before prompting, use the red-green-refactor loop to guide and validate AI output, and catch errors early. You'll leave with a repeatable approach that makes AI a reliable collaborator — whether you're building data pipelines, APIs, or analytical models.",
+      "description": "AI coding tools are transforming how engineering and data science teams work — but speed without a structure creates technical debt, regressions, and code that's hard to trust.  This workshop presents an alternative: a TDD-based guardrail framework for AI-assisted development that provides teams with a practical workflow to maintain code quality and reliability.  Participants will learn to write tests that define intent before prompting, use the red-green-refactor loop to guide and validate AI output, and catch errors early. You'll leave with a repeatable approach that makes AI a reliable collaborator — whether you're building data pipelines, APIs, or analytical models.",
       "speakers": [
         "Stefan Trenkwalder"
       ],
@@ -30,15 +50,256 @@
       "imageFilename": "Stefan_Trenkwalder"
     },
     {
-      "id": "sunday-1400-e-hg-204-workshop-do-you-know-how-well-your-model",
+      "id": "sunday-1000-e-hg-207-code-organization-for-non-engineers",
       "day": "sunday",
       "date": "2026-04-19",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "room": "E.HG 204",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "room": "E.HG 207",
       "type": "workshop",
-      "title": "(Workshop) Do you know how well your model is doing? Evaluate your LLMs",
-      "description": "Prerequisites:\n\n- Have experience coding in Python (with Python installed in the local machine)\n- Basic understanding of machine learning and LLMs\n- Experience with Hugging Face Transformers preferred but not necessary\n- A Hugging Face Hub account (sign up for free)\n- A modern computer that can fine-turn small LLMs locally\n\nDescription:\n\nLarge Language Models (LLMs) are becoming central to modern applications, yet effectively evaluating their performance remains a significant challenge. How do you objectively compare different models, benchmark the impact of fine-tuning, or ensure your LLM responses adhere to safety guidelines (guard-railing)? This hands-on workshop addresses these critical questions.",
+      "title": "Code organization for non-engineers",
+      "description": "Have you ever opened a piece of code that seems to break just by looking at it—and noticed that your coworker wrote it? You don’t want to be *that* person. While tangled, hard-to-maintain code can emerge for many reasons, it should never be by accident.  In this hands-on workshop, you will learn how to make code easier to maintain and to evolve. We will gradually refactor a messy Python application into a well-organized, testable software. You will develop a mental model for organizing code effectively and understand how its structure impacts code quality. Ultimately, this will inform future decisions on design and code organization.  This workshop is specifically designed for people who don't identify as software engineers or don't perform typical software engineering tasks as part of their daily work. Participants should be familiar with basic Python programming and the concept of automated (unit) tests.",
+      "speakers": [
+        "Michael Seifert"
+      ],
+      "language": "English or German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Michael_Seifert"
+    },
+    {
+      "id": "sunday-1000-e-hg-209-workshop-learn-to-unlock-document-intell",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "room": "E.HG 209",
+      "type": "workshop",
+      "title": "Workshop: Learn to Unlock Document Intelligence with Open-Source AI",
+      "description": "Most organizational knowledge is still locked inside complex documents, making it difficult to extract and use the information effectively. Traditional tools often fail when working with real-world document formats, particularly PDFs. Tables lose their structure, figures get separated from captions, and multi-column layouts become unreadable text. These failures make it difficult to bring AI to document-heavy workflows.  This workshop will give you hands on experience with Docling, an open source Python library that takes a different approach, using deep learning models to parse documents the way humans read them. It preserves hierarchy, extracts structured data through a consistent API, and supports 15+ file formats out of the box. All of Docling is MIT-licensed, enabling fully local execution, allowing you to keep sensitive data on-premise while delivering low-latency processing and ingestion.  You'll be building a complete document intelligence pipeline from the ground up. We'll work through three progressive modules: first, converting documents and exploring Docling's enrichment features like table detection and image classification; second, chunking strategies that preserve document semantics for retrieval; and finally, building on all our other components using Docling, we will build a multimodal RAG pipeline with visual grounding, creating an application that can cite the exact page and location where it found an answer.  No prior experience with Docling is required. Colab notebooks with hosted model endpoints will be provided, so you can follow along with just a browser. Attendees who prefer local execution should have Jupyter Notebook installed and the ability to download models from Hugging Face. Bring your own documents to experiment with, or use the samples provided.",
+      "speakers": [
+        "Mingxuan Zhao",
+        "Carol Chen"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Mingxuan_Zhao"
+    },
+    {
+      "id": "sunday-1000-hs1-let-developers-write-python-not-yaml",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Let Developers Write Python, Not YAML",
+      "description": "GitOps promises simplicity, but for many Python developers, infrastructure still lives in a different world : full of YAML, cloud jargon, and tools they never signed up to learn. At scale, this disconnect slows teams down and turns platform engineers into full-time translators.  In this talk, I’ll show how building internal Python SDKs transformed that relationship.  Instead of asking developers to write YAML or understand Terraform, we exposed infrastructure and GitOps workflows as idiomatic Python libraries -with clear APIs, semantic versioning, type hints, and CI/CD integration. Developers could provision resources and deploy services using tools and patterns they already knew, while platform teams kept control, safety, and GitOps guarantees.  You’ll learn how internal SDKs can:  - Abstract infrastructure complexity without hiding important behavior - Feel like “normal Python code,” not infrastructure tooling - Integrate cleanly into GitHub Actions and existing developer workflows - Improve developer confidence, velocity, and overall experience  This talk is for Python developers who want better ways to interact with infrastructure - and for platform engineers who want GitOps adoption without forcing everyone to “learn YAML first.”  If you’ve ever heard “I don’t speak YAML”, this talk will show how Python SDKs can become the missing bridge between GitOps and real-world developer experience.",
+      "speakers": [
+        "Shahar Shporer"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "canceled",
+      "canceled": true,
+      "slideUrl": "",
+      "imageFilename": "Shahar_Shporer"
+    },
+    {
+      "id": "sunday-1000-hs1-vibe-coding-using-aider",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Vibe coding using Aider?",
+      "description": "tbd",
+      "speakers": [
+        "Ralf Schlatterbeck"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
+    },
+    {
+      "id": "sunday-1000-hs2-stop-guessing-finding-and-fixing-python-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Stop Guessing: Finding and Fixing Python Performance Bottlenecks",
+      "description": "Python applications often become slow for reasons that are not immediately obvious. Developers frequently rely on intuition or trial-and-error when optimizing performance, which can lead to wasted effort and ineffective solutions.  In this talk, we will explore a practical workflow for identifying and fixing real performance bottlenecks in Python services. Using a live demo of a deliberately inefficient recommendation API built with Python and FastAPI, we will investigate common performance problems such as inefficient algorithms, excessive database queries, blocking I/O, and missing caching strategies.  Through profiling tools such as cProfile and py-spy, we will identify the true bottlenecks and apply targeted optimizations including algorithm improvements, query batching, caching with Redis, and asynchronous concurrency.  By the end of the session, attendees will learn a systematic approach to diagnosing and improving the performance of Python applications, moving from guesswork to data-driven optimization.",
+      "speakers": [
+        "Tabish Mazhari"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Tabish_Mazhari"
+    },
+    {
+      "id": "sunday-1000-hs3-how-small-can-smart-be-visual-text-reaso",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS3",
+      "type": "talk",
+      "title": "How Small Can Smart Be? Visual Text Reasoning with LLMs Using Python",
+      "description": "Artisitc image inference, especially comic books, are one of the hardest multimodal domains. They mix stylized art, fragmented text, visual storytelling, and weakly aligned captions. In my research, I evaluated small language models and vision language models on large comic datasets such as COMICS and Manga109, using retrieval and grounding tasks inspired by the LoCU framework.  This talk focuses on how to implement this entire research pipeline in Python: - Data loading and preprocessing for multimodal datasets - Panel and speech bubble alignment strategies - Feature extraction with small vision and text encoders - Vector search using local databases like Chroma or FAISS - Evaluation with Recall@K, nDCG@K, and string similarity metrics - Error analysis to understand where small models fail and why  Instead of treating multimodal AI as black box magic, we will treat it as an engineering problem. The audience will leave with concrete Python patterns for building scalable, testable multimodal experiments, and a realistic view of what small models can and cannot do in visual reasoning tasks.",
+      "speakers": [
+        "Syed Ansab Waqar Gillani"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Syed_Ansab_Waqar_Gillani"
+    },
+    {
+      "id": "sunday-1000-hs4-ein-raspberry-pi-nice-hunderte-davon-cra",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS4",
+      "type": "talk",
+      "title": "Ein Raspberry Pi: Nice, Hunderte davon: Crazy – Wie man mit Raspberry Pis (kein) Geld verdient",
+      "description": "Viele haben einen Raspberry Pi zum Experimentieren oder für kleinere Anwendungen zu Hause, was für die Umsetzung ein informatisches Interesse und Grundverständnis wie auch die Bereitschaft zum Basteln erfordert. Andererseits ist der Minicomputer eine mehr als ausreichende Hardware, um damit viele Anwendungen umzusetzen, wo diese Bedingungen aber nicht gegeben sind. Franz Knipp betreut eine Flotte von mehreren 100 Geräten, die in ganz Österreich im Einsatz sind, ohne dass er Einsatzorte je selbst gesehen hat. Im Rahmen des Vortrags geht auf die Erfahrungen ein, die er in mehreren Jahren gesammelt hat, beschreibt die Möglichkeiten der Aktualisierung aus der Ferne und die Bereitstellung für die Endkunden als Plug&Play-Geräte.",
+      "speakers": [
+        "Franz Knipp"
+      ],
+      "language": "German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "#REF!"
+    },
+    {
+      "id": "sunday-1000-hs5-running-every-street-in-paris-with-pytho",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Running Every Street in Paris with Python and PostGIS",
+      "description": "In 2006, Tom Murphy started a project of running every street in Pittsburgh (over 1,500 miles in total). He finished the project in 2022, covering 3661 miles in 269 runs. In this talk, we'll look at how we can do the same in our cities and track our progress, with Paris as an example.  We'll explore how to extract street networks from OpenStreetMap, process GPS tracking data from running activities, and build a system to track progress toward covering every street in a city. We'll dive into challenges like handling GPS inaccuracies, matching runs to streets, and maintaining a database of covered streets.  This talk is aimed at Python developers interested in working with geospatial data using Python libraries like `osmnx`, `shapely`, `geopandas`, and storing it for efficient querying in Postgres and PostGIS.",
+      "speakers": [
+        "Vinayak Mehta"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Vinayak_Mehta"
+    },
+    {
+      "id": "sunday-1100-hs1-how-i-built-a-rag-powered-ai-assistant-w",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "How I Built a RAG-Powered AI Assistant With Python",
+      "description": "Most of my readers ask similar questions about data science careers, AI, and breaking into the industry without a CS degree, but the answers are usually buried across 50+ of my substack blog posts (https://aiweekender.substack.com). So I built a Python-based AI assistant (https://assistant.ds-claudia.com) that can answer their questions directly, using my past writing as the knowledge base.  In this talk, I’ll walk through how I used Supabase, OpenAI, and Streamlit to build a lightweight retrieval-augmented generation (RAG) system that: 1. Retrieves relevant posts,  2. Generates personalized responses, 3. Helps readers discover content they would have missed.   This talk is a practical, end-to-end walkthrough of building a RAG AI assistant on top of existing content. I’ll cover:  - Parsing real-world text from RSS feeds and HTML - Converting posts into embeddings for semantic search - Storing and querying embeddings with Supabase and pgvector - Generating personalized answers with OpenAI LLMs - Streaming responses in Streamlit, including source citations - Logging queries to understand reader needs and improve the system  Attendees will leave with a clear picture of how to build a RAG-based assistant for their own blogs, documentation, or newsletters. This is a practical, end-to-end look at turning messy real-world text into a useful assistant that people actually rely on, all without fine-tuning or heavy infrastructure.",
+      "speakers": [
+        "Claudia Ng"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Claudia_Ng"
+    },
+    {
+      "id": "sunday-1100-hs2-what-did-my-agent-do-observability-and-a",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "What Did My Agent Do? Observability and Accountability for AI Agents",
+      "description": "Generative AI systems and AI agents behave very differently from traditional software. Their non-deterministic nature and ability to act across multiple steps make debugging and accountability harder, which increases the need for better observability. Beyond latency and error rates, teams need insight into prompts, responses, and agent actions to understand what an agent did and why.  In this session, I will show how to instrument AI agents using OpenTelemetry and the GenAI Semantic Conventions, with OpenLIT as the native SDK. Through a live demo, I will demonstrate how to capture agent interactions alongside performance telemetry using Prometheus and Jaeger, while keeping sensitive data separate to reduce risk and cost.  I will also show how telemetry can support ongoing evaluations, helping teams reason about agent behavior over time without logging everything. This talk is for engineers building AI agents who want to improve trust and accountability without oversharing data.",
+      "speakers": [
+        "Ishan Jain"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Ishan_Jain"
+    },
+    {
+      "id": "sunday-1100-hs3-multi-lingual-advanced-search-in-django-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS3",
+      "type": "talk",
+      "title": "Multi-lingual advanced search in Django without Cloud",
+      "description": "",
+      "speakers": [
+        "Thomas Aglassinger"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "#REF!"
+    },
+    {
+      "id": "sunday-1100-hs4-alpine-mobility-bahn-zum-berg-zuugle",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS4",
+      "type": "talk",
+      "title": "Alpine Mobility: Bahn zum Berg & Zuugle",
+      "description": "Bahn zum Berg’ ist ein gemeinnütziger Verein aus Österreich, der die klimafreundliche Anreise in die Berge mit den Öffis fördert. Eine zentrale Herausforderung dabei: Der Datenraum aus unzähligen Tourenkombinationen und dynamischen Fahrplänen ist riesig. Um dir als Endanwender eine einfach nutzbare Informationsplattform bieten zu können, verarbeiten wir diese Komplexität im Hintergrund vollautomatisch. Dank der Unterstützung österreichischer Ministerien konnten wir in den letzten Jahren zwei starke Plattformen realisieren: www.bahn-zum-berg.at mit Fokus auf den deutschsprachigen Alpenraum und www.zuugle.at, eine multilinguale Suchmaschine für den gesamten Alpenbogen in fünf Sprachen.",
+      "speakers": [
+        "Martin Heppner"
+      ],
+      "language": "German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
+    },
+    {
+      "id": "sunday-1100-hs5-are-we-free-threaded-ready-looking-at-wh",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Are we free-threaded ready? Looking at where free-threaded Python fails",
+      "description": "Free-threaded Python aims to significantly improve performance, allowing multiple native threads to execute Python bytecode concurrently. In this talk, we will explore the current state of Python's free-threading initiative and assess its practical readiness for widespread adoption.   We begin by exploring the background of free-threaded Python, summarising its origins, current status, and the technical differences distinguishing it from standard Python implementations. A key focus will be examining the compatibility landscape, specifically investigating how many popular third-party libraries are currently prepared for free-threading. We will distinguish between generic pure Python wheels and explicitly free-threaded wheels and I’ll explain how the community can contribute to compatibility verification.   We then critically discuss free-threaded Python's necessity, weighing the disadvantage of increased thread safety concerns (and verification methods) against the promised advantage of speed (including multithreaded profiling).Will free-threaded Python become a critical future direction for the language? How can you contribute? If and how specific projects can immediately benefit from it? Let’s find out together!  Outline:  - Background about free-threaded Python  - Where it started and where are we now  - What are the differences between standard and free-threaded Python - Looking at how many popular libraries are free-threaded ready  - free-threaded wheels vs generic pure Python wheel  - Testing the library built for free-threading compatibility and how you can help - Do we really need free-threaded Python?  - Disadvantage: thread safety - how to verify thread safety of a library  - Advantage: speed up - how to perform multithreaded profiling - Conclusion  - Free-threaded Python is the future, and how you can contribute  - Check if you can take advantage of it and equip yourself Join the discourse and voice out your thoughts",
       "speakers": [
         "Cheuk Ting Ho"
       ],
@@ -50,6 +311,246 @@
       "imageFilename": "Cheuk_Ting_Ho"
     },
     {
+      "id": "sunday-1400-e-hg-204-workshop-do-you-know-how-well-your-model",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "room": "E.HG 204",
+      "type": "workshop",
+      "title": "(Workshop) Do you know how well your model is doing? Evaluate your LLMs",
+      "description": "Prerequisites:  - Have experience coding in Python (with Python installed in the local machine) - Basic understanding of machine learning and LLMs - Experience with Hugging Face Transformers preferred but not necessary - A Hugging Face Hub account (sign up for free) - A modern computer that can fine-turn small LLMs locally  Description:  Large Language Models (LLMs) are becoming central to modern applications, yet effectively evaluating their performance remains a significant challenge. How do you objectively compare different models, benchmark the impact of fine-tuning, or ensure your LLM responses adhere to safety guidelines (guard-railing)? This hands-on workshop addresses these critical questions.  We will begin with an essential revision of the Hugging Face Transformers library, covering basic LLM inference and fine-tuning. The core of the workshop will introduce and provide deep practice with Lighteval, an efficient and powerful LLM evaluation framework. Participants will learn how to leverage Lighteval to compare various LLMs available on the Hugging Face Hub using a range of pre-built tasks and metrics.  Finally, we will delve into advanced evaluation techniques, focusing on creating custom tasks and metrics tailored to unique, real-world application requirements. Participants will learn how to prepare custom datasets on the Hugging Face Hub and integrate them into Lighteval for precise, domain-specific evaluation. By the end of this workshop, you will possess the practical skills to rigorously evaluate, benchmark, and fine-tune your LLMs with confidence.  Outline:  Part 1  - Presentation: The importance of evaluation of LLMs  - Compare performance of LLM for specific tasks  - Benchmark the fine-tuning performance  - Rail guard the LLM responses - Coding exercise: Introduction and revision of Hugging Face Transformers  - Revision of using Transformers for LLM influence  - Fine tuning a LLM with transformers  Part 2  - Presentation: Introduction of Lighteval  - What is Lighteval and what can it do  - Different tasks and metrics available in Lighteval - Coding exercise: Using Lighteval to compare LLMs  - Familiar the use of Lighteval  - Compare two LLMs on Hugging Face Hub  - Experiment with different tasks and metrics  Part 3  - Presentation: Advance use of Lighteval  - Introduction of custom tasks and metrics  - What is needed for creating custom tasks and metrics  - How to put custom tasks and metrics together - Coding exercise: Practice with custom tasks and metrics  - Uploading datasets to Hugging Face Hub  - Creating custom tasks and metrics  - Using custom tasks and metrics to compare LLMs",
+      "speakers": [
+        "Cheuk Ting Ho"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Cheuk_Ting_Ho"
+    },
+    {
+      "id": "sunday-1400-e-hg-207-pre-commit-to-better-code",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "room": "E.HG 207",
+      "type": "workshop",
+      "title": "(Pre-)Commit to Better Code",
+      "description": "# Abstract Maintaining code quality can be challenging, no matter the size of your project or number of contributors. Different team members may have different opinions on code styling and preferences for code structure, while solo contributors might find themselves spending a considerable amount of time making sure the code conforms to accepted conventions. However, manually inspecting and fixing issues in files is both tedious and error-prone. As such, computers are much more suited to this task than humans. Pre-commit hooks are a great way to have a computer handle this for you.  Pre-commit hooks are code checks that run whenever you attempt to commit your changes with Git. They can detect and, in some cases, automatically correct code-quality issues *before* they make it to your codebase. In this tutorial, you will learn how to install and configure pre-commit hooks for your repository to ensure that only code that passes your checks makes it into your codebase. We will also explore how to build custom pre-commit hooks for novel use cases.  # Description ## Section 1: Setting Up Pre-Commit Hooks  After laying the foundation with an overview of Git hooks, we will discuss the use cases for hooks at the pre-commit stage (called pre-commit hooks), as well as a high-level explanation of how to set them up without any external tools. We will then introduce the `pre-commit` tool and disambiguate it from pre-commit hooks, before commencing a detailed walkthrough of the pre-commit hooks setup process when using `pre-commit`.  ## Section 2: Creating a Pre-Commit Hook While there are a lot of pre-made hooks in existence, sometimes they aren't sufficient for the task at hand. In this section, we will walk step-by-step through the process of creating and distributing a custom hook. After wiring everything up, we will discuss best practices for sharing, documenting, testing, and maintaining the codebase.  # Audience This tutorial is for anyone with intermediate knowledge of Python and basic knowledge of `git`. You must be comfortable writing Python code and working with `git` on the command line and using basic commands (`git clone`, `git add`, `git status`, `git commit`, `git push`). Attendees should have Python and `git` installed on their computers, as well as a text editor for writing code (e.g., Visual Studio Code).  # Prerequisites  - Comfort writing Python code and working with Git on the command line using basic commands (e.g., clone, status, diff, add, commit, and push) - Have Python and Git installed on your computers, as well as a text editor for writing code (e.g., Visual Studio Code)",
+      "speakers": [
+        "Stefanie Molin"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Stefanie_Molin"
+    },
+    {
+      "id": "sunday-1400-hs1-from-imports-to-innovation-the-dynamics-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "From Imports to Innovation: The Dynamics Behind Python’s Evolution",
+      "description": "What can millions of real Python code snippets tell us about how the language evolves? And why do the patterns we observe in Python look uncannily similar to patterns found in patents and scientific research — systems that seem to have nothing to do with software?  This talk begins with a practical challenge: extracting structured signals from the chaotic world of Stack Overflow. We built a pipeline that scanned posts for Python code blocks, identified import statements, normalised package names, filtered noise, and reconstructed a time-ordered stream of collections, each composed of the packages used in that snippet. From this, we derived two simple indicators of innovation: \u0001•\u0001new packages appearing for the first time, and \u0001•\u0001new package pairs appearing together for the first time.  Once these signals are extracted, a surprisingly coherent picture emerges. The Python ecosystem introduces brand-new packages less and less frequently over time, yet continues to generate new combinations of packages at a remarkably steady pace. Developers reuse familiar tools, but they also explore the space of possible pairings with a precision that looks — statistically — almost mechanical.  To understand just how surprising this is, we compare Python’s behavior with two very different worlds. The first is the US patent system, where technology codes assigned to inventions can be analyzed the same way we analyze Python imports. A classic 2015 study by Youn et al. showed that while new technology codes appear at a slowing rate, pairs of codes accumulate almost linearly over two centuries of innovation. The second is a corpus of physics publications, which behaves in much the same way when one treats subject classification codes as ingredients.  Across all three domains — software, science, and invention — the same pattern holds. Distinct components grow sublinearly (Heaps’ law), while distinct combinations grow close to linearly. This parallel is not only unexpected; it suggests that these systems share a deeper underlying mechanism, bound not by specific domain-specific details but by the very foundational patterns of human innovation.  In the second half of the talk, we introduce the concept of \"adjacent possible\" and demonstrate its modelling via a simple stochastic model: a Pólya urn extended with the adjacent possible. The model assumes only two forces: reinforcement of frequently used components and occasional introduction of new ones. Despite its simplicity, it reproduces the empirical behavior of all three systems without requiring domain-specific rules. It shows how a stable exploration–exploitation balance can arise naturally, leading to predictable rates of combinatorial novelty even in rapidly changing ecosystems.  The framework offers a new way to think about the ecosystem: not as a chaotic swarm of libraries, but as an innovation system governed by universal constraints. It sheds light on why certain libraries become dominant, why the combination space grows the way it does, and how the community collectively expands the “adjacent possible” of the language.  Attendees of the talk will learn: \u0001•\u0001how to extract meaningful innovation signals from real Python code at scale, \u0001•\u0001how to measure novelty and combinatorial creativity in software ecosystems, \u0001•\u0001why Python’s long-term evolution aligns with empirical laws from patents and science, \u0001•\u0001and how simple generative models can help reason about complex developer behavior.  The talk connects engineering, data analysis, and innovation theory to reveal an unexpected insight: Python grows the way many creative systems grow — slowly at the edges, rapidly in combinations, and always under the quiet guidance of reinforcement and the adjacent possible.",
+      "speakers": [
+        "Gábor Mészáros"
+      ],
+      "language": "English or German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Gábor_Mészáros"
+    },
+    {
+      "id": "sunday-1400-hs2-making-sense-of-concurrency-in-python-3-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Making sense of concurrency in Python 3.14",
+      "description": "Async/await, threads, subinterpreters, and multiprocessing—Do you know when to use which?  Python 3.14 made subinterpreters available in the standard library and marked free-threaded Python as officially supported. This gives us a wider choice of concurrency mechanisms—but also more tradeoffs to consider.  This talk develops a mental model in which the differences between Python’s concurrency mechanisms become apparent. Attendees will learn how to reason about async/await, threads, subinterpreters, and multiprocessing. They will be able to assess which approach to pick for a given problem, and how to combine concurrency models effectively in Python applications.",
+      "speakers": [
+        "Michael Seifert"
+      ],
+      "language": "English or German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Michael_Seifert"
+    },
+    {
+      "id": "sunday-1400-hs3-from-marketboard-to-mcp-building-an-llm-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS3",
+      "type": "talk",
+      "title": "From Marketboard to MCP: Building an LLM-Powered Advisor for Final Fantasy 14 with Python",
+      "description": "What happens when you take a niche gaming problem, figuring out when and how to sell items on Final Fantasy XIV's player-driven marketplace, and solve it with an LLM-powered Python backend? You end up learning a lot about what it actually takes to make AI advice useful. In this talk, I'll walk through the full journey of building a marketboard advisor: from syncing in-game inventory and aggregating price trends, to structuring that data in a way an LLM can reason about, to exposing it through MCP tools and a ChatGPT integration on my website. The game is just the domain, the lessons around designing for LLM consumption, building MCP tools, and knowing where AI adds value (and where it doesn't) apply to any advisory system you might build in Python.",
+      "speakers": [
+        "Brandon Gier"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Brandon_Gier"
+    },
+    {
+      "id": "sunday-1400-hs4-programmierer-weisheiten",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS4",
+      "type": "talk",
+      "title": "Programmierer-Weisheiten",
+      "description": "",
+      "speakers": [
+        "Denis Knauf"
+      ],
+      "language": "German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
+    },
+    {
+      "id": "sunday-1400-hs5-how-python-powers-data-extraction-scrapy",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "How Python Powers Data Extraction: Scrapy in Production",
+      "description": "Everyone's written a scraper but fewer people have kept one running reliably for months. This talk bridges that gap, taking you from \"it works on my machine\" to a production data extraction system built with Scrapy, Python's most battle-tested scraping framework.  We'll cover four parts of running Scrapy in production: scheduling your spiders reliably, monitoring for failures before your data pipeline goes silent, scaling up, and wiring your output into a real data pipeline.   If you've used Python and are curious how serious data extraction systems are built, this talk is for you.  What attendees will take away:  A mental model for thinking about scrapers as production services  An overview of scheduling options (cron, Scrapyd, cloud schedulers)  How to detect silent failures and slow spiders before they become a problem  Where scraped data goes next — storage, pipelines, and downstream use, including powering RAG and AI systems",
+      "speakers": [
+        "John Rooney"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "John_Rooney"
+    },
+    {
+      "id": "sunday-1500-hs1-feature-selection-what-your-model-can-t-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Feature Selection: What your model can't tell you",
+      "description": "There are several algorithms for selecting features. However, they rely on the data and the correlations between features. Is there a place for the saying \"correlation is not causation?\"  This talk focuses on exactly that. Including what economists call \"bad controls\" can mask effects and create spurious correlations, ending in reduced model performance. Using an entertaining mix of anecdotes and simulated data, I explain how feature selection can benefit from the causal inference literature. The colorful cast of characters includes selection bias, confounders, and Simpson's Paradox.  While widely applicable, this talk is not overwhelmingly technical. The target audience is anyone who uses data, but the math involved is limited to linear regression. In fact, I hope that anyone, regardless of background, can enjoy the nuances of data interactions with me.",
+      "speakers": [
+        "James Donahue"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "James_Donahue"
+    },
+    {
+      "id": "sunday-1500-hs2-schema-first-ai-type-safe-llm-outputs-wi",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Schema-First AI: Type-Safe LLM Outputs with PydanticAI (Tested in CI, Offline with Ollama)",
+      "description": "On Friday, your team ships an “LLM-powered” feature. On Monday, the dashboard looks… haunted.  One row says years_experience = “5–7”, another says “about five-ish”, a user’s email is “john at gmail dot com”, and your database is now storing what can only be described as creative writing. Nothing is “down” — but your data is drifting, your analytics are lying, and your code is becoming a scrapbook of quick fixes. If you store “5–7” in an integer column, your pipeline breaks—or worse, silently coerces and corrupts your metrics.  This is the quiet failure mode of AI features: LLMs return plausible text, not guaranteed data. And many projects accidentally return to the old “stringly-typed” era: prompt → paragraph → regex → json.loads() → try/except → more try/except. It works in demos… until real-world inputs arrive: ranges (“5–7”), multiple numbers (“worked on 3 projects in 2 teams”), mixed languages, inconsistent keys, wrong types, invalid formats, and outputs that change shape between runs.  Python teams spent years building trust through schemas, validation, and tests. We define request/response contracts for every API. We validate before writing to the database. We ship with test suites and Continuous Integration (CI). But when the LLM enters the stack, many teams throw that discipline away and “hope the output behaves.”  This talk brings it back with a practical approach: Schema-First AI — treat LLM output like an API response with a non-negotiable contract.  What you’ll see (and copy into your own projects)  We’ll build a workflow that turns messy text into reliable, typed objects:  Define the contract first using a Pydantic model (types + constraints)   Example: years_experience is an integer (0–50), email must be a valid email, skills must be a list, not prose.  Enforce structured output using PydanticAI   The model must return output that matches your schema. If it doesn’t, validation fails (and we handle it cleanly).  Validate before storage   Bad-but-plausible outputs get caught before they corrupt your database and metrics.  Test without calling the model (fast, $0, CI-friendly)   Unit-test business logic using typed Pydantic objects (no model calls), add contract tests for schema guarantees, and use   Hypothesis (property-based testing) to generate hundreds/thousands of edge cases in seconds.  Live demo  Unstructured output → typed result → validation catching errors → a test suite running in under a second → a small production-style pipeline + dashboard that makes the reliability visible.  The full demo runs offline using Ollama (no API keys), and the same architecture works with hosted providers too.  Why this is useful (beyond the demo)  You’ll reduce brittle parsing code dramatically You’ll prevent silent data corruption (often worse than a crash) You’ll get a repeatable pattern for extraction, classification, routing, and “AI-as-a-service” internal tools You’ll have a testing strategy that lets AI code ship with confidence Takeaways  A repeatable Schema-First blueprint for extraction/classification workflows A CI-ready testing strategy for AI features (including $0 model-call tests) Practical patterns for validation, retries, and schema evolution A reference repo + checklist you can apply to your next LLM feature Audience: Beginner → Intermediate Python developers. No AI background required.",
+      "speakers": [
+        "Vyom Gupta"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Vyom_Gupta"
+    },
+    {
+      "id": "sunday-1500-hs3-python-decorators-from-syntactic-sugar-t",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "15:00",
+      "endTime": "16;00",
+      "room": "HS3",
+      "type": "talk",
+      "title": "Python Decorators: From Syntactic Sugar to Production-Grade Design Tool",
+      "description": "Decorators are one of Python’s most powerful and often misunderstood features. Beyond simple logging examples, decorators enable clean separation of concerns, cross-cutting behavior injection, and framework-level extensibility. In this talk, we will build a precise mental model of how decorators work at runtime. We will move from basic function decorators to parameterized decorators, class decorators, and decorator factories. Real production use cases will be demonstrated. We will conclude with an overview of the best practices to consider when developing new decorators.",
+      "speakers": [
+        "Haim Michael"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Haim_Michael"
+    },
+    {
+      "id": "sunday-1500-hs4-philosophischer-mitmach-workshop-digital",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "room": "HS4",
+      "type": "workshop",
+      "title": "Philosophischer Mitmach-Workshop: Digitaler Humanismus, soll K.I. alles dürfen?",
+      "description": "",
+      "speakers": [
+        "Michael Wissgott"
+      ],
+      "language": "German",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
+    },
+    {
+      "id": "sunday-1500-hs5-fair-ai-from-qa-how-testers-can-prevent-",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Fair AI from QA: How Testers Can Prevent Algorithmic Bias",
+      "description": "In this interactive talk, we will explore how artificial intelligence systems can be affected by hidden biases in data and models, impacting critical decisions such as hiring, loan approvals, or medical diagnoses. Attendees will learn what algorithmic bias is, how to detect it from a QA perspective, and practical strategies to mitigate it.  The session includes a hands-on activity analyzing real datasets, helping participants identify discriminatory patterns and reflect on the ethical role of testers in the AI era.  This talk is essential for QA professionals and developers who want to ensure technology is not only functional but also fair, safe, and transparent.",
+      "speakers": [
+        "Manuel Alejandro Ledezma Falcon"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Manuel_Alejandro_Ledezma_Falcon"
+    },
+    {
       "id": "sunday-1600-e-hg-204-data-validation-with-pointblank",
       "day": "sunday",
       "date": "2026-04-19",
@@ -58,7 +559,7 @@
       "room": "E.HG 204",
       "type": "workshop",
       "title": "Data validation with pointblank",
-      "description": "Data validation comprises a crucial step in each data-centric project. This part enables the data scientist to understand which aspects to focus on during data cleaning. Furthermore, building and executing machine learning models as well as performing subsequent data analysis on clean data substantially improves the results.",
+      "description": "Data validation comprises a crucial step in each data-centric project. This part enables the data scientist to understand which aspects to focus on during data cleaning. Furthermore, building and executing machine learning models as well as performing subsequent data analysis on clean data substantially improves the results.   This workshop will provide some guidance to the participants to run data validation in Python with pointblank. Essential validation patterns are demonstrated while teaching best practices with regards to coding, configuration, environments and versioning in mind. Data validation is demonstrated for both notebook environments and CLI applications, for instance when workflow management tools are used for production-ready code. The participants should gain experience with data validation and feel confident integrating this step in their daily data analysis.   This workshop is addressed to intermediate Python developers and data scientists. A general understanding of Python fundamentals is expected. A general understanding of data science workflows, e.g. as outlined by Hadley Wickham would be helpful. Version control, virtual environments, workflow management and a general understanding of data frame manipulation is beneficial as well.",
       "speakers": [
         "Johannes Werner"
       ],
@@ -68,6 +569,507 @@
       "canceled": false,
       "slideUrl": "",
       "imageFilename": "Johannes_Werner"
+    },
+    {
+      "id": "sunday-1600-hs1-teaching-python-but-also-a-lot-more-it-s",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Teaching Python (but also a lot more IT stuff) in a Script-Generated Lab in the Cloud",
+      "description": "Providing students with the infrastructure for teaching IT related stuff like programming, operating systems, networks, etc. was always a challenge for teachers.  At the Unviversity of Applied Sciences Burgenland we do this with a self-designed system called \"Vlizedlab\", which allows to provide a virtual machine to every student that is defined by a script and has a desktop that the students can access via a web browser.  The script definition of the student machine is modular, such that we can compose custom-made machines for quite a lot of sorts of teaching.  And the web interface allows the teacher to view student machines at any time, to help along or find errors. Anyone having tought IT will know how important this \"glimpse over the shoulder\" is when teaching practical IT.  Still, such a lab can be generated by some script magic in about 20 minutes.  And clearly, \"Vlizedlab\" is open source software and does not rely on a particular cloud provider.  Vlizedlab was used for the first time for teaching in particular Python for beginners with different teachers and student groups in 2025. But it has been used for years for teaching various subjects including programming, algorithms, operating systems, basic networking, web development, databases and even blockchain, containers and orchestration.  In this talk we will present an insight on design goals and usage of the Vlizedlab from the point of view of an operator and of a teacher, we will report on particular experience with it when teaching Python (and other stuff), and will provide a life demo on how to generate a lab for a group of students with ease.",
+      "speakers": [
+        "Robert Matzinger"
+      ],
+      "language": "English or German",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Robert_Matzinger"
+    },
+    {
+      "id": "sunday-1600-hs2-how-to-automate-tests-for-llms-that-neve",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "How to Automate Tests for LLMs That Never Answer the Same Way Twice",
+      "description": "Large Language Models rarely give the same answer twice, even when the meaning is exactly the same. In our case, this became a real production problem: automated tests kept failing, not because the model was wrong, but because it expressed the same idea using different words, synonyms, or sentence structures. Traditional assertions are built for deterministic systems. LLMs are not. The session focuses on practical lessons learned from real-world usage, how to test LLMs that paraphrase by design, and how semantic evaluation can turn flaky tests into reliable signals.",
+      "speakers": [
+        "Manuel Alejandro Ledezma Falcon"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Manuel_Alejandro_Ledezma_Falcon"
+    },
+    {
+      "id": "sunday-1600-hs3-logging-module-adventures",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "room": "HS3",
+      "type": "talk",
+      "title": "Logging module adventures",
+      "description": "Logging module seems a little bit odd. If you would like to understand its logic - join me on my journey into the depths of Python logging. I will share learnings from my own adventure, driven by curiosity and need to add context to long running tasks' logs.",
+      "speakers": [
+        "Konrad Gawda"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Konrad_Gawda"
+    },
+    {
+      "id": "sunday-1600-hs5-the-flicker-effect-why-your-model-audits",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "The \"Flicker Effect\": Why Your Model Audits Are Lying to You",
+      "description": "Have you ever estimated feature importance in scikit-learn, changed the random_state, and watched your \"Top 5\" features swap places? This is the \"Flicker Effect.\"  For most Python developers, \"shuffling\" data (Permutation Importance) is the industry standard for explaining models. But in high-stakes environments like banking or healthcare, stochastic results are a liability. If you can’t get the same answer twice, can you really trust the audit?  In this talk, we move beyond \"random shuffling\" toward Deterministic Model Auditing. We will explore:  - A Beginner-Friendly Introduction to the Math of Stability: How a \"single optimal permutation\" makes model explanations 100% reproducible and 30x faster. - The Proxy Problem: How models \"sneak in\" biased data (like gender or race) through proxy variables, and how to detect this \"signal leakage\" using Systemic Variable Importance (SVI). - Forensic-Grade AI: How to move from \"black-box\" guesses to audits that hold up under regulatory scrutiny.  Whether you are a data scientist building models or a developer curious about AI fairness, you will leave with a new framework for making your Python models truly accountable.",
+      "speakers": [
+        "Albert Dorador"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Albert_Dorador"
+    },
+    {
+      "id": "sunday-1700-hs1-lightning-talks",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "lightning talks",
+      "description": "each talk has a maximum lenght of 5 minutes. Register for a tak at the registration desk",
+      "speakers": [
+        "various speakers"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "various_speakers"
+    },
+    {
+      "id": "sunday-1800-hs1-calculating-industrial-revolution-mechan",
+      "day": "sunday",
+      "date": "2026-04-19",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Calculating Industrial Revolution - Mechanical Calculators of the Past",
+      "description": "Almost all the achievements of the Industrial Revolution — from the steam engine to the Ferris wheel, from the Semmering Railway to the Kaprun power plant, from the telegraph to the radio — were planned and created before the first pocket calculator.  But how were these designs and inventions calculated? How were complex calculations even carried out in practice before the first computer? From around 1900 through the 1970s, in addition to slide rules and calculating discs, a class of machines now almost forgotten was used for this purpose: mechanical calculating machines.  Initially a rare sensation in the mechanization of mathematics, these “brains of steel” were used by the thousands well into the 1960s. Traces of them can still be found in today’s computer science.  In this lecture, I will not only trace the history of the development of mechanical calculators, but I will also bring several well-preserved calculating machines from 1920 to 1960 to the lecture and demonstrate live how our grandparents’ generations used them to calculate the technical developments of the modern era.  After the presentation, you can try out some of the calculators for yourself.",
+      "speakers": [
+        "Robert Matzinger"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Robert_Matzinger"
+    },
+    {
+      "id": "monday-0900-hs1-the-flexible-robotics-stack-simulating-a",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "The Flexible Robotics Stack: Simulating and Controlling Bots in Python",
+      "description": "Have you ever considered giving your Python an extra claw? Python has become the glue of modern robotics, bridging the gap between high-level AI and physical movement.  In this talk, we will explore the stack for modern robotics. We’ll see how to build virtual worlds to train AI models and how those models transition to physical hardware. We will then see tools to control and monitor these robots to keep them on track. Then we’ll cover the basics of servo control, translating learned Python logic into making a robotic arm move.  Finally, we’ll look at soft robotics, using simulation libraries to simulate and control deformable, flexible machines.  Whether you're a hobbyist or an engineer, you'll walk away with a roadmap for building your own robots.",
+      "speakers": [
+        "Jan Margeta"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Jan_Margeta"
+    },
+    {
+      "id": "monday-0900-hs2-why-would-you-import-duckdb-in-your-pyth",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Why would you \"import duckdb\" in your Python project?",
+      "description": "DuckDB is an in-process database that can be imported as a library in all popular programming languages. Of course, that includes Python too – with about 3/4 of DuckDB's user base importing its Python client.  But why would you use a database inside your Python process? First, DuckDB brings all the benefits of databases, including persistent storage, query optimization, and transaction handling, all without the hassle of setting up a database server. Second, DuckDB's Python client can seamlessly interact with other libraries such as Pandas, Polars, NumPy, and notebooks. Its Arrow-based deep integrations and Pythonic API allow you to gradually include DuckDB in a Python project, ranging from eliminating performance choke points to performing your entire workload in DuckDB.  In this talk, I give a brief overview of DuckDB and demonstrate how you can use it to modernize your Python codebase.",
+      "speakers": [
+        "Gabor Szarnyas"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Gabor_Szarnyas"
+    },
+    {
+      "id": "monday-0900-hs5-kafka-for-python-devs-from-what-is-kafka",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Kafka for Python Devs: From “What is Kafka?” to Production Basics",
+      "description": "Kafka shows up everywhere once systems need to move data in real time—but I feel many Python developers shy back from taking a deeper look. In this beginner-friendly talk, I’ll build a clear mental model of Kafka (topics, partitions, offsets, consumer groups, retention) and explain when it’s the right tool—and when it’s too much compared to simpler options like Redis Pub/Sub.  Using two realistic fintech-flavored examples—publishing fixed-cadence price updates and consuming event-driven trades to update derived state—we’ll look at small, readable Python snippets with confluent-kafka: a minimal producer, a minimal consumer, and the patterns that keep them reliable. We’ll cover common pitfalls like auto-commit surprises, rebalances, and “poison” messages, and finish with a practical 80/20 set of tuning knobs (batching, linger, compression, commit strategy).  Attendees will leave with the concepts and patterns needed to confidently build and troubleshoot their first Kafka-based Python service.",
+      "speakers": [
+        "Sophie Herrmann"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "#REF!"
+    },
+    {
+      "id": "monday-1000-e-hg-204-ready-set-publish-write-your-first-pytho",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "room": "E.HG 204",
+      "type": "workshop",
+      "title": "Ready, set, publish - Write your first Python Package",
+      "description": "This session walks through the full journey of creating your first Python package using Poetry - from project setup to publishing. We will explore how to write and structure tests, use pre‑commit hooks to automatically format and lint your code, and run everything inside reproducible Dev Containers.",
+      "speakers": [
+        "Linda Kolb"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Linda_Kolb"
+    },
+    {
+      "id": "monday-1000-hs1-building-deep-learning-systems-with-pyth",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Building Deep Learning Systems with Python: For Problems in Health, Agriculture, and Climate",
+      "description": "Deep learning is often introduced through idealized examples: clean datasets, powerful hardware, and benchmark driven results. In practice, most real world problems are messier, constrained, and driven by decisions rather than scores. This talk focuses on how to build deep learning systems with Python that work under conditions, using examples from health, agriculture, and climate data. The session presents a practical, system oriented approach to deep learning. Instead of focusing on complex architectures, it emphasizes how to frame problems correctly, work with imperfect data, build reliable baselines, and evaluate models in ways that support real world use.  1. From Problem to System (Why framing matters) Moving from “can we train a model?” to “what decision should this system support?” Defining success metrics based on context (e.g., sensitivity vs. accuracy) Why many deep learning projects fail before modeling even begins  2. Data Reality Check Working with limited, noisy, and imbalanced datasets Common data issues in health, agriculture, and environmental data Practical strategies for inspection, validation, and preprocessing using Python  3. Building the Baseline in Python Why simple models sometimes matter more than complex ones early on Establishing strong baselines before scaling complexity A reusable Python workflow: data loading, training loop, evaluation  4. Model Design Under Constraints Choosing architectures that match the problem and resources Training on CPUs or limited hardware When transfer learning helps and when it does not  5. Evaluation Beyond Accuracy Selecting metrics that reflect costs and risks Understanding failure modes through error analysis Using interpretability tools to inspect model behavior  6. Case Studies Across Domains Health: image based disease detection and triage support Agriculture: crop disease detection from visual data Climate: pattern detection in environmental and geospatial data What stayed the same across domains, and what changed  7. From Experiment to Deployment Thinking Reproducibility and documentation What makes a model usable outside a notebook Common pitfalls when moving toward real world use  8. Key Takeaways A practical framework for building deep learning systems with Python How to apply the same workflow across different domains How to think critically about data, models, and evaluation in real settings  This talk is aimed at developers and data practitioners who already know Python and basic machine learning concepts and want to move beyond demos toward building systems that actually support decisions.",
+      "speakers": [
+        "Cherno Basiru Jallow"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Cherno_Basiru_Jallow"
+    },
+    {
+      "id": "monday-1000-hs2-building-a-data-lakehouse-in-the-europea",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Building a data lakehouse in the European cloud",
+      "description": "It's 2026 and all of a sudden your regular solution to build a data pipeline in Azure or AWS seem to have gone out of favour pretty fast. We want to store our data outside of the reach of the next autocrat. But what are the alternatives? In this session we'll discuss how you can build a data lakehouse in the European cloud. And we want more: we want PySpark, notebooks and data visualization. Is that all possible?  For this data lakehouse solution we start with Kubernetes and object storage. You'll be surprised how many European cloud providers offer these products. Now we'll use Nessie as catalog and Trino as query engine. With Iceberg, our open table format, we can already create our first table.  Next we'll run Jupyter Hub for shared notebooks. And now we can cooperate on writing PySpark code.  Great, but can we still use (local) PowerBI for data visualisation?  Yes, but that actually turns out a bit harder and for some reason expensive. We'll look at the alternatives for that.  This presentation is also suitable for visitors who are not data engineers or who have little knowledge of Kubernetes.",
+      "speakers": [
+        "Marcel-Jan Krijgsman"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Marcel-Jan_Krijgsman"
+    },
+    {
+      "id": "monday-1000-hs5-free-software-is-all-about-freedom",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Free Software Is All About Freedom",
+      "description": "Free software (often also called open-source software) plays an essential role for almost all modern digital infrastructure. The Python language and most of the Python ecosystem are also free software. But what does that actually mean? Learn about the four essential freedoms, why they matter, and how they lead to the success of free software.  Learn about the motivation and values behind free software. Software is everywhere in modern society, and we all rely on software every day. We all depend on software every day. Big tech companies often abuse our dependence and force unwanted features on us. We should care that people are in control of their own devices and digital lives. Free software communities work hard to provide alternatives and the possibility to escape from vendor lock-in.  Let's get political! Free software is ever more important for democracy and digital sovereignty. Learn about the initiatives of the FSFE (Free Software Foundation Europe), fighting to benefit users and society for 25 years now.",
+      "speakers": [
+        "Fiona Ebner",
+        "Gregor Horvath"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "#REF!"
+    },
+    {
+      "id": "monday-1100-hs1-debug-smarter-not-harder-all-you-need-to",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Debug smarter, not harder - all you need to know about debugging in Python",
+      "description": "This talk tackles the common, yet ultimately limiting, practice of using print statements for debugging in Python. We will explore why relying on print statements often becomes inefficient and cumbersome as applications grow in complexity.   The presentation will guide attendees through a transition to professional-grade debugging tools, beginning with a detailed look at the built-in Python debugger, pdb, including essential commands and workflows.   Next, I will demystify the powerful debugging capabilities integrated into modern Integrated Development Environments (IDEs), specifically demonstrating debugpy and its seamless application within popular tools like VS Code and PyCharm.   Finally, the talk will introduce debug logging as a robust, scalable alternative to temporary print statements, covering best practices for when and how to implement a logging framework to manage application state effectively.   By contrasting these strategies, this session aims to empower developers to choose the right tool. Be it a dedicated debugger, an IDE feature, or a logging framework, for any challenge. Enabling smarter, faster, and more effective code remediation in their daily work.   Outline:  - Why not use “print”?  - Situation when you can use “print” to debug  - Situation when using “print” is not helpful - Debuggers used in Python  - pdb : why use pdb not “print”  - Debugging in IDEs  - Debugpy: what is it?  - Debugpy used in VS Code and PyCharm - Debug logging  - When should you use debug logging?  - Logging vs “print”  - How to manage debug logs? - Conclusion and summary  - Use the right tools and strategies for the situation  - Summarise the debugging strategies that have been introduced",
+      "speakers": [
+        "Cheuk Ting Ho"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Cheuk_Ting_Ho"
+    },
+    {
+      "id": "monday-1100-hs2-designing-python-apis-for-data-you-don-t",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "Designing Python APIs for Data You Don’t Control",
+      "description": "Python developers are used to working with APIs that have documentation, versioning, and some expectation of stability. Websites offer none of that, yet many Python systems depend on web data every day.  This talk reframes web scraping and extraction as an API design problem under extreme uncertainty. Instead of focusing on selectors or parsing techniques, we’ll focus on how to design Python-facing interfaces that can survive change.  We’ll explore topics such as optional fields, backward-compatible schema changes, defensive parsing, and meaningful error semantics. We’ll also discuss how breaking changes affect downstream users, especially when your data feeds analytics pipelines, dashboards, or automated systems.  By the end of the session, attendees will have a clearer mental model for treating web data as a volatile dependency, and practical strategies for designing Python APIs that protect users from inevitable change.",
+      "speakers": [
+        "Saurav Jain"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "canceled",
+      "canceled": true,
+      "slideUrl": "",
+      "imageFilename": "Saurav_Jain"
+    },
+    {
+      "id": "monday-1100-hs2-an-introduction-to-regression-testing",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "An Introduction to Regression Testing",
+      "description": "Have you ever been unsure about touching a bit of code out of fear you might break something? Have you ever thought \"Ah, maybe I should fix this... BUT\" and refrained from following up on your instincts of improving the code base? In this talk, we we focus on tools and strategies to implement regression tests. Through regression tests, we want to ensure that previously developed (and tested?) code still performs as expected after a change. Agenda: 1. Conceptual overview and basics 2. A more realistic example 3. Selected strategies that I have kept reusing over the years 4. Costs vs. benefits 5. Q&A and discussion Familiarity with software testing in general and pytest in particular is assumed. Also, that you are interested in testing your code. ;) Looking forward to our exchange!",
+      "speakers": [
+        "Claus Aichinger"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "empty",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "#REF!"
+    },
+    {
+      "id": "monday-1100-hs5-open-edx-the-other-open-source-lms",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Open edX: the \"other\" open source LMS",
+      "description": "In Europe, most people think of Moodle when they hear think about open source learning management systems. However, there's another! Open edX has been a solid, Python-based LMS for more than a decade, and it has an interesting past, present, and future.   Having worked with up Open edX since 2015, I help run multiple Open edX platforms, develop courseware on Open edX, and am an active contributing community member.   This talk explains Open edX, its architecture, and its community.",
+      "speakers": [
+        "Florian Haas"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Florian_Haas"
+    },
+    {
+      "id": "monday-1100-hs5-a-python-developer-s-guide-to-entity-res",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "A Python Developer’s Guide to Entity Resolution in the AI Era",
+      "description": "Before feed data into an AI, we face the oldest problem in data engineering: How do you know that \"Apple Inc.\", \"Apple Computer\", and \"Aple Corp\" are the same company?  In 2026, it is tempting to throw a massive AI model at this problem. But AI is expensive, slow, and surprisingly bad at catching single-character typos in SKUs or IDs.  This beginner-friendly talk is a survival guide for messy text data. We will explore \"Entity Resolution\"—the art of linking text records together. We will compare modern AI Embeddings against blazing-fast, 60-year-old math algorithms like Levenshtein distance and Jaro-Winkler. Using Python’s RapidFuzz library, you will learn how to build a highly accurate, lightweight \"Hybrid\" matching pipeline that cleans your data without needing an expensive GPU.",
+      "speakers": [
+        "Artem Sentsov"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "canceled",
+      "canceled": true,
+      "slideUrl": "",
+      "imageFilename": "Artem_Sentsov"
+    },
+    {
+      "id": "monday-1400-hs1-hands-on-building-ai-applications-in-pyt",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Hands-On: Building AI Applications in Python",
+      "description": "AI features are becoming common in Python applications, but many developers struggle to move from demos to real, maintainable code.  In this hands-on workshop, participants will build a small AI-powered Python application step-by-step. The focus is on understanding how AI fits into a Python system: structuring inputs and outputs, integrating a language model, adding simple logic, and handling failure cases responsibly.  Rather than relying on heavy frameworks or hidden abstractions, the workshop uses clear, minimal Python code to demonstrate patterns that participants can reuse in their own projects. A modern language model (such as Gemini) is used as an example, but the concepts apply to any AI-backed Python application.  No prior AI or machine learning experience is required.",
+      "speakers": [
+        "Robina Mirbahar"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Robina_Mirbahar"
+    },
+    {
+      "id": "monday-1400-hs2-the-combinator-pattern-elegant-compositi",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS2",
+      "type": "talk",
+      "title": "The Combinator Pattern: Elegant Composition for Modern Python Developers",
+      "description": "Functional programming encourages us to think in terms of composition - building complex logic from small, pure building blocks. In this talk, we’ll explore how the Combinator Design Pattern helps us achieve exactly that.  Using Python, we’ll go beyond theoretical definitions and implement combinators step by step — starting from simple primitives and evolving them into elegant, reusable, and type-safe abstractions.  Along the way, we’ll analyze how combinators enhance readability, maintainability, and alignment with the Single Responsibility Principle, while offering a modern alternative to conditional logic and inheritance-based designs.  By the end, participants will understand not only how to implement combinators but also how to think compositionally in Python.   The key takeaways are:  + Understand the Combinator Pattern: Learn its conceptual foundation and its role in functional programming and software design.  + Practical Implementation in Python: See how to build combinators step by step, leveraging lambdas, higher-order functions, and immutability.  + Achieve Clean and Reusable Code: Discover how combinators promote clarity, separation of concerns, and compliance with SOLID principles.  + Adopt a Compositional Mindset: Leave with concrete insights on writing expressive, declarative Python code that scales elegantly across real-world projects.",
+      "speakers": [
+        "Haim Michael"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Haim_Michael"
+    },
+    {
+      "id": "monday-1400-hs5-tying-up-loose-threads-making-your-proje",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "Tying Up Loose Threads: Making your Project No-GIL Ready",
+      "description": "If you messed around with Python's command line options or read the official documentation, you might wonder what the -Xgil option or the PYTHON_GIL environment variable did to your scripts, and whether setting either affects performance. The hubbub on popular wheels such as pyo3, python-zstandard, numpy, uv, cffi, and cython supporting the free-threaded interpreter is no passing fad either. For Pythonistas that don't read PEPs in their spare time or contribute to the cpython project itself, an adventure that delves into a less known, yet jaw-dropping aspect of Python awaits!  Python's Global Interpreter Lock, which determines which single thread can execute native Python code and call C API functions, simplifies writing multithreaded code. However, sticking with this execution model leaves out extra performance afforded by modern multicore CPUs with hyperthreading, as automatic locking and unlocking of the GIL does not scale well with thread counts, especially in performance-sensitive workloads.  The newfangled free-threaded interpreter promises salvation when running either pure Python code or with compiled extensions. General multithreading rules apply (prefer thread-local variables, using locks to prevent simultaneous access of shared data), but when dealing with projects containing compiled extensions that directly or indirectly interface with Python's C API, more porting rules also apply.    Key porting tips, including projects using the Limited API, include: port native code away from C API functions that avoid borrowed references because they aren't thread-safe; modify unit tests to catch concurrency bugs arising from assuming the presence of the GIL; and extend CI coverage of Python interpreters both for testing and to build free-threaded compatible wheels.  Outline: * Introduction (2-3 min.)   * What is the -Xgil option?  * What is the GIL? * What is the free-threaded interpreter? (6-8 min.)   * Global Interpreter Lock: downsides of automatic serialization of parallel workloads  * How to try out the free-threaded interpreter  * Increased parallelism with the no-GIL interpreter with multi-core CPUs * Porting tips (15-18 min)  * Adding a trove classifier in pyproject.toml  * Marking your extension module as supporting no-GIL  * Limited API (and PEP 803)  * Bumping key dependencies, including FFI wheels  * Using locks, mutexes, and atomics in native code to prevent concurrency bugs  * Including pytest-run-parallel to catch threading bugs * Closing Remarks (2 min.)  * Q&A (2 min.)",
+      "speakers": [
+        "Charlie Lin"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": true,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Charlie_Lin"
+    },
+    {
+      "id": "monday-1500-hs1-agents-what-do-they-do",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "Agents — What Do They Do?",
+      "description": "Agents — what do they do? No, really, what do they do? Your agent fails mid-tool-call, returns garbage, burns your token budget — and your APM dashboard says everything's fine. Our users kept hitting this wall, so at Sentry we decided to solve it. I'll walk through the engineering decisions behind Sentry's open-source Agent Monitoring: why we landed on three span types — intent, reasoning, action — and how they plug into your existing tracing stack. We'll dig into the surprisingly tricky parts (token cost tracking that goes literally negative if you get it wrong), conversation tracking across agent invocations, and what it takes to instrument a Python agent. You'll walk out knowing how agents break in prod and how to catch it.",
+      "speakers": [
+        "Fabian Schindler"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Fabian_Schindler"
+    },
+    {
+      "id": "monday-1500-hs5-the-ai-blind-spot-why-your-vector-search",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "room": "HS5",
+      "type": "talk",
+      "title": "The AI Blind Spot: Why Your Vector Search Needs Classic Python Algorithms",
+      "description": "In 2026, it is tempting to think Large Language Models and Vector Databases have completely solved text analytics. Just embed your text, run a cosine similarity check, and you’re done, right? Not quite.  While vectors are incredible at understanding meaning, they have a massive blind spot: they are terrible at exactness. If you need to match specific product SKUs, catch slight typos in usernames, or prevent an LLM from hallucinating an ID number, modern AI will often fail where a 60-year-old math algorithm succeeds.  In this beginner-friendly talk, we will explore this \"Vector Blind Spot.\" You will learn why classic string metrics like Levenshtein and Jaro-Winkler are more critical than ever, how to implement them using blazing-fast, modern Python libraries like RapidFuzz.",
+      "speakers": [
+        "Artem Sentsov"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "Artem_Sentsov"
+    },
+    {
+      "id": "monday-1600-hs1-lightning-talks",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "lightning talks",
+      "description": "each talk has a maximum lenght of 5 minutes. Register for a tak at the registration desk",
+      "speakers": [
+        "various speakers"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": "various_speakers"
+    },
+    {
+      "id": "monday-1700-hs1-conference-closing",
+      "day": "monday",
+      "date": "2026-04-20",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "room": "HS1",
+      "type": "talk",
+      "title": "conference closing",
+      "description": "",
+      "speakers": [
+        "various speakers"
+      ],
+      "language": "English",
+      "firstTimeSpeaker": false,
+      "category": "",
+      "canceled": false,
+      "slideUrl": "",
+      "imageFilename": ""
     }
   ]
 }
