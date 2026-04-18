@@ -115,7 +115,7 @@ function render() {
   const dayStart = floorToHour(Math.min(...minuteStarts));
   const dayEnd = ceilToHour(Math.max(...minuteEnds));
   const totalMinutes = Math.max(60, dayEnd - dayStart);
-  const pixelsPerMinute = 1.25;
+  const pixelsPerMinute = 1.75;
   const timelineHeight = Math.max(300, Math.round(totalMinutes * pixelsPerMinute));
 
   const selectedDay = getConferenceDays(state.schedule).find(

@@ -285,6 +285,7 @@ body {
   margin: 0;
   font-size: 0.97rem;
   line-height: 1.3;
+  font-weight: 400;
 }
 
 .session__speakers {
