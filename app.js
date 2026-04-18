@@ -116,7 +116,7 @@ function render() {
   const dayEnd = ceilToHour(Math.max(...minuteEnds));
   const totalMinutes = Math.max(60, dayEnd - dayStart);
   const slotMinutes = 10;
-  const pixelsPerMinute = 1.75;
+  const pixelsPerMinute = 3.5;
   const slotHeight = Math.round(slotMinutes * pixelsPerMinute * 10) / 10;
   const slotCount = Math.ceil(totalMinutes / slotMinutes);
 

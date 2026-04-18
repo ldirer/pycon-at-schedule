@@ -172,13 +172,7 @@ body {
 
 .timetable__room-bg {
   border-right: 1px solid var(--color-border);
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--slot-height) - 1px),
-    #eef2f8 calc(var(--slot-height) - 1px),
-    #eef2f8 var(--slot-height)
-  );
+  background: #fcfdff;
 }
 
 .timetable__room-bg--last {
