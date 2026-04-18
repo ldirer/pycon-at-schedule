@@ -100,16 +100,13 @@ function render() {
   }
 
   const rooms = unique(sessions.map((s) => s.room));
-  const slotKeys = unique(
-    sessions.map((s) => `${s.startTime}–${s.endTime}`)
-  ).sort((a, b) => a.localeCompare(b));
-
-  const bySlotAndRoom = new Map();
-  sessions.forEach((s) => {
-    const key = `${s.startTime}–${s.endTime}||${s.room}`;
-    if (!bySlotAndRoom.has(key)) bySlotAndRoom.set(key, []);
-    bySlotAndRoom.get(key).push(s);
-  });
+  const minuteStarts = sessions.map((s) => timeToMinutes(s.startTime));
+  const minuteEnds = sessions.map((s) => timeToMinutes(s.endTime));
+  const dayStart = floorToHour(Math.min(...minuteStarts));
+  const dayEnd = ceilToHour(Math.max(...minuteEnds));
+  const totalMinutes = Math.max(60, dayEnd - dayStart);
+  const pixelsPerMinute = 1.25;
+  const timelineHeight = Math.max(300, Math.round(totalMinutes * pixelsPerMinute));
 
   const selectedDay = getConferenceDays(state.schedule).find(
     (d) => d.date === state.activeDay
@@ -123,64 +120,65 @@ function render() {
   heading.textContent = formatDayLabel(selectedDay || { date: state.activeDay });
   section.appendChild(heading);
 
-  const tableWrap = document.createElement("div");
-  tableWrap.className = "schedule-grid-wrap";
+  const wrap = document.createElement("div");
+  wrap.className = "timeline-wrap";
 
-  const table = document.createElement("table");
-  table.className = "schedule-grid";
+  const timeline = document.createElement("div");
+  timeline.className = "timeline";
+  timeline.style.setProperty("--room-count", String(rooms.length));
+  timeline.style.setProperty("--timeline-height", `${timelineHeight}px`);
+  timeline.style.setProperty("--pixels-per-minute", String(pixelsPerMinute));
 
-  const thead = document.createElement("thead");
-  const headRow = document.createElement("tr");
-
-  const thTime = document.createElement("th");
-  thTime.className = "schedule-grid__timecol";
-  thTime.textContent = "Time";
-  headRow.appendChild(thTime);
+  const timeHead = document.createElement("div");
+  timeHead.className = "timeline__head timeline__head--time";
+  timeHead.textContent = "Time";
+  timeline.appendChild(timeHead);
 
   rooms.forEach((room) => {
-    const th = document.createElement("th");
-    th.textContent = room;
-    headRow.appendChild(th);
+    const roomHead = document.createElement("div");
+    roomHead.className = "timeline__head timeline__head--room";
+    roomHead.textContent = room;
+    timeline.appendChild(roomHead);
   });
 
-  thead.appendChild(headRow);
-  table.appendChild(thead);
+  const timesCol = document.createElement("div");
+  timesCol.className = "timeline__times";
+  for (let m = dayStart; m <= dayEnd; m += 60) {
+    const mark = document.createElement("div");
+    mark.className = "timeline__time-mark";
+    if (m === dayStart) mark.classList.add("timeline__time-mark--start");
+    if (m === dayEnd) mark.classList.add("timeline__time-mark--end");
+    const topPct = ((m - dayStart) / totalMinutes) * 100;
+    mark.style.top = `${topPct}%`;
+    mark.textContent = minutesToTime(m);
+    timesCol.appendChild(mark);
+  }
+  timeline.appendChild(timesCol);
 
-  const tbody = document.createElement("tbody");
+  const byRoom = groupBy(sessions, (s) => s.room);
 
-  slotKeys.forEach((slot) => {
-    const row = document.createElement("tr");
+  rooms.forEach((room) => {
+    const roomCol = document.createElement("div");
+    roomCol.className = "timeline__room-col";
 
-    const timeCell = document.createElement("th");
-    timeCell.className = "schedule-grid__time";
-    timeCell.scope = "row";
-    timeCell.textContent = slot.replace("–", " – ");
-    row.appendChild(timeCell);
+    (byRoom[room] || []).forEach((s) => {
+      const startMinute = timeToMinutes(s.startTime);
+      const endMinute = timeToMinutes(s.endTime);
+      const startOffset = startMinute - dayStart;
+      const duration = Math.max(5, endMinute - startMinute);
 
-    rooms.forEach((room) => {
-      const td = document.createElement("td");
-      td.className = "schedule-grid__cell";
-      td.setAttribute("data-room", room);
-      td.setAttribute("data-time", slot.replace("–", " – "));
-
-      const key = `${slot}||${room}`;
-      const cellSessions = bySlotAndRoom.get(key) || [];
-
-      if (!cellSessions.length) {
-        td.classList.add("schedule-grid__cell--empty");
-      } else {
-        cellSessions.forEach((s) => td.appendChild(renderSession(s)));
-      }
-
-      row.appendChild(td);
+      const card = renderSession(s);
+      card.classList.add("timeline-session");
+      card.style.top = `${Math.round(startOffset * pixelsPerMinute)}px`;
+      card.style.height = `${Math.max(44, Math.round(duration * pixelsPerMinute) - 4)}px`;
+      roomCol.appendChild(card);
     });
 
-    tbody.appendChild(row);
+    timeline.appendChild(roomCol);
   });
 
-  table.appendChild(tbody);
-  tableWrap.appendChild(table);
-  section.appendChild(tableWrap);
+  wrap.appendChild(timeline);
+  section.appendChild(wrap);
 
   el.scheduleRoot.innerHTML = "";
   el.scheduleRoot.appendChild(section);
@@ -386,6 +384,27 @@ function getConferenceDays(schedule) {
 
 function unique(arr) {
   return Array.from(new Set(arr));
+}
+
+function timeToMinutes(time) {
+  const [h, m] = time.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function minutesToTime(totalMinutes) {
+  const h = Math.floor(totalMinutes / 60)
+    .toString()
+    .padStart(2, "0");
+  const m = (totalMinutes % 60).toString().padStart(2, "0");
+  return `${h}:${m}`;
+}
+
+function floorToHour(minutes) {
+  return Math.floor(minutes / 60) * 60;
+}
+
+function ceilToHour(minutes) {
+  return Math.ceil(minutes / 60) * 60;
 }
 
 function formatDateRange(dates) {

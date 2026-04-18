@@ -132,7 +132,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-.schedule-grid-wrap {
+.timeline-wrap {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: auto;
@@ -140,52 +140,73 @@ body {
   box-shadow: var(--shadow);
 }
 
-.schedule-grid {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 760px;
+.timeline {
+  --room-count: 1;
+  --timeline-height: 560px;
+  --pixels-per-minute: 1.25;
+  --hour-height: calc(var(--pixels-per-minute) * 60px);
+  display: grid;
+  grid-template-columns: 88px repeat(var(--room-count), minmax(230px, 1fr));
+  grid-template-rows: auto var(--timeline-height);
+  min-width: calc(88px + var(--room-count) * 230px);
 }
 
-.schedule-grid thead th {
+.timeline__head {
   background: #f8faff;
   color: #4a5568;
   text-align: left;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 0.7rem 0.8rem;
+  padding: 0.7rem;
   border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  border-right: 1px solid var(--color-border);
 }
 
-.schedule-grid__timecol {
-  width: 118px;
+.timeline__head--room:last-child {
+  border-right: none;
 }
 
-.schedule-grid tbody tr + tr th,
-.schedule-grid tbody tr + tr td {
-  border-top: 1px solid var(--color-border);
+.timeline__times,
+.timeline__room-col {
+  position: relative;
+  height: var(--timeline-height);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--hour-height) - 1px),
+    #ebeff7 calc(var(--hour-height) - 1px),
+    #ebeff7 var(--hour-height)
+  );
 }
 
-.schedule-grid__time {
-  padding: 0.9rem 0.8rem;
-  font-size: 0.85rem;
-  color: #475467;
-  white-space: nowrap;
-  vertical-align: top;
-  background: #fcfdff;
+.timeline__times {
+  border-right: 1px solid var(--color-border);
 }
 
-.schedule-grid__cell {
-  vertical-align: top;
-  padding: 0.6rem;
-  min-width: 240px;
+.timeline__time-mark {
+  position: absolute;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  transform: translateY(-50%);
+  line-height: 1;
 }
 
-.schedule-grid__cell--empty {
-  background: #fafbfd;
+.timeline__time-mark--start {
+  transform: none;
+}
+
+.timeline__time-mark--end {
+  transform: translateY(-100%);
+}
+
+.timeline__room-col {
+  border-right: 1px solid var(--color-border);
+}
+
+.timeline__room-col:last-child {
+  border-right: none;
 }
 
 .session {
@@ -209,6 +230,18 @@ body {
 
 .session + .session {
   margin-top: 0.55rem;
+}
+
+.timeline-session {
+  position: absolute;
+  left: 0.35rem;
+  right: 0.35rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.timeline-session .session__title {
+  font-size: 0.93rem;
 }
 
 .session__meta {
@@ -321,68 +354,37 @@ body {
 }
 
 @media (max-width: 920px) {
-  .schedule-grid-wrap {
-    border: none;
-    background: transparent;
-    box-shadow: none;
+  .timeline {
+    grid-template-columns: 68px repeat(var(--room-count), minmax(220px, 1fr));
+    min-width: calc(68px + var(--room-count) * 220px);
   }
 
-  .schedule-grid {
-    min-width: 0;
-    border-collapse: separate;
-    border-spacing: 0;
+  .timeline__head {
+    padding: 0.6rem;
+    font-size: 0.74rem;
   }
 
-  .schedule-grid thead {
-    display: none;
+  .timeline__time-mark {
+    left: 0.35rem;
+    font-size: 0.68rem;
   }
 
-  .schedule-grid tbody,
-  .schedule-grid tr,
-  .schedule-grid th,
-  .schedule-grid td {
-    display: block;
-    width: 100%;
+  .timeline-session {
+    left: 0.25rem;
+    right: 0.25rem;
+    padding: 0.55rem;
   }
 
-  .schedule-grid tbody tr {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 0.8rem;
-    padding: 0.65rem;
+  .timeline-session .session__meta {
+    font-size: 0.72rem;
   }
 
-  .schedule-grid tbody tr + tr th,
-  .schedule-grid tbody tr + tr td {
-    border-top: none;
-  }
-
-  .schedule-grid__time {
-    background: transparent;
-    padding: 0;
-    margin: 0 0 0.5rem;
+  .timeline-session .session__title {
     font-size: 0.84rem;
   }
 
-  .schedule-grid__cell {
-    padding: 0;
-    min-width: 0;
-  }
-
-  .schedule-grid__cell::before {
-    content: attr(data-room);
-    display: block;
-    font-size: 0.74rem;
-    color: var(--color-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin: 0.45rem 0 0.35rem;
-  }
-
-  .schedule-grid__cell--empty {
-    display: none;
+  .timeline-session .session__speakers {
+    font-size: 0.75rem;
   }
 }
 
