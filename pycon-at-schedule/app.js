@@ -2,7 +2,7 @@ const SCHEDULE_URL = "data/schedule.json";
 
 const state = {
   schedule: null,
-  activeDay: "all",
+  activeDay: null,
 };
 
 const el = {
@@ -23,9 +23,9 @@ init();
 
 async function init() {
   el.downloadBtn.addEventListener("click", onDownloadIcs);
-  el.dialog
-    .querySelector(".dialog__close")
-    .addEventListener("click", () => el.dialog.close());
+
+  const closeBtn = el.dialog.querySelector(".dialog__close");
+  closeBtn.addEventListener("click", () => el.dialog.close());
   el.dialog.addEventListener("click", (e) => {
     if (e.target === el.dialog) el.dialog.close();
   });
@@ -41,8 +41,11 @@ async function init() {
     return;
   }
 
+  const days = getConferenceDays(state.schedule);
+  state.activeDay = days[0]?.date ?? null;
+
   renderHeader(state.schedule.conference);
-  renderDayTabs(state.schedule);
+  renderDayTabs(days);
   render();
 }
 
@@ -52,84 +55,135 @@ function renderHeader(conf) {
   el.confLocation.textContent = conf.location || "";
 }
 
-function renderDayTabs(schedule) {
-  const days = uniqueDays(schedule.sessions);
-  const tabs = [{ key: "all", label: "All days" }].concat(
-    days.map((d) => ({ key: d.date, label: formatDayLabel(d) }))
-  );
-
+function renderDayTabs(days) {
   el.dayTabs.innerHTML = "";
-  tabs.forEach((t) => {
+
+  days.forEach((day) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "day-tabs__btn";
-    btn.textContent = t.label;
+    btn.textContent = formatDayLabel(day);
     btn.setAttribute("role", "tab");
-    btn.setAttribute("aria-selected", String(state.activeDay === t.key));
+    btn.dataset.date = day.date;
+    btn.setAttribute("aria-selected", String(state.activeDay === day.date));
+
     btn.addEventListener("click", () => {
-      state.activeDay = t.key;
-      el.dayTabs.querySelectorAll(".day-tabs__btn").forEach((b) => {
-        b.setAttribute(
-          "aria-selected",
-          String(b.textContent === t.label)
-        );
-      });
+      state.activeDay = day.date;
+      renderDayTabs(days);
       render();
     });
+
     el.dayTabs.appendChild(btn);
   });
 }
 
 function render() {
-  const sessions = state.schedule.sessions.filter((s) =>
-    state.activeDay === "all" ? true : s.date === state.activeDay
-  );
-
-  if (sessions.length === 0) {
-    el.scheduleRoot.innerHTML = `<p class="schedule__status">No sessions found.</p>`;
+  if (!state.activeDay) {
+    el.scheduleRoot.innerHTML = `<p class="schedule__status">No conference days configured.</p>`;
     return;
   }
 
-  const byDay = groupBy(sessions, (s) => s.date);
-  const orderedDays = Object.keys(byDay).sort();
+  const sessions = state.schedule.sessions
+    .filter((s) => s.date === state.activeDay)
+    .sort((a, b) => {
+      const byTime = a.startTime.localeCompare(b.startTime);
+      if (byTime !== 0) return byTime;
+      return a.room.localeCompare(b.room);
+    });
+
+  if (!sessions.length) {
+    const day = getConferenceDays(state.schedule).find((d) => d.date === state.activeDay);
+    el.scheduleRoot.innerHTML = `<p class="schedule__status">No sessions yet for ${escapeHtml(
+      formatDayLabel(day || { date: state.activeDay })
+    )}.</p>`;
+    return;
+  }
+
+  const rooms = unique(sessions.map((s) => s.room));
+  const slotKeys = unique(
+    sessions.map((s) => `${s.startTime}–${s.endTime}`)
+  ).sort((a, b) => a.localeCompare(b));
+
+  const bySlotAndRoom = new Map();
+  sessions.forEach((s) => {
+    const key = `${s.startTime}–${s.endTime}||${s.room}`;
+    if (!bySlotAndRoom.has(key)) bySlotAndRoom.set(key, []);
+    bySlotAndRoom.get(key).push(s);
+  });
+
+  const selectedDay = getConferenceDays(state.schedule).find(
+    (d) => d.date === state.activeDay
+  );
+
+  const section = document.createElement("section");
+  section.className = "day-section";
+
+  const heading = document.createElement("h2");
+  heading.className = "day-section__heading";
+  heading.textContent = formatDayLabel(selectedDay || { date: state.activeDay });
+  section.appendChild(heading);
+
+  const tableWrap = document.createElement("div");
+  tableWrap.className = "schedule-grid-wrap";
+
+  const table = document.createElement("table");
+  table.className = "schedule-grid";
+
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+
+  const thTime = document.createElement("th");
+  thTime.className = "schedule-grid__timecol";
+  thTime.textContent = "Time";
+  headRow.appendChild(thTime);
+
+  rooms.forEach((room) => {
+    const th = document.createElement("th");
+    th.textContent = room;
+    headRow.appendChild(th);
+  });
+
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+
+  slotKeys.forEach((slot) => {
+    const row = document.createElement("tr");
+
+    const timeCell = document.createElement("th");
+    timeCell.className = "schedule-grid__time";
+    timeCell.scope = "row";
+    timeCell.textContent = slot.replace("–", " – ");
+    row.appendChild(timeCell);
+
+    rooms.forEach((room) => {
+      const td = document.createElement("td");
+      td.className = "schedule-grid__cell";
+      td.setAttribute("data-room", room);
+      td.setAttribute("data-time", slot.replace("–", " – "));
+
+      const key = `${slot}||${room}`;
+      const cellSessions = bySlotAndRoom.get(key) || [];
+
+      if (!cellSessions.length) {
+        td.classList.add("schedule-grid__cell--empty");
+      } else {
+        cellSessions.forEach((s) => td.appendChild(renderSession(s)));
+      }
+
+      row.appendChild(td);
+    });
+
+    tbody.appendChild(row);
+  });
+
+  table.appendChild(tbody);
+  tableWrap.appendChild(table);
+  section.appendChild(tableWrap);
 
   el.scheduleRoot.innerHTML = "";
-  orderedDays.forEach((date) => {
-    const section = document.createElement("section");
-    section.className = "day-section";
-
-    const heading = document.createElement("h2");
-    heading.className = "day-section__heading";
-    heading.textContent = formatDayLabel({
-      day: byDay[date][0].day,
-      date,
-    });
-    section.appendChild(heading);
-
-    const byTime = groupBy(
-      byDay[date].sort((a, b) => a.startTime.localeCompare(b.startTime)),
-      (s) => `${s.startTime}–${s.endTime}`
-    );
-
-    Object.keys(byTime).forEach((timeRange) => {
-      const group = document.createElement("div");
-      group.className = "slot-group";
-
-      const timeHeader = document.createElement("h3");
-      timeHeader.className = "slot-group__time";
-      timeHeader.textContent = timeRange.replace("–", " – ");
-      group.appendChild(timeHeader);
-
-      const list = document.createElement("div");
-      list.className = "sessions";
-      byTime[timeRange].forEach((s) => list.appendChild(renderSession(s)));
-      group.appendChild(list);
-
-      section.appendChild(group);
-    });
-
-    el.scheduleRoot.appendChild(section);
-  });
+  el.scheduleRoot.appendChild(section);
 }
 
 function renderSession(s) {
@@ -139,14 +193,12 @@ function renderSession(s) {
 
   const meta = document.createElement("div");
   meta.className = "session__meta";
-  meta.appendChild(badge(s.type));
+  meta.appendChild(badge(s.type || "talk"));
   if (s.canceled) meta.appendChild(badge("canceled"));
-  const room = document.createElement("span");
-  room.textContent = s.room;
-  meta.appendChild(room);
+
   if (s.language) {
     const lang = document.createElement("span");
-    lang.textContent = "· " + s.language;
+    lang.textContent = s.language;
     meta.appendChild(lang);
   }
 
@@ -169,9 +221,12 @@ function renderSession(s) {
 }
 
 function badge(kind) {
+  const normalized = ["workshop", "talk", "canceled"].includes(kind)
+    ? kind
+    : "talk";
   const b = document.createElement("span");
-  b.className = "badge badge--" + kind;
-  b.textContent = kind;
+  b.className = "badge badge--" + normalized;
+  b.textContent = normalized;
   return b;
 }
 
@@ -186,8 +241,8 @@ function openDialog(s) {
     .filter(Boolean)
     .join(" · ");
   el.dialogSpeakers.textContent = (s.speakers || []).join(", ");
-  el.dialogDescription.textContent =
-    s.description || "No description available.";
+  el.dialogDescription.textContent = s.description || "No description available.";
+
   if (typeof el.dialog.showModal === "function") {
     el.dialog.showModal();
   } else {
@@ -212,6 +267,8 @@ function onDownloadIcs() {
 }
 
 function buildIcs(schedule) {
+  const tzid = schedule.conference.timezone || "Europe/Vienna";
+
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -219,6 +276,7 @@ function buildIcs(schedule) {
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${escapeIcs(schedule.conference.name)}`,
+    `X-WR-TIMEZONE:${escapeIcs(tzid)}`,
     "BEGIN:VTIMEZONE",
     "TZID:Europe/Vienna",
     "BEGIN:STANDARD",
@@ -246,17 +304,19 @@ function buildIcs(schedule) {
       lines.push("BEGIN:VEVENT");
       lines.push(`UID:${s.id}@pycon.at`);
       lines.push(`DTSTAMP:${dtstamp}`);
-      lines.push(`DTSTART;TZID=Europe/Vienna:${icsLocal(s.date, s.startTime)}`);
-      lines.push(`DTEND;TZID=Europe/Vienna:${icsLocal(s.date, s.endTime)}`);
+      lines.push(`DTSTART;TZID=${tzid}:${icsLocal(s.date, s.startTime)}`);
+      lines.push(`DTEND;TZID=${tzid}:${icsLocal(s.date, s.endTime)}`);
       lines.push(`SUMMARY:${escapeIcs(s.title)}`);
       if (s.room) lines.push(`LOCATION:${escapeIcs(s.room)}`);
+
       const descParts = [];
-      if (s.speakers && s.speakers.length)
+      if (s.speakers && s.speakers.length) {
         descParts.push("Speakers: " + s.speakers.join(", "));
+      }
       if (s.language) descParts.push("Language: " + s.language);
       if (s.description) descParts.push("", s.description);
-      if (descParts.length)
-        lines.push(`DESCRIPTION:${escapeIcs(descParts.join("\n"))}`);
+      if (descParts.length) lines.push(`DESCRIPTION:${escapeIcs(descParts.join("\n"))}`);
+
       lines.push(`CATEGORIES:${s.type === "workshop" ? "Workshop" : "Talk"}`);
       lines.push("END:VEVENT");
     });
@@ -266,7 +326,6 @@ function buildIcs(schedule) {
 }
 
 function icsLocal(isoDate, time) {
-  // isoDate: "2026-04-19", time: "10:00"
   const [y, m, d] = isoDate.split("-");
   const [hh, mm] = time.split(":");
   return `${y}${m}${d}T${hh}${mm}00`;
@@ -295,7 +354,6 @@ function escapeIcs(text) {
 }
 
 function foldIcsLine(line) {
-  // RFC 5545: lines SHOULD NOT exceed 75 octets; fold with CRLF + space
   if (line.length <= 75) return line;
   const chunks = [];
   let i = 0;
@@ -310,41 +368,49 @@ function foldIcsLine(line) {
 
 /* ---------- helpers ---------- */
 
-function uniqueDays(sessions) {
-  const seen = new Map();
-  sessions.forEach((s) => {
-    if (!seen.has(s.date)) seen.set(s.date, { day: s.day, date: s.date });
-  });
-  return Array.from(seen.values()).sort((a, b) => a.date.localeCompare(b.date));
+function getConferenceDays(schedule) {
+  const confDates = schedule?.conference?.dates || [];
+  if (confDates.length) {
+    return confDates.map((date) => {
+      const matching = schedule.sessions.find((s) => s.date === date);
+      return {
+        date,
+        day: matching?.day || null,
+      };
+    });
+  }
+
+  const uniqueDates = unique(schedule.sessions.map((s) => s.date)).sort();
+  return uniqueDates.map((date) => ({ date, day: null }));
 }
 
-function groupBy(arr, keyFn) {
-  return arr.reduce((acc, item) => {
-    const k = keyFn(item);
-    (acc[k] ||= []).push(item);
-    return acc;
-  }, {});
+function unique(arr) {
+  return Array.from(new Set(arr));
 }
 
 function formatDateRange(dates) {
   if (!dates || !dates.length) return "";
+
   const parse = (iso) => {
     const [y, m, d] = iso.split("-").map(Number);
     return new Date(Date.UTC(y, m - 1, d));
   };
+
   const fmt = new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
     timeZone: "UTC",
   });
+
   if (dates.length === 1) return fmt.format(parse(dates[0]));
   const first = parse(dates[0]);
   const last = parse(dates[dates.length - 1]);
+
   return `${fmt.format(first).replace(/ \d{4}$/, "")} – ${fmt.format(last)}`;
 }
 
-function formatDayLabel({ day, date }) {
+function formatDayLabel({ date }) {
   const [y, m, d] = date.split("-").map(Number);
   const dt = new Date(Date.UTC(y, m - 1, d));
   const name = new Intl.DateTimeFormat("en-GB", {
@@ -362,9 +428,6 @@ function formatDayLabel({ day, date }) {
 function escapeHtml(text) {
   return String(text).replace(
     /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[
-        c
-      ])
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
   );
 }
