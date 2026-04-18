@@ -1,11 +1,13 @@
 const SCHEDULE_URL = "data/schedule.json";
 const TALKS_URL = "data/talks.json";
+const MAX_TITLE_MATCH_DISTANCE = 5;
 
 const state = {
   schedule: null,
   activeDay: null,
   scheduleToTalkId: {},
   talksById: {},
+  titleMatches: [],
 };
 
 const el = {
@@ -38,8 +40,13 @@ async function init() {
     state.schedule = schedule;
 
     const talks = Array.isArray(talksData?.talks) ? talksData.talks : [];
-    state.scheduleToTalkId = buildScheduleToTalkMapping(schedule.sessions, talks);
+    const { mapping, matches } = buildScheduleToTalkMapping(schedule.sessions, talks);
+    state.scheduleToTalkId = mapping;
+    state.titleMatches = matches;
     state.talksById = indexTalksById(talks);
+
+    logTitleMatchReport(matches);
+    window.__titleMatches = matches;
   } catch (err) {
     el.scheduleRoot.innerHTML = `<p class="schedule__status">Couldn't load schedule: ${escapeHtml(
       err.message
@@ -70,27 +77,46 @@ async function loadJson(url) {
 function buildScheduleToTalkMapping(scheduleSessions, talks) {
   const talkTitles = talks.map((talk) => ({
     id: talk.id,
+    title: talk.title || "",
     normalizedTitle: normalizeTitleForMatching(talk.title || ""),
   }));
 
-  return scheduleSessions.reduce((acc, session) => {
-    const sessionTitle = normalizeTitleForMatching(session.title || "");
-    if (!sessionTitle || !talkTitles.length) return acc;
+  const mapping = {};
+  const matches = [];
 
-    let bestTalkId = null;
+  scheduleSessions.forEach((session) => {
+    const sessionTitle = normalizeTitleForMatching(session.title || "");
+    if (!sessionTitle || !talkTitles.length) return;
+
+    let bestTalk = null;
     let bestDistance = Number.POSITIVE_INFINITY;
 
     talkTitles.forEach((talk) => {
       const dist = levenshteinDistance(sessionTitle, talk.normalizedTitle);
       if (dist < bestDistance) {
         bestDistance = dist;
-        bestTalkId = talk.id;
+        bestTalk = talk;
       }
     });
 
-    if (bestTalkId) acc[session.id] = bestTalkId;
-    return acc;
-  }, {});
+    if (!bestTalk) return;
+
+    const accepted = bestDistance <= MAX_TITLE_MATCH_DISTANCE;
+    if (accepted) {
+      mapping[session.id] = bestTalk.id;
+    }
+
+    matches.push({
+      scheduleId: session.id,
+      scheduleTitle: session.title || "",
+      talkId: bestTalk.id,
+      talkTitle: bestTalk.title,
+      distance: bestDistance,
+      accepted,
+    });
+  });
+
+  return { mapping, matches };
 }
 
 function indexTalksById(talks) {
@@ -103,6 +129,26 @@ function indexTalksById(talks) {
 function getMatchedTalkForSession(session) {
   const talkId = state.scheduleToTalkId[session.id];
   return talkId ? state.talksById[talkId] || null : null;
+}
+
+function logTitleMatchReport(matches) {
+  const sorted = [...matches].sort((a, b) => b.distance - a.distance);
+  const acceptedCount = sorted.filter((m) => m.accepted).length;
+  const rejectedCount = sorted.length - acceptedCount;
+  console.log(
+    `[title-match] total=${sorted.length} accepted=${acceptedCount} rejected=${rejectedCount} (max distance ${MAX_TITLE_MATCH_DISTANCE})`
+  );
+
+  sorted.forEach((m) => {
+    const line =
+      `[title-match] distance=${m.distance} accepted=${m.accepted} ` +
+      `schedule=\"${m.scheduleTitle}\" -> talk=\"${m.talkTitle}\"`;
+    if (!m.accepted) {
+      console.warn(line + " [REJECTED: distance too high]");
+    } else {
+      console.log(line);
+    }
+  });
 }
 
 function renderHeader(conf) {
@@ -330,11 +376,16 @@ function openDialog(s) {
   el.dialogSpeakers.textContent = (s.speakers || []).join(", ");
 
   const matchedTalk = getMatchedTalkForSession(s);
+  el.dialogDescription.classList.remove("dialog__description--html", "dialog__description--plain");
+
   if (matchedTalk?.description) {
+    el.dialogDescription.classList.add("dialog__description--html");
     el.dialogDescription.innerHTML = matchedTalk.description;
   } else if (s.description) {
+    el.dialogDescription.classList.add("dialog__description--plain");
     el.dialogDescription.textContent = s.description;
   } else {
+    el.dialogDescription.classList.add("dialog__description--plain");
     el.dialogDescription.textContent = "No description available.";
   }
 

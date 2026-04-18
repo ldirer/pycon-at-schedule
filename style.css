@@ -338,9 +338,41 @@ body {
 
 .dialog__description {
   margin-top: 0.85rem;
-  white-space: pre-wrap;
   overflow: auto;
   max-height: 50vh;
+}
+
+.dialog__description--plain {
+  white-space: pre-wrap;
+}
+
+.dialog__description--html {
+  white-space: normal;
+  line-height: 1.45;
+}
+
+.dialog__description--html :is(h1, h2, h3, h4) {
+  margin: 0.9rem 0 0.45rem;
+  line-height: 1.25;
+}
+
+.dialog__description--html h1 {
+  font-size: 1.08rem;
+}
+
+.dialog__description--html h2 {
+  font-size: 1rem;
+}
+
+.dialog__description--html p,
+.dialog__description--html ul,
+.dialog__description--html ol,
+.dialog__description--html blockquote {
+  margin: 0 0 0.7rem;
+}
+
+.dialog__description--html li + li {
+  margin-top: 0.25rem;
 }
 
 @media (max-width: 920px) {

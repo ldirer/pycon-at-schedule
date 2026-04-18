@@ -92,6 +92,24 @@ async def main() -> None:
             await page.wait_for_selector(".timetable", timeout=1000)
             await page.evaluate("console.log('playwright-check: schedule loaded')")
 
+            title_matches = await page.evaluate(
+                "() => (window.__titleMatches || []).map((m) => ({...m}))"
+            )
+            print(f"Title matches ({len(title_matches)}):")
+            for m in sorted(title_matches, key=lambda x: x["distance"], reverse=True):
+                print(
+                    f"  distance={m['distance']:>2} | "
+                    f"{m['scheduleTitle']} -> {m['talkTitle']}"
+                )
+
+            poor = [m for m in title_matches if not m.get("accepted", False)]
+            if poor:
+                print("Rejected title matches (distance > 5):")
+                for m in sorted(poor, key=lambda x: x["distance"], reverse=True):
+                    print(
+                        f"  distance={m['distance']:>2} | "
+                        f"{m['scheduleTitle']} -> {m['talkTitle']}"
+                    )
             conf_name = (await page.text_content("#conf-name") or "").strip()
             assert conf_name == "PyCon Austria 2026", f"Conference title mismatch: {conf_name}"
 
