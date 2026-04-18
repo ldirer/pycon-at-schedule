@@ -100,8 +100,18 @@ function render() {
   }
 
   const rooms = unique(sessions.map((s) => s.room));
-  const minuteStarts = sessions.map((s) => timeToMinutes(s.startTime));
-  const minuteEnds = sessions.map((s) => timeToMinutes(s.endTime));
+  const minuteStarts = sessions
+    .map((s) => timeToMinutes(s.startTime))
+    .filter((n) => Number.isFinite(n));
+  const minuteEnds = sessions
+    .map((s) => timeToMinutes(s.endTime))
+    .filter((n) => Number.isFinite(n));
+
+  if (!minuteStarts.length || !minuteEnds.length) {
+    el.scheduleRoot.innerHTML = `<p class="schedule__status">Schedule contains invalid time values.</p>`;
+    return;
+  }
+
   const dayStart = floorToHour(Math.min(...minuteStarts));
   const dayEnd = ceilToHour(Math.max(...minuteEnds));
   const totalMinutes = Math.max(60, dayEnd - dayStart);
@@ -164,6 +174,8 @@ function render() {
     (byRoom[room] || []).forEach((s) => {
       const startMinute = timeToMinutes(s.startTime);
       const endMinute = timeToMinutes(s.endTime);
+      if (!Number.isFinite(startMinute) || !Number.isFinite(endMinute)) return;
+
       const startOffset = startMinute - dayStart;
       const duration = Math.max(5, endMinute - startMinute);
 
@@ -325,7 +337,8 @@ function buildIcs(schedule) {
 
 function icsLocal(isoDate, time) {
   const [y, m, d] = isoDate.split("-");
-  const [hh, mm] = time.split(":");
+  const normalizedTime = normalizeTime(time);
+  const [hh, mm] = normalizedTime.split(":");
   return `${y}${m}${d}T${hh}${mm}00`;
 }
 
@@ -386,8 +399,24 @@ function unique(arr) {
   return Array.from(new Set(arr));
 }
 
+function groupBy(arr, keyFn) {
+  return arr.reduce((acc, item) => {
+    const key = keyFn(item);
+    (acc[key] ||= []).push(item);
+    return acc;
+  }, {});
+}
+
+function normalizeTime(time) {
+  return String(time || "")
+    .trim()
+    .replace(";", ":");
+}
+
 function timeToMinutes(time) {
-  const [h, m] = time.split(":").map(Number);
+  const normalized = normalizeTime(time);
+  const [h, m] = normalized.split(":").map(Number);
+  if (!Number.isFinite(h) || !Number.isFinite(m)) return NaN;
   return h * 60 + m;
 }
 

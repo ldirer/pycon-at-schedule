@@ -240,6 +240,10 @@ body {
   overflow: hidden;
 }
 
+.timeline-session + .timeline-session {
+  margin-top: 0;
+}
+
 .timeline-session .session__title {
   font-size: 0.93rem;
 }
