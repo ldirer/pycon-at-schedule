@@ -22,6 +22,7 @@ const el = {
   dialogMeta: document.getElementById("dialog-meta"),
   dialogSpeakers: document.getElementById("dialog-speakers"),
   dialogDescription: document.getElementById("dialog-description"),
+  dialogBio: document.getElementById("dialog-bio"),
 };
 
 init();
@@ -394,6 +395,14 @@ function openDialog(s) {
   } else {
     el.dialogDescription.classList.add("dialog__description--plain");
     el.dialogDescription.textContent = "No description available.";
+  }
+
+  if (matchedTalk?.speaker_info_html) {
+    el.dialogBio.innerHTML = matchedTalk.speaker_info_html;
+    el.dialogBio.hidden = false;
+  } else {
+    el.dialogBio.innerHTML = "";
+    el.dialogBio.hidden = true;
   }
 
   if (typeof el.dialog.showModal === "function") {
